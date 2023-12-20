@@ -87,8 +87,8 @@ According to the CAP theorem, a distributed system can prioritize at most two of
 * **AP (Availability and Partition Tolerance):** In scenarios where network partitions are common, and the system needs to remain operational, a system may prioritize availability and partition tolerance. This is common in systems where high availability and fault tolerance are critical, even if it means sacrificing strong consistency.
 
 <figure markdown>
-    ![CAP Theorem](https://upload.wikimedia.org/wikipedia/commons/c/c6/CAP_Theorem_Venn_Diagram.png){ width="600" }
-    <figcaption><i>Source: <a href="https://en.wikipedia.org/wiki/CAP_theorem" target="_blank">Wikipedia - CAP Theorem</a><i></figcaption>
+  ![CAP Theorem](https://upload.wikimedia.org/wikipedia/commons/c/c6/CAP_Theorem_Venn_Diagram.png){ width="600" }
+  <figcaption><i>Source: <a href="https://en.wikipedia.org/wiki/CAP_theorem" target="_blank">Wikipedia - CAP Theorem</a></i></figcaption>
 </figure>
 
 It's important to note that the CAP theorem provides a theoretical framework for understanding trade-offs in distributed systems but does not prescribe specific solutions. Different systems may make different choices based on their specific requirements and use cases. Additionally, advancements in distributed systems research have led to the exploration of systems that aim to provide a balance between the three aspects, challenging the strict interpretation of the CAP theorem in some cases.

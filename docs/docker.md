@@ -37,8 +37,8 @@ Docker containers and virtual machines (VMs) are both technologies used for virt
 | Use Cases | Containers are well-suited for microservices architectures, continuous integration/continuous deployment (CI/CD) pipelines, and scenarios where rapid deployment and scalability are crucial. | VMs are suitable for scenarios that require strong isolation, compatibility with various operating systems, and where applications rely on specific OS configurations. |
 
 <figure markdown>
-    ![VM vs Docker](https://cloudacademy.com/wp-content/uploads/2019/10/Docker-vs..png){ width="100" }
-    <figcaption><i>Source: <a href="https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/" target="_blank">Docker vs. Virtual Machines: Differences You Should Know</a><i></figcaption>
+  ![VM vs Docker](https://cloudacademy.com/wp-content/uploads/2019/10/Docker-vs..png){ width="100%" }
+  <figcaption><i>Source: <a href="https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/" target="_blank">Docker vs. Virtual Machines: Differences You Should Know</a></i></figcaption>
 </figure>
 
 In summary, Docker containers and virtual machines have different levels of abstraction and are suitable for different use cases. Containers are lightweight, portable, and efficient, making them popular for modern application development and deployment practices. Virtual machines provide stronger isolation and are more suitable for scenarios where running multiple instances of different operating systems is necessary. The choice between Docker containers and virtual machines depends on the specific requirements of the application and the environment in which it will be deployed.
