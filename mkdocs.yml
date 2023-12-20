@@ -57,7 +57,7 @@ nav:
       - Cassandra: cassandra.md
       - Elasticsearch: elasticsearch.md
     - Payments: payments.md
-  - Spring Boot: spring-boot.md
+  - Spring Boot Cloud: spring-boot-cloud.md
   - Testing: testing.md
   - Documentation: documentation.md
   - DevOps:
