@@ -26,11 +26,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hsandmann.github.io/platform/design-patterns/</loc>
-         <lastmod>2023-12-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hsandmann.github.io/platform/devops/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>
@@ -47,6 +42,11 @@
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/documentation/</loc>
+         <lastmod>2023-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/flyway/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -86,12 +86,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hsandmann.github.io/platform/platform/</loc>
+         <lastmod>2023-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hsandmann.github.io/platform/rest-vs-graphql/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/spring-boot-cloud/</loc>
+         <lastmod>2023-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/versioning-rest-apis/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
