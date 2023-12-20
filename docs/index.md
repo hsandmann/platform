@@ -58,4 +58,7 @@ Livros:
 Artigos:
 
 - XU, A. et al.. ByteByteGo - System Design 101. Disponível em: [https://github.com/ByteByteGoHq/system-design-101](https://github.com/ByteByteGoHq/system-design-101). Acesso em: 19 dezembro 2023.
+
 - Spring. Spring Cloud. Disponível em: [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud). Acesso em: 19 dezembro 2023.
+
+- CHOI, K., Software Engineering Blogs. Disponível em: [https://github.com/kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs). Acesso em: 20 dezembro 2023.

@@ -34,8 +34,8 @@ nav:
   - Home: index.md
   - Versions:
     - 2024.1: 2024.1.md
-  - Design Patterns:
-    - Concepts: design-patterns.md
+  - Platform:
+    - Concepts: platform.md
     - Microservices: microservices.md
     - Gateway: gateway.md
     - Discovery: discovery.md
@@ -51,15 +51,15 @@ nav:
     - Monitoring: monitoring.md
     - Logging: logging.md
     - Tracing: tracing.md
+    - Synchronizatin
     - Serverless: serverless.md
-    - GraphQL: graphql.md
     - Messaging: 
       - Kafka: kafka.md
       - RabbitMQ: rabbitmq.md
-    - Distributed Data:
+    - Database:
+      - Flyway: flyway.md
       - Redis: redis.md
       - MongoDB: mongodb.md
-      - Cassandra: cassandra.md
       - Elasticsearch: elasticsearch.md
     - Payments: payments.md
   - Docker: docker.md
@@ -82,4 +82,5 @@ nav:
     - Terraform: terraform.md
   - Apendix:
     - REST vs GraphQL: rest-vs-graphql.md
+    - Versioning REST APIs: versioning-rest-apis.md
   - Contributors: contributors.md
