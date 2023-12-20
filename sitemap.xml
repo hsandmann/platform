@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hsandmann.github.io/platform/contributors/</loc>
+         <lastmod>2023-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hsandmann.github.io/platform/design-patterns/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>
@@ -77,6 +82,11 @@
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/monitoring/</loc>
+         <lastmod>2023-12-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/rest-vs-graphql/</loc>
          <lastmod>2023-12-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
