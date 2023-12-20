@@ -32,7 +32,6 @@ nav:
   - Home: index.md
   - Versions:
     - 2024.1: 2024.1.md
-  - Docker: docker.md
   - Design Patterns:
     - Concepts: design-patterns.md
     - Microservices: microservices.md
@@ -61,6 +60,7 @@ nav:
       - Cassandra: cassandra.md
       - Elasticsearch: elasticsearch.md
     - Payments: payments.md
+  - Docker: docker.md
   - Spring Boot Cloud: spring-boot-cloud.md
   - Testing: testing.md
   - Documentation: documentation.md
@@ -78,7 +78,6 @@ nav:
     - Google Cloud Platform: google-cloud-platform.md
     - Microsoft Azure: microsoft-azure.md
     - Terraform: terraform.md
-  - Project:
-    - Project: project.md
-    - About: about.md
-    - Contact: contact.md
+  - Apendix:
+    - REST vs GraphQL: rest-vs-graphql.md
+  - Contributors: contributors.md

@@ -1,4 +1,6 @@
-# [Plataforma, Microsserviços e APIs](#platform-microservices-and-apis)
+# [Plataformas, Microsserviços e APIs](#plataformas-microsservicos-e-apis)
+
+<!-- ![Insper](https://www.insper.edu.br/wp-content/themes/insper/dist/image/logo.png){ align=right } -->
 
 Carga Horária: 80
 
@@ -20,7 +22,7 @@ Ao final da disciplina o aluno será capaz de:
 6. Analisar, projetar e especificar uma solução de computação em nuvem mista baseada em hardware, software e redes para atender aos requisitos de determinado pacto de nível de serviço (SLA);
 7. Planejar e analisar o uso de plataformas empresariais como subsídio para criação de novos negócios.
 
-## [Conteúdo Programático](#conteúdo-programático)
+## [Conteúdo Programático](#conteudo-programatico)
 
 1. Conceitos de Arquitetura e Micro Serviços;
 2. Micro Serviços com Interface API - RESTful;
@@ -34,7 +36,7 @@ Ao final da disciplina o aluno será capaz de:
 10. Software como um Serviço;
 11. Gestão de Níveis de Serviço.
 
-## [Bibliografia Básica](#bibliografia-básica)
+## [Bibliografia Básica](#bibliografia-basica)
 
 Livros:
 
