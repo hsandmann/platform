@@ -71,11 +71,8 @@ nav:
   - Cloud Computing:
     - AWS: aws.md
     - Cloud Foundry: cloud-foundry.md
-    - Heroku: heroku.md
-    - OpenShift: openshift.md
-    - Pivotal: pivotal.md
-    - Google Cloud: google-cloud.md
-    - Azure: azure.md
+    - Google Cloud Platform: google-cloud-platform.md
+    - Microsoft Azure: microsoft-azure.md
     - Terraform: terraform.md
   - Project:
     - Project: project.md
