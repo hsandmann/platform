@@ -1,0 +1,82 @@
+site_name: Platform, Microservices, DevOps and APIs
+site_author: Sandmann, H.
+site_url: https://hsandmann.github.io/platform
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - footnotes
+  - tables
+plugins:
+  - glightbox
+nav:
+  - Home: index.md
+  - Versions:
+    - 2024.1: 2024.1.md
+  - Docker: docker.md
+  - Design Patterns:
+    - Concepts: design-patterns.md
+    - Microservices: microservices.md
+    - Gateway: gateway.md
+    - Discovery: discovery.md
+    - Load Balancing: load-balancing.md
+    - Config: config.md
+    - Circuit Breaker: circuit-breaker.md
+    - Security:
+      - Concepts: security.md
+      - JWT: jwt.md
+      - OAuth2: oauth2.md
+      - OpenID: openid.md
+    - Feign: feign.md
+    - Monitoring: monitoring.md
+    - Logging: logging.md
+    - Tracing: tracing.md
+    - Serverless: serverless.md
+    - GraphQL: graphql.md
+    - Messaging: 
+      - Kafka: kafka.md
+      - RabbitMQ: rabbitmq.md
+    - Distributed Data:
+      - Redis: redis.md
+      - MongoDB: mongodb.md
+      - Cassandra: cassandra.md
+      - Elasticsearch: elasticsearch.md
+    - Payments: payments.md
+  - Spring Boot: spring-boot.md
+  - Testing: testing.md
+  - Documentation: documentation.md
+  - DevOps:
+    - Concepts: devops.md
+    - Git: git.md
+    - CI/CD: cicd.md
+    - Jenkins: jenkins.md
+    - Nexus: nexus.md
+    - SonarQube: sonarqube.md
+    - Kubernetes: kubernetes.md
+  - Cloud Computing:
+    - AWS: aws.md
+    - Cloud Foundry: cloud-foundry.md
+    - Heroku: heroku.md
+    - OpenShift: openshift.md
+    - Pivotal: pivotal.md
+    - Google Cloud: google-cloud.md
+    - Azure: azure.md
+    - Terraform: terraform.md
+  - Project:
+    - Project: project.md
+    - About: about.md
+    - Contact: contact.md
