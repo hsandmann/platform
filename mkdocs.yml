@@ -34,6 +34,10 @@ nav:
   - Home: index.md
   - Versions:
     - 2024.1: 2024.1.md
+  - API:
+    - Spring Boot Cloud: spring-boot-cloud.md
+    - Testing: testing.md
+    - Documentation: documentation.md
   - Platform:
     - Concepts: platform.md
     - Microservices: microservices.md
@@ -51,7 +55,6 @@ nav:
     - Monitoring: monitoring.md
     - Logging: logging.md
     - Tracing: tracing.md
-    - Synchronizatin
     - Serverless: serverless.md
     - Messaging: 
       - Kafka: kafka.md
@@ -62,11 +65,8 @@ nav:
       - MongoDB: mongodb.md
       - Elasticsearch: elasticsearch.md
     - Payments: payments.md
-  - Docker: docker.md
-  - Spring Boot Cloud: spring-boot-cloud.md
-  - Testing: testing.md
-  - Documentation: documentation.md
   - DevOps:
+    - Docker: docker.md
     - Concepts: devops.md
     - Git: git.md
     - CI/CD: cicd.md
