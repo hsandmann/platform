@@ -10,11 +10,13 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/kubernetes/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/jenkins/">
       
       
-        <link rel="prev" href="../jenkins/">
+        <link rel="prev" href="../devops/">
       
+      
+        <link rel="next" href="../kubernetes/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Kubernetes - Platform, Microservices, DevOps and APIs</title>
+        <title>Jenkins - Platform, Microservices, DevOps and APIs</title>
       
     
     
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubernetes" class="md-skip">
+        <a href="#jenkins" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubernetes
+              Jenkins
             
           </span>
         </div>
@@ -1114,10 +1116,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../jenkins/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jenkins
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1126,6 +1148,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#service-level-agreement-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service-level agreement - SLA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noops" class="md-nav__link">
+    <span class="md-ellipsis">
+      NoOps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1177,30 +1252,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Kubernetes
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1209,35 +1264,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bibliografia
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1596,11 +1622,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
+  <a href="#service-level-agreement-sla" class="md-nav__link">
     <span class="md-ellipsis">
-      Bibliografia
+      Service-level agreement - SLA
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noops" class="md-nav__link">
+    <span class="md-ellipsis">
+      NoOps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1619,8 +1669,15 @@
                   
 
 
-<h1 id="kubernetes">Kubernetes</h1>
-<h2 id="bibliografia">Bibliografia</h2>
+<h1 id="jenkins">Jenkins</h1>
+<p>DevOps is an acroni</p>
+<h2 id="service-level-agreement-sla">Service-level agreement - SLA</h2>
+<p>Service-level agreement, well-known as SLA, is</p>
+<p>References:</p>
+<div class="language-text highlight"><pre><span></span><code>-[Wiki Service-level Agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
+</code></pre></div>
+<h2 id="other-approaches">Other Approaches</h2>
+<h3 id="noops">NoOps</h3>
 
 
 
