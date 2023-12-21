@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hsandmann.github.io/platform/build-automation/</loc>
+         <lastmod>2023-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hsandmann.github.io/platform/circuit-breaker/</loc>
          <lastmod>2023-12-21</lastmod>
          <changefreq>daily</changefreq>
