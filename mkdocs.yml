@@ -8,7 +8,6 @@ theme:
     - content.code.select
     - content.code.annotate
     - content.tooltips
-    - navigation.expand
     - navigation.path
 markdown_extensions:
   - attr_list
@@ -80,7 +79,7 @@ nav:
     - Google Cloud Platform: google-cloud-platform.md
     - Microsoft Azure: microsoft-azure.md
     - Terraform: terraform.md
-  - Apendix:
+  - Appendix:
     - REST vs GraphQL: rest-vs-graphql.md
     - Versioning REST APIs: versioning-rest-apis.md
   - Contributors: contributors.md
