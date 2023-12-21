@@ -65,6 +65,7 @@ nav:
       - Elasticsearch: elasticsearch.md
     - Payments: payments.md
   - DevOps:
+    - Build Automation: build-automation.md
     - Docker: docker.md
     - Concepts: devops.md
     - Git: git.md

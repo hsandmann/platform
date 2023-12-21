@@ -61,6 +61,13 @@ HMACSHA512(
 
 JWTs are widely used in web development due to their simplicity, flexibility, and support across various programming languages and frameworks. They are commonly used in token-based authentication systems.
 
+## Spring Boot Security Cloud
+
+JWT is a decentralized 
+
+The point of entrance of API is the gateway, then as suggested by [^5].
+
+
 [^1]: [RFC 7519 - JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519), 2015.
     
 [^2]: [JWT - Builder](http://jwtbuilder.jamiekurtz.com).
@@ -68,3 +75,5 @@ JWTs are widely used in web development due to their simplicity, flexibility, an
 [^3]: [jwt.io - JWT Verification](https://jwt.io/).
 
 [^4]: [Unix Time Stamp - Epoch Converter](https://www.unixtimestamp.com)
+
+[^5]: DELANTHA, R., [Spring Cloud Gateway security with JWT](https://medium.com/@rajithgama/spring-cloud-gateway-security-with-jwt-23045ba59b8a), 2023.
