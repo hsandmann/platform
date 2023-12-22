@@ -40,10 +40,10 @@ nav:
   - Platform:
     - Concepts: platform.md
     - Microservices: microservices.md
-    - Gateway: gateway.md
     - Discovery: discovery.md
-    - Load Balancing: load-balancing.md
+    - Gateway: gateway.md
     - Config: config.md
+    - Load Balancing: load-balancing.md
     - Circuit Breaker: circuit-breaker.md
     - Security:
       - Concepts: security.md
@@ -55,7 +55,6 @@ nav:
     - Monitoring: monitoring.md
     - Logging: logging.md
     - Tracing: tracing.md
-    - Serverless: serverless.md
     - Messaging: 
       - Kafka: kafka.md
       - RabbitMQ: rabbitmq.md
@@ -76,6 +75,7 @@ nav:
     - SonarQube: sonarqube.md
     - Kubernetes: kubernetes.md
   - Cloud Computing:
+    - Serverless: serverless.md
     - AWS: aws.md
     - Cloud Foundry: cloud-foundry.md
     - Google Cloud Platform: google-cloud-platform.md
