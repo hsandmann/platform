@@ -50,6 +50,7 @@ nav:
       - JWT: jwt.md
       - OAuth2: oauth2.md
       - OpenID: openid.md
+      - SSO: sso.md
     - Feign: feign.md
     - Monitoring: monitoring.md
     - Logging: logging.md
@@ -65,9 +66,9 @@ nav:
       - Elasticsearch: elasticsearch.md
     - Payments: payments.md
   - DevOps:
+    - Concepts: devops.md
     - Build Automation: build-automation.md
     - Docker: docker.md
-    - Concepts: devops.md
     - Git: git.md
     - CI/CD: cicd.md
     - Jenkins: jenkins.md
