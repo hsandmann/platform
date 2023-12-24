@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://hsandmann.github.io/platform/jwt/">
       
       
-        <link rel="prev" href="../circuit-breaker/">
+        <link rel="prev" href="../security/">
       
       
         <link rel="next" href="../communcation/">
@@ -586,7 +586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security.md" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,8 +612,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -643,8 +641,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -653,15 +649,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#concepts" class="md-nav__link">
+  <a href="#jwt-json-web-token" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts
+      JWT - JSON Web Token
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="JWT - JSON Web Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#spring-boot-security-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       Spring Boot Security Cloud
@@ -669,8 +666,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#addtional-material" class="md-nav__link">
     <span class="md-ellipsis">
       Addtional Material
@@ -695,6 +692,11 @@
       Fernanda Kipper - Autenticação e Autorização com Spring Security e JWT Tokens
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1495,7 +1497,7 @@
             
   
   <span class="md-ellipsis">
-    Platform as a Business
+    Platform as an Innovation
   </span>
   
 
@@ -1505,7 +1507,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Platform as a Business
+            Platform as an Innovation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1516,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform-as-a-business.md" class="md-nav__link">
+      <a href="../platform-as-an-innovation.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1660,8 +1662,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1670,15 +1670,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#concepts" class="md-nav__link">
+  <a href="#jwt-json-web-token" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts
+      JWT - JSON Web Token
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="JWT - JSON Web Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#spring-boot-security-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       Spring Boot Security Cloud
@@ -1686,8 +1687,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#addtional-material" class="md-nav__link">
     <span class="md-ellipsis">
       Addtional Material
@@ -1719,6 +1720,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -1735,8 +1741,9 @@
                   
 
 
-<h1 id="jwt-json-web-token">JWT - JSON Web Token</h1>
-<h2 id="concepts">Concepts</h2>
+  <h1>JWT</h1>
+
+<h2 id="jwt-json-web-token">JWT - JSON Web Token</h2>
 <p>JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p>Here are the key components and concepts of JWT:</p>
 <ol>
@@ -1798,37 +1805,37 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>JWTs are widely used in web development due to their simplicity, flexibility, and support across various programming languages and frameworks. They are commonly used in token-based authentication systems.</p>
-<h2 id="spring-boot-security-cloud">Spring Boot Security Cloud</h2>
+<h3 id="spring-boot-security-cloud">Spring Boot Security Cloud</h3>
 <p>JWT is a decentralized </p>
 <p>The point of entrance of API is the gateway, then as suggested by <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>.</p>
-<h2 id="addtional-material">Addtional Material</h2>
-<h3 id="byetebytego-why-is-jwt-popular"><a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i></h3>
-<p><a href="https://www.youtube.com/watch?v=P2CPd9ynFLg"><img alt="" src="https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg" width="100%" /></a></p>
-<h3 id="fernanda-kipper-autenticacao-e-autorizacao-com-spring-security-e-jwt-tokens"><a href="https://www.youtube.com/watch?v=5w-YCcOjPD0" target="_blank">Fernanda Kipper - Autenticação e Autorização com Spring Security e JWT Tokens</a></i></h3>
-<p><a href="https://www.youtube.com/watch?v=5w-YCcOjPD0"><img alt="" src="https://img.youtube.com/vi/5w-YCcOjPD0/0.jpg" width="100%" /></a></p>
+<h3 id="addtional-material">Addtional Material</h3>
+<h4 id="byetebytego-why-is-jwt-popular"><a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i></h4>
+<p><a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank"><img alt="" src="https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg" width="100%" /></a></p>
+<h4 id="fernanda-kipper-autenticacao-e-autorizacao-com-spring-security-e-jwt-tokens"><a href="https://www.youtube.com/watch?v=5w-YCcOjPD0" target="_blank">Fernanda Kipper - Autenticação e Autorização com Spring Security e JWT Tokens</a></i></h4>
+<p><a href="https://www.youtube.com/watch?v=5w-YCcOjPD0" target="_blank"><img alt="" src="https://img.youtube.com/vi/5w-YCcOjPD0/0.jpg" width="100%" /></a></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://datatracker.ietf.org/doc/html/rfc7519">RFC 7519 - JSON Web Token (JWT)</a>, 2015.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank">RFC 7519 - JSON Web Token (JWT)</a>, 2015.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="http://jwtbuilder.jamiekurtz.com">JWT - Builder</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="http://jwtbuilder.jamiekurtz.com" target="_blank">JWT - Builder</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://jwt.io/">jwt.io - JWT Verification</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://jwt.io/" target="_blank">jwt.io - JWT Verification</a>.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://www.unixtimestamp.com">Unix Time Stamp - Epoch Converter</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://www.unixtimestamp.com" target="_blank">Unix Time Stamp - Epoch Converter</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>DELANTHA, R., <a href="https://medium.com/@rajithgama/spring-cloud-gateway-security-with-jwt-23045ba59b8a">Spring Cloud Gateway security with JWT</a>, 2023.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>DELANTHA, R., <a href="https://medium.com/@rajithgama/spring-cloud-gateway-security-with-jwt-23045ba59b8a" target="_blank">Spring Cloud Gateway security with JWT</a>, 2023.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://en.wikipedia.org/wiki/Pepper_(cryptography)">Wikipedia - Pepper (cryptography)</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Pepper_(cryptography)" target="_blank">Wikipedia - Pepper (cryptography)</a>.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p>PGzlan, <a href="https://dev.to/0xog_pg/serve-your-hash-with-salt-and-pepper-for-stronger-account-security-587k">Serve your hash with Salt and Pepper for Stronger Account Security</a>, 2023.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>PGzlan, <a href="https://dev.to/0xog_pg/serve-your-hash-with-salt-and-pepper-for-stronger-account-security-587k" target="_blank">Serve your hash with Salt and Pepper for Stronger Account Security</a>, 2023.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
