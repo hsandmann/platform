@@ -1,6 +1,4 @@
-# JWT - JSON Web Token
-
-## Concepts
+## JWT - JSON Web Token
 
 JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519[^1].
 
@@ -63,36 +61,36 @@ HMACSHA512(
 
 JWTs are widely used in web development due to their simplicity, flexibility, and support across various programming languages and frameworks. They are commonly used in token-based authentication systems.
 
-## Spring Boot Security Cloud
+### Spring Boot Security Cloud
 
 JWT is a decentralized 
 
 The point of entrance of API is the gateway, then as suggested by [^5].
 
 
-## Addtional Material
+### Addtional Material
 
 
-### <a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i>
+#### <a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i>
 
-[![](https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg){ width=100% }](https://www.youtube.com/watch?v=P2CPd9ynFLg)
+[![](https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg){ width=100% }](https://www.youtube.com/watch?v=P2CPd9ynFLg){:target="_blank"}
 
-### <a href="https://www.youtube.com/watch?v=5w-YCcOjPD0" target="_blank">Fernanda Kipper - Autenticação e Autorização com Spring Security e JWT Tokens</a></i>
+#### <a href="https://www.youtube.com/watch?v=5w-YCcOjPD0" target="_blank">Fernanda Kipper - Autenticação e Autorização com Spring Security e JWT Tokens</a></i>
 
-[![](https://img.youtube.com/vi/5w-YCcOjPD0/0.jpg){ width=100% }](https://www.youtube.com/watch?v=5w-YCcOjPD0)
+[![](https://img.youtube.com/vi/5w-YCcOjPD0/0.jpg){ width=100% }](https://www.youtube.com/watch?v=5w-YCcOjPD0){:target="_blank"}
 
 
 
-[^1]: [RFC 7519 - JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519), 2015.
+[^1]: [RFC 7519 - JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519){:target="_blank"}, 2015.
     
-[^2]: [JWT - Builder](http://jwtbuilder.jamiekurtz.com).
+[^2]: [JWT - Builder](http://jwtbuilder.jamiekurtz.com){:target="_blank"}.
     
-[^3]: [jwt.io - JWT Verification](https://jwt.io/).
+[^3]: [jwt.io - JWT Verification](https://jwt.io/){:target="_blank"}.
 
-[^4]: [Unix Time Stamp - Epoch Converter](https://www.unixtimestamp.com)
+[^4]: [Unix Time Stamp - Epoch Converter](https://www.unixtimestamp.com){:target="_blank"}.
 
-[^5]: DELANTHA, R., [Spring Cloud Gateway security with JWT](https://medium.com/@rajithgama/spring-cloud-gateway-security-with-jwt-23045ba59b8a), 2023.
+[^5]: DELANTHA, R., [Spring Cloud Gateway security with JWT](https://medium.com/@rajithgama/spring-cloud-gateway-security-with-jwt-23045ba59b8a){:target="_blank"}, 2023.
 
-[^6]: [Wikipedia - Pepper (cryptography)](https://en.wikipedia.org/wiki/Pepper_(cryptography)).
+[^6]: [Wikipedia - Pepper (cryptography)](https://en.wikipedia.org/wiki/Pepper_(cryptography)){:target="_blank"}.
 
-[^7]: PGzlan, [Serve your hash with Salt and Pepper for Stronger Account Security](https://dev.to/0xog_pg/serve-your-hash-with-salt-and-pepper-for-stronger-account-security-587k), 2023.
+[^7]: PGzlan, [Serve your hash with Salt and Pepper for Stronger Account Security](https://dev.to/0xog_pg/serve-your-hash-with-salt-and-pepper-for-stronger-account-security-587k){:target="_blank"}, 2023.
