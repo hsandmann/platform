@@ -1,4 +1,4 @@
-site_name: Platform, Microservices, DevOps and APIs
+site_name: Platforms, Microservices, DevOps and APIs
 site_author: Sandmann, H.
 site_url: https://hsandmann.github.io/platform
 theme:
@@ -51,7 +51,7 @@ nav:
       - OAuth2: oauth2.md
       - OpenID: openid.md
       - SSO: sso.md
-    - Feign: feign.md
+    - Communication: communcation.md
     - Monitoring: monitoring.md
     - Logging: logging.md
     - Tracing: tracing.md
