@@ -81,6 +81,8 @@ nav:
     - Google Cloud Platform: google-cloud-platform.md
     - Microsoft Azure: microsoft-azure.md
     - Terraform: terraform.md
+  - Platform as a Business:
+    - Concepts: platform-as-a-business.md
   - Appendix:
     - REST vs GraphQL: rest-vs-graphql.md
     - Versioning REST APIs: versioning-rest-apis.md
