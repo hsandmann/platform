@@ -49,8 +49,8 @@ nav:
       - Concepts: security.md
       - JWT: jwt.md
       - OAuth2: oauth2.md
-      - OpenID: openid.md
-      - SSO: sso.md
+      # - OpenID: openid.md
+      # - SSO: sso.md
     - Communication: communcation.md
     - Monitoring: monitoring.md
     - Logging: logging.md
