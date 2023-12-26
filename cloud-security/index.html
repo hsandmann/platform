@@ -774,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logging.md" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracing.md" class="md-nav__link">
+      <a href="../tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -975,48 +975,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mongodb.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MongoDB
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../elasticsearch.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Elasticsearch
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1118,11 +1076,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-automation/" class="md-nav__link">
+      <a href="../version-control-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Build Automation
+    Version Control
   </span>
   
 
@@ -1160,11 +1118,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../git.md" class="md-nav__link">
+      <a href="../package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Git
+    Package
   </span>
   
 
@@ -1181,74 +1139,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cicd.md" class="md-nav__link">
+      <a href="../release/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    CI/CD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jenkins/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Jenkins
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nexus.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Nexus
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sonarqube.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SonarQube
+    Release
   </span>
   
 
@@ -1694,15 +1589,18 @@
     identify(String)
   }
   class AuthResource {
+    &lt;&lt;REST API&gt;&gt;
     -authService
   }
   class RegisterIn {
+    &lt;&lt;record&gt;&gt;
     String firstName
     String lastName
     String email
     String password
   }
   class CredentialIn {
+    &lt;&lt;record&gt;&gt;
     String email
     String password
   }
@@ -1710,10 +1608,24 @@
     &lt;&lt;service&gt;&gt;
     register(RegisterIn)
     authenticate(CredentialIn)
-    identify(String)
+    identify(Session)
+  }
+  class RegisterRepository {
+    &lt;&lt;interface&gt;&gt;
+  }
+  class RegisterEntity {
+    &lt;&lt;entity&gt;&gt;
+  }
+  class UserRepository {
+    &lt;&lt;interface&gt;&gt;
+  }
+  class UserEntity {
+    &lt;&lt;entity&gt;&gt;
   }
   AuthController &lt;|-- AuthResource
-  AuthResource o-- AuthService</code></pre>
+  AuthResource o-- AuthService
+  AuthService o-- RegisterRepository
+  AuthService o-- UserRepository</code></pre>
 <h2 id="addtional-material">Addtional Material</h2>
 <ul>
 <li>

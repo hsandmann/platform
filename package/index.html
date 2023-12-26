@@ -10,13 +10,13 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/jenkins/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/package/">
       
       
         <link rel="prev" href="../docker/">
       
       
-        <link rel="next" href="../kubernetes/">
+        <link rel="next" href="../release/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Jenkins - Platforms, Microservices, DevOps and APIs</title>
+        <title>Package - Platforms, Microservices, DevOps and APIs</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jenkins" class="md-skip">
+        <a href="#maven" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jenkins
+              Package
             
           </span>
         </div>
@@ -716,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logging.md" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracing.md" class="md-nav__link">
+      <a href="../tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,48 +917,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mongodb.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MongoDB
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../elasticsearch.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Elasticsearch
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1062,11 +1020,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../build-automation/" class="md-nav__link">
+      <a href="../version-control-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Build Automation
+    Version Control
   </span>
   
 
@@ -1101,48 +1059,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../git.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Git
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cicd.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CI/CD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1152,14 +1068,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Jenkins
+    Package
   </span>
   
 
@@ -1170,7 +1084,7 @@
         
   
   <span class="md-ellipsis">
-    Jenkins
+    Package
   </span>
   
 
@@ -1182,8 +1096,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1192,35 +1104,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#service-level-agreement-sla" class="md-nav__link">
+  <a href="#maven" class="md-nav__link">
     <span class="md-ellipsis">
-      Service-level agreement - SLA
+      Maven
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-approaches" class="md-nav__link">
+  <a href="#gradle" class="md-nav__link">
     <span class="md-ellipsis">
-      Other Approaches
+      Gradle
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Other Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#noops" class="md-nav__link">
-    <span class="md-ellipsis">
-      NoOps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1240,32 +1137,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../nexus.md" class="md-nav__link">
+      <a href="../release/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nexus
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sonarqube.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SonarQube
+    Release
   </span>
   
 
@@ -1640,8 +1516,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1650,35 +1524,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#service-level-agreement-sla" class="md-nav__link">
+  <a href="#maven" class="md-nav__link">
     <span class="md-ellipsis">
-      Service-level agreement - SLA
+      Maven
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-approaches" class="md-nav__link">
+  <a href="#gradle" class="md-nav__link">
     <span class="md-ellipsis">
-      Other Approaches
+      Gradle
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Other Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#noops" class="md-nav__link">
-    <span class="md-ellipsis">
-      NoOps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1697,15 +1556,26 @@
                   
 
 
-<h1 id="jenkins">Jenkins</h1>
-<p>DevOps is an acroni</p>
-<h2 id="service-level-agreement-sla">Service-level agreement - SLA</h2>
-<p>Service-level agreement, well-known as SLA, is</p>
-<p>References:</p>
-<div class="language-text highlight"><pre><span></span><code>-[Wiki Service-level Agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
-</code></pre></div>
-<h2 id="other-approaches">Other Approaches</h2>
-<h3 id="noops">NoOps</h3>
+  <h1>Package</h1>
+
+<h2 id="maven">Maven</h2>
+<p>Maven uses an XML file to describe the software project being built, its dependencies on other external modules and components, the build order, directories, and required plugins. It comes with pre-defined targets for performing certain well-defined tasks such as compilation of code and its packaging.</p>
+<p>Key Features:
+- Simple project setup that follows best practices.
+- Dependency management including automatic updating, dependency closures (also known as transitive dependencies)
+- Able to easily work with multiple projects at the same time.
+- Large and mature community with a large ecosystem of plugins and integrations.</p>
+<h2 id="gradle">Gradle</h2>
+<p>Gradle is another build automation tool that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language (DSL) instead of the XML form used by Apache Maven for declaring the project configuration. Gradle provides a platform to support the entire development lifecycle of a software project.</p>
+<p>Key Features:
+- Declarative builds and build-by-convention.
+- Language for dependency-based programming.
+- Structure your build.
+- Deep API.
+- Multi-project builds.
+- Many ways to manage dependencies.
+- Integration with existing structures.
+- Ease of migration.</p>
 
 
 

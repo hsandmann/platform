@@ -10,13 +10,13 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/build-automation/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/release/">
       
       
-        <link rel="prev" href="../devops/">
+        <link rel="prev" href="../package/">
       
       
-        <link rel="next" href="../docker/">
+        <link rel="next" href="../kubernetes/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Build Automation - Platforms, Microservices, DevOps and APIs</title>
+        <title>Release - Platforms, Microservices, DevOps and APIs</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#build-automation" class="md-skip">
+        <a href="#jenkins" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Build Automation
+              Release
             
           </span>
         </div>
@@ -716,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logging.md" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracing.md" class="md-nav__link">
+      <a href="../tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,48 +917,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mongodb.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MongoDB
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../elasticsearch.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Elasticsearch
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1059,28 +1017,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../version-control-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Build Automation
+    Version Control
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -1114,11 +1062,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../git.md" class="md-nav__link">
+      <a href="../package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Git
+    Package
   </span>
   
 
@@ -1132,81 +1080,72 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cicd.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Release
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    CI/CD
+    Release
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jenkins/" class="md-nav__link">
+      
         
-  
-  <span class="md-ellipsis">
-    Jenkins
-  </span>
-  
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
-    <li class="md-nav__item">
-      <a href="../nexus.md" class="md-nav__link">
-        
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jenkins
+    </span>
+  </a>
   
-  <span class="md-ellipsis">
-    Nexus
-  </span>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-level-agreement-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service-level agreement - SLA
+    </span>
+  </a>
   
-
-      </a>
-    </li>
+</li>
+      
+    </ul>
   
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sonarqube.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SonarQube
-  </span>
-  
-
-      </a>
+</nav>
+      
     </li>
   
 
@@ -1577,8 +1516,32 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jenkins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-level-agreement-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service-level agreement - SLA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1593,9 +1556,15 @@
                   
 
 
-<h1 id="build-automation">Build Automation</h1>
-<p>Maven</p>
-<p>Gradle</p>
+  <h1>Release</h1>
+
+<h2 id="jenkins">Jenkins</h2>
+<p>DevOps is an acroni</p>
+<h2 id="service-level-agreement-sla">Service-level agreement - SLA</h2>
+<p>Service-level agreement, well-known as SLA, is</p>
+<p>References:</p>
+<div class="language-text highlight"><pre><span></span><code>-[Wiki Service-level Agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
+</code></pre></div>
 
 
 
