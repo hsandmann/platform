@@ -1767,7 +1767,7 @@
 <h2 id="jwt-json-web-token">JWT - JSON Web Token</h2>
 <p>JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <p>Here are the key components and concepts of JWT:</p>
-<ol>
+<ul>
 <li><strong>JSON Format:</strong> JWTs are represented as JSON objects that are easy to parse and generate. The JSON format makes them human-readable and easy to work with.</li>
 <li>
 <p><strong>Three Parts:</strong> JWTs consist of three parts separated by dots (<code>.</code>): Header, Payload, and Signature.</p>
@@ -1789,7 +1789,7 @@
 <li><strong>Stateless and Self-contained:</strong> JWTs are stateless, meaning that all the information needed is within the token itself. The server doesn't need to store the user's state. They are also self-contained, meaning that all the information needed is contained within the token.</li>
 <li><strong>Use Cases:</strong> JWTs are commonly used for authentication and information exchange between parties. For example, after a user logs in, a server could generate a JWT and send it to the client. The client can then include the JWT in the headers of subsequent requests to access protected resources. The server can verify the authenticity of the JWT using the stored secret key.</li>
 <li><strong>Security Considerations:</strong> While JWTs are widely used and versatile, it's important to handle them securely. For instance, the key used to sign the JWT should be kept secret, and HTTPS should be used to transmit JWTs to prevent man-in-the-middle attacks.</li>
-</ol>
+</ul>
 <p>Here's a simple example of a JWT created on JWT Builder<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>:</p>
 <p><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJJbnNwZXIiLCJpYXQiOjE3MDMwMDgzMzgsImV4cCI6MjAxODU0MTEzOCwiYXVkIjoid3d3Lmluc3Blci5lZHUuYnIiLCJzdWIiOiJodW1iZXJ0b3JzQGluc3Blci5lZHUuYnIiLCJHaXZlbk5hbWUiOiJIdW1iZXJ0byIsIlN1cm5hbWUiOiJTYW5kbWFubiIsIkVtYWlsIjoiaHVtYmVydG9yc0BpbnNwZXIuZWR1LmJyIiwiUm9sZSI6IlByb2Zlc3NvciJ9.SsGdvR5GbYWTRbxY7IGxHt1vSxhkpRueBJWsi0lrPhJVCICp119QjU8F3QvHW0yF5tw-HhQ9RVh0l89t4M0LNw</code></p>
 <p>This JWT consists of three parts, decoded by <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>:</p>
