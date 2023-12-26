@@ -12,6 +12,16 @@ This token is then sent back to the user. The user's client software (like a web
 
 Here's a simplified step-by-step process:
 
+``` mermaid
+sequenceDiagram
+  autonumber
+  actor User
+  User->>+Auth Server: authentication(credentials)
+  Auth Server->>Auth Server: verifies credenditals and generates a token
+  Auth Server->>-User: returns the token
+  User->>User: stores the token to use for the next requests
+```
+
 1. The user sends their username and password (or other credentials) to the server;
 2. The server verifies the credentials. If they're valid, the server generates a token.
 3. The server sends this token back to the user.
@@ -27,6 +37,21 @@ Authorization is the process of granting or denying access to specific resources
 In many systems, the token not only represents the user's identity, but also includes information about their permissions or roles. This is often done using a type of token called a [JSON Web Token (JWT)](./jwt.md), which can include a payload of data.
 
 Here's a simplified step-by-step process:
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  actor User
+  User->>Auth Server: request with token
+  Auth Server->>Auth Server: decodes the token and extracts claims
+  Auth Server->>Auth Server: verifies permissions
+  critical is allowed
+    Auth Server->>Secured Resource: authorizes the request
+    Secured Resource->>User: returns the response
+  option access denied
+    Auth Server-->>User: unauthorizated message
+  end  
+```
 
 1. After authentication, the user's client software sends a request to a server. This request includes the token.
 2. The server decodes the token and extracts the user's identity and permissions.
