@@ -49,7 +49,7 @@ sequenceDiagram
     Auth Server->>Secured Resource: authorizes the request
     Secured Resource->>User: returns the response
   option denied
-    Auth Server-->>User: unauthorizated message
+    Auth Server-->>User: unauthorized message
   end  
 ```
 
