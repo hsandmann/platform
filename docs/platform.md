@@ -101,18 +101,18 @@ Scalability in the context of computer systems refers to the ability of a system
 
 | *Definition* | Vertical scalability involves adding more resources to a single node or machine in order to increase its capacity. |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ |
-| *Example*    | Adding more servers to a web application to handle increased traffic.                                              |
+| *Example*    | Upgrading the CPU, adding more RAM, or increasing storage on a server.                                                     |
 
 | Pros                                               | Cons                                                                   |
 | -------------------------------------------------- | ---------------------------------------------------------------------- |
 | Simplicity in implementation.                      | There's a limit to how much a single machine can be scaled vertically. |
 | it can be cost-effective for certain applications. | It may also lead to downtime during upgrades.                          |
 
-### Horizontal Scalability (Scale-Out)
+### [Horizontal Scalability (Scale-Out)](#horizontal-scalability-scale-out)
 
 | *Definition* | Horizontal scalability involves adding more nodes or machines to a system, distributing the load across multiple machines. |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| *Example*    | Upgrading the CPU, adding more RAM, or increasing storage on a server.                                                     |
+| *Example*    | Adding more servers to a web application to handle increased traffic.                                              |
 
 | Pros                                                                       | Cons                                              |
 | -------------------------------------------------------------------------- | ------------------------------------------------- |

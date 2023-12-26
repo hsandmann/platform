@@ -30,16 +30,13 @@ Key concepts of DDD include:
 
 By focusing on the domain and domain logic, DDD provides techniques to develop complex systems targeting real-world scenarios. It helps to reduce the complexity by dividing the system into manageable and interconnected parts.
 
-
-
-
 <figure markdown>
   ![Best practices for microservices](https://github.com/ByteByteGoHq/system-design-101/raw/main/images/microservice-best-practices.jpeg){ width="100%" }
   <figcaption><i>Source: <a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#microservice-architecture" target="_blank">System Design 101 - Microservice Architecture</a></i></figcaption>
 </figure>
 
 
-## Design a Microservice Platform
+### Design a Microservice Platform
 
 ``` mermaid
 flowchart LR
@@ -54,7 +51,7 @@ flowchart LR
     subgraph Essentials
       direction TB
       discovery["Discovery"]
-      security["Security"]
+      security["Auth"]
       config["Configuration"]
     end
     subgraph Businesses
@@ -64,17 +61,36 @@ flowchart LR
       ms3["Service 3"]
     end
   end
-  Client --> lb["Load Balance"] --> Gateway --> Businesses
-  Gateway --> security
-  Gateway --> discovery
-  click Gateway "../gateway/" "Gateway"
+  Client --> lb["Load Balance"] --> gateway["Gateway"] --> Businesses
+  gateway --> security
+  gateway --> discovery
+  click gateway "../gateway/" "Gateway"
   click discovery "../discovery/" "Discovery"
   click security "../security/" "Security"
   click config "../config/" "Configuration"
+  click lb "../load-balancing/" "Load Balance"
 ```
 
+### ARchitecture for a Simple Microservice
 
-## Containering:
+Two Maven Project
+
+- Interfaces
+
+- Implemmentation: resource
+
+``` mermaid
+classDiagram
+  class AuthController
+  <<interface>> AuthController
+  AuthController <|-- AuthResource
+```
+
+Directory
+
+
+
+### Containering:
 
 Many microservices implies in many ports, then a complicated environment to manage
 

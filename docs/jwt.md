@@ -1,6 +1,6 @@
 ## JWT - JSON Web Token
 
-JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519[^1].
+JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519[^1] and it is a decentralized approach for security (which can support [horizontal scalability](./platform.md#horizontal-scalability-scale-out)).
 
 Here are the key components and concepts of JWT:
 
@@ -24,61 +24,56 @@ Here's a simple example of a JWT created on JWT Builder[^2]:
 
 This JWT consists of three parts, decoded by [^3]:
 
-- Header: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9`
+=== "[Header](#header)"
 
-```json
-{
-  "typ": "JWT",
-  "alg": "HS512"
-}
-```
+    `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9`
 
-- Payload: `eyJpc3MiOiJJbnNwZXIiLCJpYXQiOjE3MDMwMDgzMzgsImV4cCI6MjAxODU0MTEzOCwiYXVkIjoid3d3Lmluc3Blci5lZHUuYnIiLCJzdWIiOiJodW1iZXJ0b3JzQGluc3Blci5lZHUuYnIiLCJHaXZlbk5hbWUiOiJIdW1iZXJ0byIsIlN1cm5hbWUiOiJTYW5kbWFubiIsIkVtYWlsIjoiaHVtYmVydG9yc0BpbnNwZXIuZWR1LmJyIiwiUm9sZSI6IlByb2Zlc3NvciJ9`
+    ```json
+    {
+      "typ": "JWT",
+      "alg": "HS512"
+    }
+    ```
 
-```json
-{
-  "iss": "Insper",
-  "iat": 1703008338,
-  "exp": 2018541138,
-  "aud": "www.insper.edu.br",
-  "sub": "humbertors@insper.edu.br",
-  "GivenName": "Humberto",
-  "Surname": "Sandmann",
-  "Email": "humbertors@insper.edu.br",
-  "Role": "Professor"
-}
-```
+=== "[Payload](#payload)"
 
-- Signature: `SsGdvR5GbYWTRbxY7IGxHt1vSxhkpRueBJWsi0lrPhJVCICp119QjU8F3QvHW0yF5tw-HhQ9RVh0l89t4M0LNw`
+    `eyJpc3MiOiJJbnNwZXIiLCJpYXQiOjE3MDMwMDgzMzgsImV4cCI6MjAxODU0MTEzOCwiYXVkIjoid3d3Lmluc3Blci5lZHUuYnIiLCJzdWIiOiJodW1iZXJ0b3JzQGluc3Blci5lZHUuYnIiLCJHaXZlbk5hbWUiOiJIdW1iZXJ0byIsIlN1cm5hbWUiOiJTYW5kbWFubiIsIkVtYWlsIjoiaHVtYmVydG9yc0BpbnNwZXIuZWR1LmJyIiwiUm9sZSI6IlByb2Zlc3NvciJ9`
 
-```py
-HMACSHA512(
-  base64UrlEncode(header) + "." +
-  base64UrlEncode(payload),
-  qwertyuiopasdfghjklzxcvbnm123456,
-)
-```
+    ```json
+    {
+      "iss": "Insper",
+      "iat": 1703008338,
+      "exp": 2018541138,
+      "aud": "www.insper.edu.br",
+      "sub": "humbertors@insper.edu.br",
+      "GivenName": "Humberto",
+      "Surname": "Sandmann",
+      "Email": "humbertors@insper.edu.br",
+      "Role": "Professor"
+    }
+    ```
+
+=== "[Signature](#signature)"
+
+    `SsGdvR5GbYWTRbxY7IGxHt1vSxhkpRueBJWsi0lrPhJVCICp119QjU8F3QvHW0yF5tw-HhQ9RVh0l89t4M0LNw`
+
+    ```py
+    HMACSHA512(
+      base64UrlEncode(header) + "." +
+      base64UrlEncode(payload),
+      qwertyuiopasdfghjklzxcvbnm123456,
+    )
+    ```
 
 JWTs are widely used in web development due to their simplicity, flexibility, and support across various programming languages and frameworks. They are commonly used in token-based authentication systems.
 
-### Spring Boot Security Cloud
-
-JWT is a decentralized 
-
-The point of entrance of API is the gateway, then as suggested by [^5].
-
-
 ### Addtional Material
 
+- [Spring Cloud Security](./cloud-security.md)
 
-#### <a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i>
+- <a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i>
 
-[![](https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg){ width=100% }](https://www.youtube.com/watch?v=P2CPd9ynFLg){:target="_blank"}
-
-#### <a href="https://www.youtube.com/watch?v=5w-YCcOjPD0" target="_blank">Fernanda Kipper - Autenticação e Autorização com Spring Security e JWT Tokens</a></i>
-
-[![](https://img.youtube.com/vi/5w-YCcOjPD0/0.jpg){ width=100% }](https://www.youtube.com/watch?v=5w-YCcOjPD0){:target="_blank"}
-
+    [![](https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg){ width=80% }](https://www.youtube.com/watch?v=P2CPd9ynFLg){:target="_blank"}
 
 
 [^1]: [RFC 7519 - JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519){:target="_blank"}, 2015.
