@@ -48,7 +48,7 @@ sequenceDiagram
   critical allowed
     Auth Server->>Secured Resource: authorizes the request
     Secured Resource->>User: returns the response
-  option access denied
+  option denied
     Auth Server-->>User: unauthorizated message
   end  
 ```
