@@ -71,6 +71,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hsandmann.github.io/platform/google-cloud-platform/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hsandmann.github.io/platform/jwt/</loc>
          <lastmod>2023-12-26</lastmod>
          <changefreq>daily</changefreq>
@@ -117,6 +122,11 @@
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/package/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/payment/</loc>
          <lastmod>2023-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
