@@ -45,7 +45,7 @@ sequenceDiagram
   User->>Auth Server: request with token
   Auth Server->>Auth Server: decodes the token and extracts claims
   Auth Server->>Auth Server: verifies permissions
-  critical is allowed
+  critical allowed
     Auth Server->>Secured Resource: authorizes the request
     Secured Resource->>User: returns the response
   option access denied
