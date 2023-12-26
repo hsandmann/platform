@@ -487,9 +487,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-a-business-platform" class="md-nav__link">
+  <a href="#design-a-microservice-platform" class="md-nav__link">
     <span class="md-ellipsis">
-      Design a Business Platform
+      Design a Microservice Platform
     </span>
   </a>
   
@@ -1725,9 +1725,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-a-business-platform" class="md-nav__link">
+  <a href="#design-a-microservice-platform" class="md-nav__link">
     <span class="md-ellipsis">
-      Design a Business Platform
+      Design a Microservice Platform
     </span>
   </a>
   
@@ -1818,14 +1818,43 @@
   </p>
 <figcaption><i>Source: <a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#microservice-architecture" target="_blank">System Design 101 - Microservice Architecture</a></i></figcaption>
 </figure>
-<h2 id="design-a-business-platform">Design a Business Platform</h2>
+<h2 id="design-a-microservice-platform">Design a Microservice Platform</h2>
+<pre class="mermaid"><code>flowchart LR
+  subgraph Client
+    direction LR
+    Web
+    Mobile
+    Desktop
+  end
+  subgraph Microservices
+    direction LR
+    subgraph Essentials
+      direction TB
+      discovery["Discovery"]
+      security["Security"]
+      config["Configuration"]
+    end
+    subgraph Businesses
+      direction TB
+      ms1["Service 1"]
+      ms2["Service 2"]
+      ms3["Service 3"]
+    end
+  end
+  Client --&gt; lb["Load Balance"] --&gt; Gateway --&gt; Businesses
+  Gateway --&gt; security
+  Gateway --&gt; discovery
+  click Gateway "../gateway/" "Gateway"
+  click discovery "../discovery/" "Discovery"
+  click security "../security/" "Security"
+  click config "../config/" "Configuration"</code></pre>
 <h2 id="containering">Containering:</h2>
 <p>Many microservices implies in many ports, then a complicated environment to manage</p>
-<figure>
-<p><a class="glightbox" href="https://github.com/ByteByteGoHq/system-design-101/raw/main/images/typical-microservice-arch.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Microservices" src="https://github.com/ByteByteGoHq/system-design-101/raw/main/images/typical-microservice-arch.jpg" width="100%" /></a>
-  </p>
-<figcaption><i>Source: <a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#microservice-architecture" target="_blank">System Design 101 - Microservice Architecture</a></i></figcaption>
-</figure>
+<!-- <figure markdown>
+  ![Microservices](https://github.com/ByteByteGoHq/system-design-101/raw/main/images/typical-microservice-arch.jpg){ width="100%" }
+  <figcaption><i>Source: <a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#microservice-architecture" target="_blank">System Design 101 - Microservice Architecture</a></i></figcaption>
+</figure> -->
+
 <h2 id="gateway">Gateway</h2>
 <h2 id="discovery">Discovery</h2>
 <h2 id="communication">Communication</h2>
