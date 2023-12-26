@@ -71,25 +71,6 @@ flowchart LR
   click lb "../load-balancing/" "Load Balance"
 ```
 
-### ARchitecture for a Simple Microservice
-
-Two Maven Project
-
-- Interfaces
-
-- Implemmentation: resource
-
-``` mermaid
-classDiagram
-  class AuthController
-  <<interface>> AuthController
-  AuthController <|-- AuthResource
-```
-
-Directory
-
-
-
 ### Containering:
 
 Many microservices implies in many ports, then a complicated environment to manage

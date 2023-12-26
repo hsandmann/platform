@@ -13,7 +13,7 @@ The point of entrance of API is the gateway, then as suggested by [^5].
     - Authorization:
 
 
-Two Maven Project
+Two Maven Projects
 
 - Interfaces
 
@@ -23,11 +23,31 @@ Two Maven Project
 classDiagram
   class AuthController {
     <<interface>>
-    regiter()
-    authenticate()
-    identify()
+    register(RegisterIn)
+    authenticate(CredentialIn)
+    identify(String)
+  }
+  class AuthResource {
+    -authService
+  }
+  class RegisterIn {
+    String firstName
+    String lastName
+    String email
+    String password
+  }
+  class CredentialIn {
+    String email
+    String password
+  }
+  class AuthService {
+    <<service>>
+    register(RegisterIn)
+    authenticate(CredentialIn)
+    identify(String)
   }
   AuthController <|-- AuthResource
+  AuthResource o-- AuthService
 ```
 
 
