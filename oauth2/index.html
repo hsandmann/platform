@@ -10,13 +10,13 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/discovery/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/oauth2/">
       
       
-        <link rel="prev" href="../microservices/">
+        <link rel="prev" href="../jwt/">
       
       
-        <link rel="next" href="../gateway/">
+        <link rel="next" href="../communcation/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Discovery - Platforms, Microservices, DevOps and APIs</title>
+        <title>OAuth2 - Platforms, Microservices, DevOps and APIs</title>
       
     
     
@@ -76,11 +76,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#discovery" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -113,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Discovery
+              OAuth2
             
           </span>
         </div>
@@ -439,30 +434,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Discovery
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -471,35 +446,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bibliografia
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -593,19 +539,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
           <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
@@ -619,7 +567,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -672,10 +620,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../oauth2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -684,6 +639,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1637,25 +1593,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bibliografia
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1670,8 +1607,31 @@
                   
 
 
-<h1 id="discovery">Discovery</h1>
-<h2 id="bibliografia">Bibliografia</h2>
+  <h1>OAuth2</h1>
+
+<p>OAuth2 is an authorization framework that allows applications to obtain limited access to user accounts on an HTTP service, such as Facebook, Google, or GitHub, without exposing the user's credentials. It provides a secure and standardized way for users to grant access to their resources to third-party applications.</p>
+<p>The principal process to obtain a valid credential using OAuth2 involves the following steps:</p>
+<ol>
+<li>
+<p><strong>Registration</strong>: The application developer needs to register their application with the OAuth2 provider (e.g., Google, Facebook) to obtain client credentials, including a client ID and client secret. These credentials are used to identify and authenticate the application.</p>
+</li>
+<li>
+<p><strong>User Authorization</strong>: When a user wants to grant access to their resources, the application redirects them to the OAuth2 provider's authorization endpoint. This typically involves the user being presented with a login screen and being asked to grant permission to the application.</p>
+</li>
+<li>
+<p><strong>Authorization Grant</strong>: Once the user grants permission, the OAuth2 provider issues an authorization grant to the application. This grant can take various forms, such as an authorization code or an access token.</p>
+</li>
+<li>
+<p><strong>Token Exchange</strong>: The application then exchanges the authorization grant for an access token by sending a request to the OAuth2 provider's token endpoint. The access token is a credential that the application can use to access the user's resources on behalf of the user.</p>
+</li>
+<li>
+<p><strong>Accessing Resources</strong>: With the access token, the application can make requests to the OAuth2 provider's API endpoints to access the user's resources. The access token is typically included in the request headers or as a query parameter.</p>
+</li>
+<li>
+<p><strong>Refreshing Tokens</strong>: Access tokens have a limited lifespan. To continue accessing the user's resources, the application can use a refresh token (if provided) to obtain a new access token without requiring the user to reauthorize the application.</p>
+</li>
+</ol>
+<p>It's important to note that the exact process and terminology may vary slightly depending on the OAuth2 provider and the specific implementation. However, the general flow remains consistent across most OAuth2 implementations.</p>
 
 
 

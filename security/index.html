@@ -697,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oauth2.md" class="md-nav__link">
+      <a href="../oauth2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1594,6 +1594,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls-for-microservices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TLS for microservices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1702,6 +1723,13 @@
 <p>In many systems, after successful authentication, the system generates a token. This token is a piece of data that represents the user's authentication session. It's like a digital ticket that proves the user's identity for a certain period of time.</p>
 <p>This token is then sent back to the user. The user's client software (like a web browser) stores this token and sends it along with every subsequent request to the server (in case of stateless server). This way, the server knows that the request comes from an authenticated user without needing to ask for the credentials again.</p>
 <p>Here's a simplified step-by-step process:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor User
+  User-&gt;&gt;+Auth Server: authentication(credentials)
+  Auth Server-&gt;&gt;Auth Server: verifies credenditals and generates a token
+  Auth Server-&gt;&gt;-User: returns the token
+  User-&gt;&gt;User: stores the token to use for the next requests</code></pre>
 <ol>
 <li>The user sends their username and password (or other credentials) to the server;</li>
 <li>The server verifies the credentials. If they're valid, the server generates a token.</li>
@@ -1715,6 +1743,18 @@
 <p>Authorization is the process of granting or denying access to specific resources or actions based on the authenticated user's privileges. It determines what a user is allowed to do within a system. Authorization can be role-based, where permissions are assigned based on predefined roles, or attribute-based, where permissions are based on specific attributes of the user.</p>
 <p>In many systems, the token not only represents the user's identity, but also includes information about their permissions or roles. This is often done using a type of token called a <a href="../jwt/">JSON Web Token (JWT)</a>, which can include a payload of data.</p>
 <p>Here's a simplified step-by-step process:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  actor User
+  User-&gt;&gt;Auth Server: request with token
+  Auth Server-&gt;&gt;Auth Server: decodes the token and extracts claims
+  Auth Server-&gt;&gt;Auth Server: verifies permissions
+  critical is allowed
+    Auth Server-&gt;&gt;Secured Resource: authorizes the request
+    Secured Resource-&gt;&gt;User: returns the response
+  option access denied
+    Auth Server--&gt;&gt;User: unauthorizated message
+  end  </code></pre>
 <ol>
 <li>After authentication, the user's client software sends a request to a server. This request includes the token.</li>
 <li>The server decodes the token and extracts the user's identity and permissions.</li>
