@@ -481,12 +481,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#design-a-microservice-platform" class="md-nav__link">
     <span class="md-ellipsis">
       Design a Microservice Platform
@@ -494,13 +489,27 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-for-a-simple-microservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARchitecture for a Simple Microservice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#containering" class="md-nav__link">
     <span class="md-ellipsis">
       Containering:
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -736,6 +745,27 @@
   
   <span class="md-ellipsis">
     OAuth2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Security
   </span>
   
 
@@ -1719,12 +1749,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#design-a-microservice-platform" class="md-nav__link">
     <span class="md-ellipsis">
       Design a Microservice Platform
@@ -1732,13 +1757,27 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-for-a-simple-microservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARchitecture for a Simple Microservice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#containering" class="md-nav__link">
     <span class="md-ellipsis">
       Containering:
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1818,7 +1857,7 @@
   </p>
 <figcaption><i>Source: <a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#microservice-architecture" target="_blank">System Design 101 - Microservice Architecture</a></i></figcaption>
 </figure>
-<h2 id="design-a-microservice-platform">Design a Microservice Platform</h2>
+<h3 id="design-a-microservice-platform">Design a Microservice Platform</h3>
 <pre class="mermaid"><code>flowchart LR
   subgraph Client
     direction LR
@@ -1831,7 +1870,7 @@
     subgraph Essentials
       direction TB
       discovery["Discovery"]
-      security["Security"]
+      security["Auth"]
       config["Configuration"]
     end
     subgraph Businesses
@@ -1841,14 +1880,30 @@
       ms3["Service 3"]
     end
   end
-  Client --&gt; lb["Load Balance"] --&gt; Gateway --&gt; Businesses
-  Gateway --&gt; security
-  Gateway --&gt; discovery
-  click Gateway "../gateway/" "Gateway"
+  Client --&gt; lb["Load Balance"] --&gt; gateway["Gateway"] --&gt; Businesses
+  gateway --&gt; security
+  gateway --&gt; discovery
+  click gateway "../gateway/" "Gateway"
   click discovery "../discovery/" "Discovery"
   click security "../security/" "Security"
-  click config "../config/" "Configuration"</code></pre>
-<h2 id="containering">Containering:</h2>
+  click config "../config/" "Configuration"
+  click lb "../load-balancing/" "Load Balance"</code></pre>
+<h3 id="architecture-for-a-simple-microservice">ARchitecture for a Simple Microservice</h3>
+<p>Two Maven Project</p>
+<ul>
+<li>
+<p>Interfaces</p>
+</li>
+<li>
+<p>Implemmentation: resource</p>
+</li>
+</ul>
+<pre class="mermaid"><code>classDiagram
+  class AuthController
+  &lt;&lt;interface&gt;&gt; AuthController
+  AuthController &lt;|-- AuthResource</code></pre>
+<p>Directory</p>
+<h3 id="containering">Containering:</h3>
 <p>Many microservices implies in many ports, then a complicated environment to manage</p>
 <!-- <figure markdown>
   ![Microservices](https://github.com/ByteByteGoHq/system-design-101/raw/main/images/typical-microservice-arch.jpg){ width="100%" }

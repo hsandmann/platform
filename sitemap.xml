@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hsandmann.github.io/platform/cloud-security/</loc>
+         <lastmod>2023-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hsandmann.github.io/platform/communcation/</loc>
          <lastmod>2023-12-26</lastmod>
          <changefreq>daily</changefreq>
