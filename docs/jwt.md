@@ -4,8 +4,8 @@ JWT stands for JSON Web Token. It is a compact, URL-safe means of representing c
 
 Here are the key components and concepts of JWT:
 
-1. **JSON Format:** JWTs are represented as JSON objects that are easy to parse and generate. The JSON format makes them human-readable and easy to work with.
-2. **Three Parts:** JWTs consist of three parts separated by dots (`.`): Header, Payload, and Signature.
+* **JSON Format:** JWTs are represented as JSON objects that are easy to parse and generate. The JSON format makes them human-readable and easy to work with.
+* **Three Parts:** JWTs consist of three parts separated by dots (`.`): Header, Payload, and Signature.
 
     - **Header:** The header typically consists of two parts: the type of the token (JWT) and the signing algorithm being used, such as HMAC SHA256 or RSA.
     
@@ -13,10 +13,10 @@ Here are the key components and concepts of JWT:
     
     - **Signature:** To create the signature part, you take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
 
-3. **Encoding:** Each of the three parts is Base64Url encoded, and the resulting strings are concatenated with periods between them. The final JWT looks like: `xxxxx.yyyyy.zzzzz`.
-4. **Stateless and Self-contained:** JWTs are stateless, meaning that all the information needed is within the token itself. The server doesn't need to store the user's state. They are also self-contained, meaning that all the information needed is contained within the token.
-5. **Use Cases:** JWTs are commonly used for authentication and information exchange between parties. For example, after a user logs in, a server could generate a JWT and send it to the client. The client can then include the JWT in the headers of subsequent requests to access protected resources. The server can verify the authenticity of the JWT using the stored secret key.
-6. **Security Considerations:** While JWTs are widely used and versatile, it's important to handle them securely. For instance, the key used to sign the JWT should be kept secret, and HTTPS should be used to transmit JWTs to prevent man-in-the-middle attacks.
+* **Encoding:** Each of the three parts is Base64Url encoded, and the resulting strings are concatenated with periods between them. The final JWT looks like: `xxxxx.yyyyy.zzzzz`.
+* **Stateless and Self-contained:** JWTs are stateless, meaning that all the information needed is within the token itself. The server doesn't need to store the user's state. They are also self-contained, meaning that all the information needed is contained within the token.
+* **Use Cases:** JWTs are commonly used for authentication and information exchange between parties. For example, after a user logs in, a server could generate a JWT and send it to the client. The client can then include the JWT in the headers of subsequent requests to access protected resources. The server can verify the authenticity of the JWT using the stored secret key.
+* **Security Considerations:** While JWTs are widely used and versatile, it's important to handle them securely. For instance, the key used to sign the JWT should be kept secret, and HTTPS should be used to transmit JWTs to prevent man-in-the-middle attacks.
 
 Here's a simple example of a JWT created on JWT Builder[^2]:
 
