@@ -491,15 +491,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#architecture-for-a-simple-microservice" class="md-nav__link">
-    <span class="md-ellipsis">
-      ARchitecture for a Simple Microservice
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#containering" class="md-nav__link">
     <span class="md-ellipsis">
       Containering:
@@ -1759,15 +1750,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#architecture-for-a-simple-microservice" class="md-nav__link">
-    <span class="md-ellipsis">
-      ARchitecture for a Simple Microservice
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#containering" class="md-nav__link">
     <span class="md-ellipsis">
       Containering:
@@ -1888,21 +1870,6 @@
   click security "../security/" "Security"
   click config "../config/" "Configuration"
   click lb "../load-balancing/" "Load Balance"</code></pre>
-<h3 id="architecture-for-a-simple-microservice">ARchitecture for a Simple Microservice</h3>
-<p>Two Maven Project</p>
-<ul>
-<li>
-<p>Interfaces</p>
-</li>
-<li>
-<p>Implemmentation: resource</p>
-</li>
-</ul>
-<pre class="mermaid"><code>classDiagram
-  class AuthController
-  &lt;&lt;interface&gt;&gt; AuthController
-  AuthController &lt;|-- AuthResource</code></pre>
-<p>Directory</p>
 <h3 id="containering">Containering:</h3>
 <p>Many microservices implies in many ports, then a complicated environment to manage</p>
 <!-- <figure markdown>

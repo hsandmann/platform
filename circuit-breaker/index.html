@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#circuit-breaker" class="md-skip">
+        <a href="#spring-cloud-circuit-breaker" class="md-skip">
           Skip to content
         </a>
       
@@ -532,8 +532,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Circuit Breaker
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -544,6 +553,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spring-cloud-circuit-breaker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spring Cloud Circuit Breaker
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1619,8 +1654,23 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spring-cloud-circuit-breaker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spring Cloud Circuit Breaker
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1635,8 +1685,22 @@
                   
 
 
-<h1 id="circuit-breaker">Circuit Breaker</h1>
-<p>Containering:</p>
+  <h1>Circuit Breaker</h1>
+
+<h2 id="spring-cloud-circuit-breaker">Spring Cloud Circuit Breaker</h2>
+<p>Spring Cloud Circuit Breaker is a service resilience pattern that allows you to provide default behavior when a network failure or any exception occurs while invoking a remote service. It's an abstraction over various circuit breaker implementations like Netflix Hystrix, Resilience4j, Sentinel, etc.</p>
+<p>Key components of Spring Cloud Circuit Breaker include:</p>
+<ul>
+<li>
+<p><strong>Dependency</strong>: To use Spring Cloud Circuit Breaker, you need to include the <code>spring-cloud-starter-circuitbreaker-{implementation}</code> dependency in your project, where <code>{implementation}</code> could be <code>hystrix</code>, <code>resilience4j</code>, <code>sentinel</code>, etc.</p>
+</li>
+<li>
+<p><strong>Configuration</strong>: You can configure the circuit breaker parameters like failure threshold, delay time, etc. in the application.properties (or application.yml) file.</p>
+</li>
+<li>
+<p><strong>Usage</strong>: You can use the <code>@CircuitBreaker</code> annotation on a method to apply the circuit breaker pattern. If the method throws an exception, the circuit breaker will open and provide a fallback method.</p>
+</li>
+</ul>
 
 
 

@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#load-balacing" class="md-skip">
+        <a href="#spring-cloud-loadbalancer" class="md-skip">
           Skip to content
         </a>
       
@@ -511,8 +511,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Load Balancing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -523,6 +532,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spring-cloud-loadbalancer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spring Cloud LoadBalancer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1619,8 +1654,23 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spring-cloud-loadbalancer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spring Cloud LoadBalancer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1635,8 +1685,22 @@
                   
 
 
-<h1 id="load-balacing">Load Balacing</h1>
-<p>Containering:</p>
+  <h1>Load Balancing</h1>
+
+<h2 id="spring-cloud-loadbalancer">Spring Cloud LoadBalancer</h2>
+<p>Spring Cloud LoadBalancer is a generic abstraction over load balancing algorithms that you can use with service discovery clients like Eureka, Consul, and Zookeeper. It provides a round-robin load balancing implementation by default, but you can also implement your own custom load balancing algorithms.</p>
+<p>Key components of Spring Cloud LoadBalancer include:</p>
+<ul>
+<li>
+<p><strong>Dependency</strong>: To use Spring Cloud LoadBalancer, you need to include the <code>spring-cloud-starter-loadbalancer</code> dependency in your project.</p>
+</li>
+<li>
+<p><strong>Configuration</strong>: By default, Spring Cloud LoadBalancer uses a simple round-robin strategy for load balancing. If you want to customize this, you can create a bean of type <code>ServiceInstanceListSupplier</code> that returns a custom list of instances for load balancing.</p>
+</li>
+<li>
+<p><strong>Usage</strong>: You can use the <code>@LoadBalanced</code> annotation on a <code>RestTemplate</code> or <code>WebClient.Builder</code> bean to integrate it with Spring Cloud LoadBalancer. When you make a request through this client, it will automatically be load balanced.</p>
+</li>
+</ul>
 
 
 

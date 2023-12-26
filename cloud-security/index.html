@@ -1719,7 +1719,7 @@
 </ul>
 </li>
 </ul>
-<p>Two Maven Project</p>
+<p>Two Maven Projects</p>
 <ul>
 <li>
 <p>Interfaces</p>
@@ -1731,11 +1731,31 @@
 <pre class="mermaid"><code>classDiagram
   class AuthController {
     &lt;&lt;interface&gt;&gt;
-    regiter()
-    authenticate()
-    identify()
+    register(RegisterIn)
+    authenticate(CredentialIn)
+    identify(String)
   }
-  AuthController &lt;|-- AuthResource</code></pre>
+  class AuthResource {
+    -authService
+  }
+  class RegisterIn {
+    String firstName
+    String lastName
+    String email
+    String password
+  }
+  class CredentialIn {
+    String email
+    String password
+  }
+  class AuthService {
+    &lt;&lt;service&gt;&gt;
+    register(RegisterIn)
+    authenticate(CredentialIn)
+    identify(String)
+  }
+  AuthController &lt;|-- AuthResource
+  AuthResource o-- AuthService</code></pre>
 <h2 id="addtional-material">Addtional Material</h2>
 <ul>
 <li>

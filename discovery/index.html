@@ -76,11 +76,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#discovery" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -448,19 +443,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Discovery
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -471,34 +453,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bibliografia
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1658,25 +1612,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bibliografia
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1691,8 +1626,24 @@
                   
 
 
-<h1 id="discovery">Discovery</h1>
-<h2 id="bibliografia">Bibliografia</h2>
+  <h1>Discovery</h1>
+
+<p>Spring Cloud Discovery is a module in the Spring Cloud framework that provides a way for services to discover and communicate with each other in a distributed system. It helps manage the dynamic nature of microservices by allowing them to register themselves and discover other services without hardcoding their locations.</p>
+<p>In a distributed system, services often need to communicate with each other to fulfill their functionalities. However, the locations of these services may change frequently due to scaling, failures, or deployments. Spring Cloud Discovery solves this problem by providing a service registry where services can register themselves and provide information about their location, such as IP address and port.</p>
+<p>The service registry acts as a central database of all the services in the system. When a service needs to communicate with another service, it can query the service registry to obtain the necessary information. This allows services to be decoupled from each other and eliminates the need for hardcoding service locations in the code.</p>
+<p>Spring Cloud Discovery supports multiple service registry implementations, such as Netflix Eureka, Consul, and ZooKeeper. These implementations provide additional features like service health checks, load balancing, and failover.</p>
+<p>To use Spring Cloud Discovery, you need to include the necessary dependencies in your project and configure the service registry implementation you want to use. Then, you can annotate your services with @EnableDiscoveryClient to enable service registration and discovery. Spring Cloud Discovery will automatically register your services with the service registry and provide a client library to query the registry for service information.</p>
+<p>Here's an example of how you can use Spring Cloud Discovery with Netflix Eureka:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@SpringBootApplication</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nd">@EnableDiscoveryClient</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyServiceApplication</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">MyServiceApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>In this example, the @EnableDiscoveryClient annotation enables service registration and discovery using the configured service registry. When the application starts, it will register itself with the service registry and be discoverable by other services.</p>
+<p>Overall, Spring Cloud Discovery simplifies the process of service discovery and communication in a distributed system, making it easier to build and maintain microservices architectures.</p>
 
 
 
