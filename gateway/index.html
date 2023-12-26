@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gateway" class="md-skip">
+        <a href="#concepts" class="md-skip">
           Skip to content
         </a>
       
@@ -469,8 +469,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -499,8 +497,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -509,18 +505,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#httpsspringioprojectsspring-cloud-gateway" class="md-nav__link">
+  <a href="#concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      https://spring.io/projects/spring-cloud-gateway/
+      Concepts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
+  <a href="#spring-cloud-gateway" class="md-nav__link">
     <span class="md-ellipsis">
-      Bibliografia
+      Spring Cloud Gateway
     </span>
   </a>
   
@@ -1646,8 +1642,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1656,18 +1650,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#httpsspringioprojectsspring-cloud-gateway" class="md-nav__link">
+  <a href="#concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      https://spring.io/projects/spring-cloud-gateway/
+      Concepts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
+  <a href="#spring-cloud-gateway" class="md-nav__link">
     <span class="md-ellipsis">
-      Bibliografia
+      Spring Cloud Gateway
     </span>
   </a>
   
@@ -1688,9 +1682,33 @@
                   
 
 
-<h1 id="gateway">Gateway</h1>
-<h2 id="httpsspringioprojectsspring-cloud-gateway">https://spring.io/projects/spring-cloud-gateway/</h2>
-<h2 id="bibliografia">Bibliografia</h2>
+  <h1>Gateway</h1>
+
+<h2 id="concepts"><a href="#concepts">Concepts</a></h2>
+<p>The Gateway design pattern is a structural design pattern that provides a centralized entry point for handling requests from external systems. It acts as a mediator between the client and the server, allowing the client to make requests to multiple services through a single interface.</p>
+<p>In the context of software development, a gateway acts as an intermediary between the client and the backend services. It abstracts away the complexity of interacting with multiple services by providing a unified API for the client to communicate with.</p>
+<p>The main benefits of using the Gateway design pattern include:</p>
+<ul>
+<li>
+<p><strong>Simplified client code</strong>: The client only needs to interact with the gateway, which handles the routing and communication with the appropriate backend services. This reduces the complexity and coupling in the client code.</p>
+</li>
+<li>
+<p><strong>Centralized cross-cutting concerns</strong>: The gateway can handle common concerns such as authentication, authorization, rate limiting, caching, and logging in a centralized manner. This eliminates the need to implement these features in each individual service.</p>
+</li>
+<li>
+<p><strong>Scalability and flexibility</strong>: The gateway can distribute requests to multiple instances of backend services, allowing for horizontal scaling. It also provides the flexibility to add or remove backend services without affecting the client code.</p>
+</li>
+<li>
+<p><strong>Protocol translation</strong>: The gateway can handle protocol translation, allowing clients to use different protocols (e.g., HTTP, WebSocket) while the backend services can use a different protocol.</p>
+</li>
+<li>
+<p><strong>Service aggregation</strong>: The gateway can aggregate data from multiple backend services and provide a unified response to the client. This reduces the number of requests made by the client and improves performance.</p>
+</li>
+</ul>
+<p>To implement the Gateway design pattern, various technologies and frameworks can be used, such as Spring Cloud Gateway, Netflix Zuul, or NGINX. These tools provide features like routing, load balancing, and request filtering, making it easier to build a robust and scalable gateway.</p>
+<p>In summary, the Gateway design pattern provides a centralized entry point for handling requests from clients and abstracts away the complexity of interacting with multiple backend services. It simplifies client code, centralizes cross-cutting concerns, and provides scalability and flexibility in a distributed system architecture.</p>
+<h2 id="spring-cloud-gateway"><a href="#spring-cloud-gateway">Spring Cloud Gateway</a></h2>
+<p>https://spring.io/projects/spring-cloud-gateway/</p>
 
 
 
