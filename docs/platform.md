@@ -1,57 +1,57 @@
-## High-perfomance Architectures
+## [High-perfomance Architectures](#high-perfomance-architectures)
 
 High-performance architectures refer to the design and configuration of computer systems, networks, and software to achieve optimal speed, responsiveness, throughput, and efficiency. These architectures are specifically tailored to handle large-scale, resource-intensive, and performance-critical workloads. High-performance systems are often employed in scenarios such as data centers, cloud computing environments, scientific computing, financial services, and other applications where speed and efficiency are paramount.
 
 Here are key aspects and principles associated with high-performance architectures:
 
-### 1. Parallelism and Concurrency
+### [Parallelism and Concurrency](#parallelism-and-concurrency)
 
 - High-performance architectures often leverage parallelism and concurrency to execute multiple tasks simultaneously, improving overall throughput.
 - Parallel processing involves dividing a task into smaller sub-tasks that can be processed concurrently, often across multiple processors or cores.
 - Concurrency allows multiple tasks to be executed concurrently, even if they are not divided into explicit sub-tasks.
 
-### 2. Distributed Systems
+### [Distributed Systems](#distributed-systems)
 
 - Distributing workloads across multiple nodes in a network is a common strategy for achieving high performance.
 - Distributed systems allow for horizontal scaling, where additional resources (nodes) can be added to handle increased demand.
 
-### 3. Optimized Algorithms and Data Structures
+### [Optimized Algorithms and Data Structures](#optimized-algorithms-and-data-structures)
 
 - Carefully designed algorithms and data structures are crucial for high performance.
 - Efficient algorithms and data structures minimize computational complexity and memory usage.
 
-### 4. Caching and Memory Optimization
+### [Caching and Memory Optimization](#caching-and-memory-optimization)
 
 - Caching is used to store frequently accessed data in a location that allows faster retrieval, reducing the need to recompute or fetch data from slower storage.
 - Memory optimization involves efficiently managing memory usage to minimize latency and improve responsiveness.
 
-### 5. Scalability
+### [Scalability](#scalability)
 
 - High-performance architectures are designed to scale horizontally or vertically to accommodate growing workloads.
 - Horizontal scalability involves adding more nodes or machines, while vertical scalability involves increasing the resources of individual nodes.
 
-### 6. Load Balancing
+### [Load Balancing](#load-balancing)
 
 - Load balancing ensures that incoming requests are distributed evenly across multiple servers or resources.
 - This helps prevent individual components from becoming bottlenecks and ensures optimal resource utilization.
 
-### 7. Fault Tolerance and Redundancy
+### [Fault Tolerance and Redundancy](#fault-tolerance-and-redundancy)
 
 - High-performance architectures often incorporate redundancy and fault-tolerant mechanisms to ensure continuous operation in the face of hardware failures or network issues.
 
-### 8. Specialized Hardware
+### [Specialized Hardware](#specialized-hardware)
 
 - In some cases, high-performance architectures may use specialized hardware, such as Graphics Processing Units (GPUs) or Field-Programmable Gate Arrays (FPGAs), to accelerate specific types of computations.
 
-### 9. Optimized Network Architecture
+### [Optimized Network Architecture](#optimized-network-architecture)
 
 - Efficient communication between nodes is critical for high performance. Optimized network architectures, low-latency interconnects, and high-bandwidth connections contribute to overall system efficiency.
 
-### 10. Monitoring and Performance Tuning
+### [Monitoring and Performance Tuning](#monitoring-and-performance-tuning)
 
 - Continuous monitoring and performance tuning are essential to identify and address bottlenecks, optimize resource utilization, and ensure that the system is operating at peak efficiency.
 
-### 11. Asynchronous and Event-Driven Design
+### [Asynchronous and Event-Driven Design](#asynchronous-and-event-driven-design)
 
 - Asynchronous and event-driven architectures can improve system responsiveness by allowing components to operate independently and respond to events as they occur.
 
@@ -59,7 +59,7 @@ High-performance architectures are tailored to the specific requirements of the 
 
 
 
-## CAP theorem
+## [CAP theorem](#cap-theorem)
 
 CAP theorem, also known as Brewer's theorem, is a concept in distributed systems that addresses the trade-offs among three fundamental aspects: Consistency, Availability, and Partition Tolerance. It was introduced by computer scientist Eric Brewer in 2000. The CAP theorem suggests that in a distributed system, it is impossible to simultaneously achieve all three of these guarantees. A system can provide at most two out of the three.
 
@@ -93,11 +93,11 @@ According to the CAP theorem, a distributed system can prioritize at most two of
 
 It's important to note that the CAP theorem provides a theoretical framework for understanding trade-offs in distributed systems but does not prescribe specific solutions. Different systems may make different choices based on their specific requirements and use cases. Additionally, advancements in distributed systems research have led to the exploration of systems that aim to provide a balance between the three aspects, challenging the strict interpretation of the CAP theorem in some cases.
 
-## Scalability
+## [Scalability](#scalability-1)
 
 Scalability in the context of computer systems refers to the ability of a system to handle an increasing amount of work, or its potential to be enlarged to accommodate that growth. There are several types of scalability that are often discussed in the field of computing:
 
-### Vertical Scalability (Scale-Up)
+### [Vertical Scalability (Scale-Up)](#vertical-scalability-scale-up)
 
 | *Definition* | Vertical scalability involves adding more resources to a single node or machine in order to increase its capacity. |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -119,7 +119,7 @@ Scalability in the context of computer systems refers to the ability of a system
 | Highly scalable, as resources can be easily added by adding more machines. | Requires a distributed architecture.              |
 | Can provide better fault tolerance.                                        | Some applications may not be easily parallelized. |
 
-### Load Balancing
+### [Load Balancing](#load-balancing-1)
 
 | *Definition* | Load balancing involves distributing incoming network traffic or workload across multiple servers or resources to optimize resource utilization, maximize throughput, minimize response time, and avoid overloading any single resource. |
 |-|-|
@@ -129,7 +129,7 @@ Scalability in the context of computer systems refers to the ability of a system
 |-|-|
 | Improves overall system performance, ensures high availability, and can help with fault tolerance. | Requires additional infrastructure, and the load balancer itself can become a potential bottleneck. |
 
-### Elastic Scalability
+### [Elastic Scalability](#elastic-scalability)
 
 | *Definition* | Elastic scalability involves dynamically adjusting resources based on demand. Resources are automatically added or removed as needed. |
 |-|-|
@@ -139,7 +139,7 @@ Scalability in the context of computer systems refers to the ability of a system
 |-|-|
 | Efficient resource utilization, cost-effective as resources are only used when needed. | Requires sophisticated monitoring and management systems. |
 
-### Database Scalability
+### [Database Scalability](#database-scalability)
 
 | *Definition* | Database scalability refers to the ability of a database to handle an increasing amount of data and transactions. |
 |-|-|
@@ -150,7 +150,7 @@ Scalability in the context of computer systems refers to the ability of a system
 |-|-|
 | Can improve performance and handle increased data loads. | Complex to implement, and horizontal scalability may require changes to the database schema. |
 
-### Caching
+### [Caching](#caching)
 
 | *Definition* | Caching involves storing frequently accessed data in a cache to reduce the need to fetch the same data from the original source repeatedly. |
 |-|-|
@@ -162,15 +162,15 @@ Scalability in the context of computer systems refers to the ability of a system
 
 Each type of scalability has its own strengths and weaknesses, and the choice of scalability approach depends on the specific requirements and constraints of the system or application being developed. Often, a combination of these scalability types is employed to achieve optimal performance and resource utilization.
 
-## Design Patterns
+## [Design Patterns](#design-patterns)
 
 A design pattern in software development is a general, reusable solution to a common problem that occurs in a particular context within a software design. It's a template or a best practice that addresses a specific design or programming problem. Design patterns aren't complete solutions by themselves; rather, they provide a blueprint for solving certain types of problems.
 
 The concept of design patterns was popularized by the book "Design Patterns: Elements of Reusable Object-Oriented Software," written by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, often referred to as the "Gang of Four" (GoF)[^1]. The book categorizes design patterns into three main types:
 
-1. **Creational Patterns:** These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. Examples include the Singleton pattern, Factory Method pattern, and Abstract Factory pattern.
-2. **Structural Patterns:** These patterns focus on the composition of classes or objects. They help in creating a structure of classes and objects, making it easier to form larger structures. Examples include the Adapter pattern, Decorator pattern, and Composite pattern.
-3. **Behavioral Patterns:** Behavioral patterns are concerned with the interaction and responsibility of objects. They define communication patterns between objects and the responsibility of one object in a given situation. Examples include Observer pattern, Strategy pattern, and Command pattern.
+* **Creational Patterns:** These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. Examples include the Singleton pattern, Factory Method pattern, and Abstract Factory pattern.
+* **Structural Patterns:** These patterns focus on the composition of classes or objects. They help in creating a structure of classes and objects, making it easier to form larger structures. Examples include the Adapter pattern, Decorator pattern, and Composite pattern.
+* **Behavioral Patterns:** Behavioral patterns are concerned with the interaction and responsibility of objects. They define communication patterns between objects and the responsibility of one object in a given situation. Examples include Observer pattern, Strategy pattern, and Command pattern.
 
 Design patterns provide several benefits in software development:
 

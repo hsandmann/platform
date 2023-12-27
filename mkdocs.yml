@@ -9,7 +9,10 @@ theme:
     - content.code.select
     - content.code.annotate
     - content.tooltips
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.path
+    - navigation.tracking
 
 markdown_extensions:
   - attr_list
@@ -34,7 +37,7 @@ markdown_extensions:
   - tables
 
 plugins:
-  - glightbox
+  - glightbox  
 
 nav:
   - Home: index.md
@@ -56,7 +59,7 @@ nav:
       - Concepts: security.md
       - JWT: jwt.md
       - OAuth2: oauth2.md
-      - Cloud Security: cloud-security.md
+      - Auth Service: auth-service.md
       # - OpenID: openid.md
       # - SSO: sso.md
     - Communication: communcation.md
@@ -64,28 +67,28 @@ nav:
     - Logging: logging.md
     - Tracing: tracing.md
     - Messaging: 
+      - Concepts: messaging.md
       - Kafka: kafka.md
       - RabbitMQ: rabbitmq.md
     - Database:
       - Flyway: flyway.md
       - Redis: redis.md
-      - MongoDB: mongodb.md
-      - Elasticsearch: elasticsearch.md
-    - Payments: payments.md
+      # - MongoDB: mongodb.md
+      # - Elasticsearch: elasticsearch.md
+    - Payment: payment.md
   - DevOps:
     - Concepts: devops.md
-    - Build Automation: build-automation.md
+    - Version Control: version-control-system.md
     - Docker: docker.md
-    - Git: git.md
-    - CI/CD: cicd.md
-    - Jenkins: jenkins.md
-    - Nexus: nexus.md
-    - SonarQube: sonarqube.md
+    - Package: package.md
+    - Release: release.md
+    # - Nexus: nexus.md
+    # - SonarQube: sonarqube.md
     - Kubernetes: kubernetes.md
   - Cloud Computing:
     - AWS: aws.md
-    - Google Cloud Platform: google-cloud-platform.md
-    - Microsoft Azure: microsoft-azure.md
+    - GCP: gcp.md
+    - Azure: azure.md
     - Terraform: terraform.md
   - Platform as an Innovation:
     - Concepts: platform-as-an-innovation.md

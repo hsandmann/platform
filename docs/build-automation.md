@@ -1,5 +1,0 @@
-# Build Automation
-
-Maven
-
-Gradle

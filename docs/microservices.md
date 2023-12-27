@@ -48,10 +48,11 @@ flowchart LR
   end
   subgraph Microservices
     direction LR
+    gateway["Gateway"]
     subgraph Essentials
       direction TB
       discovery["Discovery"]
-      security["Auth"]
+      auth["Auth"]
       config["Configuration"]
     end
     subgraph Businesses
@@ -61,12 +62,12 @@ flowchart LR
       ms3["Service 3"]
     end
   end
-  Client --> lb["Load Balance"] --> gateway["Gateway"] --> Businesses
-  gateway --> security
+  Client --> lb["Load Balance"] --> gateway --> Businesses
+  gateway --> auth
   gateway --> discovery
   click gateway "../gateway/" "Gateway"
   click discovery "../discovery/" "Discovery"
-  click security "../security/" "Security"
+  click auth "../auth-service/" "Auth"
   click config "../config/" "Configuration"
   click lb "../load-balancing/" "Load Balance"
 ```

@@ -10,3 +10,4 @@ Key components of Spring Cloud Config include:
 
 - **Refresh Scope**: Spring Cloud Config includes a `RefreshScope` capability which allows properties to be reloaded without restarting the application. You can expose a `/refresh` endpoint in your application that, when invoked, will cause the application to re-fetch properties from the Config Server.
 
+[Spring Cloud Config Server](https://docs.spring.io/spring-cloud-config/reference/server.html)

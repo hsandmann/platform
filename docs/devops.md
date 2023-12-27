@@ -9,13 +9,14 @@ Key concepts of DevOps include:
 - **Monitoring and Logging**: Keeping track of how applications and systems are performing in real-time to understand ongoing IT infrastructure status.
 - **Communication and Collaboration**: Increased communication and collaboration in an organization is one of the key cultural aspects of DevOps. The use of DevOps tooling and automation of the software delivery process tends to increase collaboration between the teams.
 
-
-
 <figure markdown>
   ![DevOps - Chain from Dev to Ops](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Devops-toolchain.svg/2560px-Devops-toolchain.svg.png){ width="100%" }
   <figcaption><i>Source: <a href="https://pt.wikipedia.org/wiki/DevOps" target="_blank">Wikipedia - Devops</a></i></figcaption>
 </figure>
 
+## [CI/CD](#cicd)
+
+## [Pipeline](#pipeline)
 
 ## Service-level agreement - SLA
 
