@@ -37,8 +37,14 @@ markdown_extensions:
   - tables
 
 plugins:
-  - glightbox  
-
+  - glightbox
+  - git-revision-date-localized
+  - search
+  - markdown-exec
+  - termynal:
+      prompt_literal_start:
+        - "$"
+        - ">"
 nav:
   - Home: index.md
   - Versions:

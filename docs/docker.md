@@ -1,4 +1,3 @@
-# Docker
 
 How to avoid the classical..
 
@@ -42,5 +41,27 @@ Docker containers and virtual machines (VMs) are both technologies used for virt
 </figure>
 
 In summary, Docker containers and virtual machines have different levels of abstraction and are suitable for different use cases. Containers are lightweight, portable, and efficient, making them popular for modern application development and deployment practices. Virtual machines provide stronger isolation and are more suitable for scenarios where running multiple instances of different operating systems is necessary. The choice between Docker containers and virtual machines depends on the specific requirements of the application and the environment in which it will be deployed.
+
+## Creating a Simple Docker
+
+```python exec="on"
+print("Hello Markdown!")
+```
+
+<!-- termynal -->
+
+```
+> pip install termynal
+---> 100%
+Installed
+```
+
+``` dockerfile
+FROM openjdk:17-alpine
+VOLUME /tmp
+ARG JAR_FILE=target/gateway-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+```
 
 [^1]: [Docker vs. Virtual Machines: Differences You Should Know](https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/)
