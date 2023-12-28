@@ -1,6 +1,8 @@
 ## Jenkins
 
-DevOps is an acroni
+[Installing Jenkins](https://www.jenkins.io/doc/book/installing/)
+
+SDLC - Software Development LifeCycle
 
 ## Service-level agreement - SLA
 

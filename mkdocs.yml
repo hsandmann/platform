@@ -95,6 +95,7 @@ nav:
     - AWS: aws.md
     - GCP: gcp.md
     - Azure: azure.md
+    - GitActions: gitactions.md
     - Terraform: terraform.md
   - Platform as an Innovation:
     - Concepts: platform-as-an-innovation.md

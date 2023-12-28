@@ -40,11 +40,25 @@ Docker containers and virtual machines (VMs) are both technologies used for virt
   <figcaption><i>Source: <a href="https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/" target="_blank">Docker vs. Virtual Machines: Differences You Should Know</a></i></figcaption>
 </figure>
 
-In summary, Docker containers and virtual machines have different levels of abstraction and are suitable for different use cases. Containers are lightweight, portable, and efficient, making them popular for modern application development and deployment practices. Virtual machines provide stronger isolation and are more suitable for scenarios where running multiple instances of different operating systems is necessary. The choice between Docker containers and virtual machines depends on the specific requirements of the application and the environment in which it will be deployed.
+In summary, Docker containers and virtual machines have different levels of abstraction and are suitable for different use cases. Containers are lightweight, portable, and efficient, making them popular for modern application development and deployment practices. Virtual machines provide stronger isolation and are more suitable for scenarios where running multiple instances of different operating systems is necessary. The choice between Docker containers and virtual machines depends on the specific requirements of the application and the environment in which it will be deployed. To install Docker Engine, see [Install Docker Engine](https://docs.docker.com/engine/install/).
 
 ## Creating a Simple Docker
 
-```python exec="on"
+| Command | Description |
+|:-|:-|
+| `docker run <image>` | Runs a Docker container from an image. |
+| `docker ps` | Lists running Docker containers. |
+| `docker ps -a` | Lists all Docker containers, both running and stopped. |
+| `docker stop <container>` | Stops a running Docker container. |
+| `docker rm <container>` | Removes a Docker container. |
+| `docker images` | Lists Docker images. |
+| `docker rmi <image>` | Removes a Docker image. |
+| `docker pull <image>` | Pulls a Docker image from a Docker registry. |
+| `docker build -t <tag> .` | Builds a Docker image from a Dockerfile in the current directory. |
+| `docker exec -it <container> <command>` | Executes a command in a running Docker container. |
+| `docker logs <container>` | Fetches the logs of a Docker container. |
+
+``` python exec="on"
 print("Hello Markdown!")
 ```
 
