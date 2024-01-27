@@ -79,3 +79,9 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 
 [^1]: [Docker vs. Virtual Machines: Differences You Should Know](https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/)
+
+
+
+https://docs.docker.com/engine/install/
+
+https://www.docker.com/blog/how-to-use-your-own-registry-2/

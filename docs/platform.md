@@ -1,3 +1,88 @@
+## [Historical Context](#historical-context)
+
+### Single block system
+
+Single block system, following the concept that a system is a *blackbox* schema, so many projects started in a simple single project that is a good choice to raise a system and try to use the initial features. This is a good approach for small and compact systems or for specialist systems where the speed of application matters.
+
+``` mermaid
+---
+title: blackbox
+---
+flowchart LR
+  Input
+  subgraph Processing
+    direction TB
+    Storage
+    Business
+    UI
+  end
+  Output
+  Input --> UI --> Output
+```
+
+The main disadvantage of this approach is the strong coupling among business, user interface (UI), and storage. The coupling is so strong that there is a mix among all the components, which implies a high cost for maintenance.
+
+### Splitted betweeen data and program
+
+``` mermaid
+---
+title: blackbox
+---
+flowchart LR
+  subgraph Processing
+    direction TB
+    subgraph Storage
+      x
+    end
+    subgraph Business
+      UI
+    end
+  end
+  Input --> UI --> Output
+  Business <-- driver --> Storage
+```
+
+System communicates to only an UI.
+
+Cobol
+
+### Multi-layer approach
+
+``` mermaid
+---
+title: blackbox
+---
+flowchart LR
+  Input
+  subgraph Processing
+    direction TB
+    Storage
+    subgraph _
+      Businesses
+      UI
+    end
+  end
+  Output
+  Input --> UI --> Output
+  Business <-- driver --> Storage
+```
+
+
+#### MVC Pattern
+
+MVC stands for Model-View-Controller. It's a design pattern often used in web development. Here's a brief explanation of each component:
+
+1. **Model**: This is the part of the system that handles the logic for the application data. Often model objects retrieve data (and store data) from a database.
+
+2. **View**: This is the part of the system that handles the display of the data. Most often the views are created from the model data.
+
+3. **Controller**: This is the part of the system that handles user interaction. Typically controllers read data from a view, control user input, and send input data to the model.
+
+The idea behind MVC is that each of these components can be developed and tested independently, which can simplify the overall development process.
+
+
+
+
 ## [High-perfomance Architectures](#high-perfomance-architectures)
 
 High-performance architectures refer to the design and configuration of computer systems, networks, and software to achieve optimal speed, responsiveness, throughput, and efficiency. These architectures are specifically tailored to handle large-scale, resource-intensive, and performance-critical workloads. High-performance systems are often employed in scenarios such as data centers, cloud computing environments, scientific computing, financial services, and other applications where speed and efficiency are paramount.

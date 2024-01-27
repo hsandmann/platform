@@ -9,3 +9,6 @@ Key features of Git include:
 - **Speed**: Git is designed to be fast and efficient, even for large projects.
 - **Data Integrity**: Git uses a data model that ensures the cryptographic integrity of every bit of your project. Every file and commit is checksummed and retrieved by its checksum when checked back out.
 - **Staging Area**: Git provides a staging area or "index" that allows you to format and review your commits before completing the commit.
+
+
+SCM - Supply-chain-management software

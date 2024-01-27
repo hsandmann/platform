@@ -40,3 +40,6 @@ console.log('Code Tab B');
       return 0;
     }
     ```
+
+
+https://www.baeldung.com/spring-rest-openapi-documentation

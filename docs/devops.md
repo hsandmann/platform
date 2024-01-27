@@ -34,3 +34,69 @@ The goal of NoOps is to allow the software developers to focus on writing new fe
 
 
 [^1]: [Wiki Service-level Agreement](https://en.wikipedia.org/wiki/Service-level_agreement)
+
+
+
+https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/
+
+Install Jenkins on Docker
+
+``` yaml
+version: '3.8'
+name: infra
+
+services:
+
+  jenkins:
+    container_name: jenkins
+    build:
+      context: ../infra/
+      dockerfile_inline: |
+        FROM jenkins/jenkins:jdk17
+        USER root
+        RUN apt-get update && apt-get install -y lsb-release
+        RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
+          https://download.docker.com/linux/debian/gpg
+        RUN echo "deb [arch=$(dpkg --print-architecture) \
+          signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
+          https://download.docker.com/linux/debian \
+          $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+        RUN apt-get update && apt-get install -y docker-ce-cli
+        USER jenkins
+        # RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
+    ports:
+      - 9000:8080
+      - 50000:50000
+    volumes:
+      - ./data/jenkins_home:/var/jenkins_home
+    restart: always
+    networks:
+      - private-network
+
+networks:
+  private-network:
+    driver: bridge
+```
+
+``` shell
+docker compose up -d --build
+```
+
+The will be avaliable at:
+``` shell
+http://localhost:9000
+```
+
+Jenkins
+
+Install plugins:
+- Blue Ocean
+- Docker
+- Docker Pipeline
+- Kubernetes Cli
+
+
+https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/
+
+https://www.jenkins.io/blog/2017/02/07/declarative-maven-project/
+

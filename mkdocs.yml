@@ -78,7 +78,7 @@ nav:
       - RabbitMQ: rabbitmq.md
     - Database:
       - Flyway: flyway.md
-      - Redis: redis.md
+      - Caching: caching.md
       # - MongoDB: mongodb.md
       # - Elasticsearch: elasticsearch.md
     - Payment: payment.md
