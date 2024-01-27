@@ -2,212 +2,217 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hsandmann.github.io/platform/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/2024.1/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/auth-service/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/aws/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/azure/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/caching/</loc>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/circuit-breaker/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/communcation/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/config/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/contributors/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/devops/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/discovery/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/docker/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/documentation/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/flyway/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/gateway/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/gcp/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/gitactions/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/google-cloud-platform/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/jwt/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/kafka/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/kubernetes/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/load-balancing/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/logging/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/messaging/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/microservices/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/monitoring/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/oauth2/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/package/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/payment/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/platform-as-an-innovation/</loc>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/platform/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/rabbitmq/</loc>
-         <lastmod>2023-12-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hsandmann.github.io/platform/redis/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/release/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/rest-vs-graphql/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/security/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/spring-boot-cloud/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/terraform/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/testing/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/tls-for-microservices/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/tracing/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/version-control-system/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/versioning-rest-apis/</loc>
-         <lastmod>2023-12-28</lastmod>
+         <lastmod>2024-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

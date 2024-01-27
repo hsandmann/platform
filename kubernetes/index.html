@@ -965,11 +965,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../redis/" class="md-nav__link">
+      <a href="../caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Caching
   </span>
   
 
@@ -1172,8 +1172,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1202,8 +1200,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1212,9 +1208,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
+  <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      Bibliografia
+      Kubernetes
     </span>
   </a>
   
@@ -1429,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform-as-an-innovation.md" class="md-nav__link">
+      <a href="../platform-as-an-innovation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1594,8 +1590,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1604,9 +1598,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bibliografia" class="md-nav__link">
+  <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      Bibliografia
+      Kubernetes
     </span>
   </a>
   
@@ -1627,8 +1621,22 @@
                   
 
 
-<h1 id="kubernetes">Kubernetes</h1>
-<h2 id="bibliografia">Bibliografia</h2>
+  <h1>Kubernetes</h1>
+
+<h2 id="kubernetes">Kubernetes</h2>
+<p>Kubernetes, also known as K8s, is an open-source platform designed to automate deploying, scaling, and operating application containers. It was originally designed by Google and is now maintained by the Cloud Native Computing Foundation.</p>
+<p>Key features of Kubernetes include:</p>
+<ul>
+<li><strong>Service discovery and load balancing</strong>: Kubernetes can expose a container using the DNS name or their own IP address. If traffic to a container is high, Kubernetes is able to load balance and distribute the network traffic to help the deployment stable.</li>
+<li><strong>Storage orchestration</strong>: Kubernetes allows you to automatically mount a storage system of your choice, such as local storages, public cloud providers, and more.</li>
+<li><strong>Automated rollouts and rollbacks</strong>: You can describe the desired state for your deployed containers using Kubernetes, and it can change the actual state to the desired state at a controlled rate. For example, you can automate Kubernetes to create new containers for your deployment, remove existing containers and adopt all their resources to the new container.</li>
+<li><strong>Automatic bin packing</strong>: You provide Kubernetes with a cluster of nodes that it can use to run containerized tasks. You tell Kubernetes how much CPU and memory (RAM) each container needs. Kubernetes can fit containers onto your nodes to make the best use of your resources.</li>
+<li><strong>Self-healing</strong>: Kubernetes restarts containers that fail, replaces and reschedules containers when nodes die, kills containers that don’t respond to your user-defined health check, and doesn’t advertise them to clients until they are ready to serve.</li>
+<li><strong>Secret and configuration management</strong>: Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys. You can deploy and update secrets and application configuration without rebuilding your container images, and without exposing secrets in your stack configuration.</li>
+</ul>
+<p>https://minikube.sigs.k8s.io/docs/start/</p>
+<p>https://cloud.google.com/learn/what-is-kubernetes?hl=pt-br#section-4</p>
+<p>https://serverlessland.com/</p>
 
 
 

@@ -16,7 +16,7 @@
         <link rel="prev" href="../rabbitmq/">
       
       
-        <link rel="next" href="../redis/">
+        <link rel="next" href="../caching/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1014,11 +1014,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../redis/" class="md-nav__link">
+      <a href="../caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Redis
+    Caching
   </span>
   
 
@@ -1427,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform-as-an-innovation.md" class="md-nav__link">
+      <a href="../platform-as-an-innovation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1626,6 +1626,16 @@
   <h1>Flyway</h1>
 
 <h2 id="flyway">Flyway</h2>
+<p>Flyway is an open-source database migration tool that strongly favors simplicity and convention over configuration. It is designed to simplify the process of versioning a database, similar to how Git versions source code. </p>
+<p>With Flyway, you can apply version control to your database which allows you to migrate it to a newer version and also revert changes if needed. Flyway uses SQL scripts or Java-based migrations to evolve your database schema in a way that is controllable and predictable.</p>
+<p>Key features of Flyway include:</p>
+<ul>
+<li><strong>Version control for your database</strong>: Allows you to track changes and apply version control to your database, similar to how you would with your source code.</li>
+<li><strong>Support for SQL and Java-based migrations</strong>: You can use SQL for simple changes, and Java for complex migrations.</li>
+<li><strong>Repeatable migrations</strong>: You can use this feature to manage objects in your database that can't be easily handled with versioned migrations, like stored procedures and views.</li>
+<li><strong>Multiple database support</strong>: Flyway supports a wide variety of databases including MySQL, PostgreSQL, SQL Server, and more.</li>
+</ul>
+<p>https://www.baeldung.com/liquibase-vs-flyway</p>
 <div class="footnote">
 <hr />
 <ol>
