@@ -10,25 +10,21 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/tls-for-microservices/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/handout/crud-basic/">
       
       
-        <link rel="prev" href="../versioning-rest-apis/">
       
       
-        <link rel="next" href="../contributors/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
-        <title>TLS for microservices - Platforms, Microservices, DevOps and APIs</title>
+        <title>Crud basic - Platforms, Microservices, DevOps and APIs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -47,18 +43,18 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_markdown_exec_ansi.css">
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
     
-      <link rel="stylesheet" href="../termynal.css">
+      <link rel="stylesheet" href="../../termynal.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -69,7 +65,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -79,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#a-requisito" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -92,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Platforms, Microservices, DevOps and APIs" class="md-header__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
+    <a href="../.." title="Platforms, Microservices, DevOps and APIs" class="md-header__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -112,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TLS for microservices
+              Crud basic
             
           </span>
         </div>
@@ -187,7 +188,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Platforms, Microservices, DevOps and APIs" class="md-nav__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
+    <a href="../.." title="Platforms, Microservices, DevOps and APIs" class="md-nav__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -205,7 +206,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -262,7 +263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024.1/" class="md-nav__link">
+      <a href="../../versions/2024.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -326,16 +327,82 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CRUD and Auth
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            CRUD and Auth
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../handout/crud-account/" class="md-nav__link">
+      <a href="../microservice-account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    CRUD Account
+    Account
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microservice-auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -392,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spring-boot-cloud/" class="md-nav__link">
+      <a href="../../spring-boot-cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -413,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/" class="md-nav__link">
+      <a href="../../testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -434,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../documentation/" class="md-nav__link">
+      <a href="../../documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -499,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform/" class="md-nav__link">
+      <a href="../../platform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../microservices/" class="md-nav__link">
+      <a href="../../microservices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../discovery/" class="md-nav__link">
+      <a href="../../discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gateway/" class="md-nav__link">
+      <a href="../../gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -583,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -604,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../load-balancing/" class="md-nav__link">
+      <a href="../../load-balancing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -625,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../circuit-breaker/" class="md-nav__link">
+      <a href="../../circuit-breaker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -683,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+      <a href="../../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -704,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../jwt/" class="md-nav__link">
+      <a href="../../jwt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -725,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oauth2/" class="md-nav__link">
+      <a href="../../oauth2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -746,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../auth-service/" class="md-nav__link">
+      <a href="../../auth-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../communcation/" class="md-nav__link">
+      <a href="../../communcation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -796,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
+      <a href="../../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -817,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logging/" class="md-nav__link">
+      <a href="../../logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -838,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracing/" class="md-nav__link">
+      <a href="../../tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../messaging/" class="md-nav__link">
+      <a href="../../messaging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kafka/" class="md-nav__link">
+      <a href="../../kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -938,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rabbitmq/" class="md-nav__link">
+      <a href="../../rabbitmq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1004,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../flyway/" class="md-nav__link">
+      <a href="../../flyway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1025,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../caching/" class="md-nav__link">
+      <a href="../../caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1054,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../payment/" class="md-nav__link">
+      <a href="../../payment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../devops/" class="md-nav__link">
+      <a href="../../devops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1140,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../version-control-system/" class="md-nav__link">
+      <a href="../../version-control-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1161,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1182,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../package/" class="md-nav__link">
+      <a href="../../package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1203,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../release/" class="md-nav__link">
+      <a href="../../release/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kubernetes/" class="md-nav__link">
+      <a href="../../kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1289,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aws/" class="md-nav__link">
+      <a href="../../aws/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gcp/" class="md-nav__link">
+      <a href="../../gcp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1331,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../azure/" class="md-nav__link">
+      <a href="../../azure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1352,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gitactions/" class="md-nav__link">
+      <a href="../../gitactions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1373,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terraform/" class="md-nav__link">
+      <a href="../../terraform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1438,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../business/" class="md-nav__link">
+      <a href="../../business/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1463,21 +1530,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -1491,7 +1556,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Appendix
@@ -1505,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rest-vs-graphql/" class="md-nav__link">
+      <a href="../../appendix/rest-vs-graphql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1526,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versioning-rest-apis/" class="md-nav__link">
+      <a href="../../appendix/versioning-rest-apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1544,17 +1609,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../appendix/tls-for-microservices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1563,7 +1621,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1583,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributors/" class="md-nav__link">
+      <a href="../../contributors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1614,6 +1671,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-requisito" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Requisito
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banco de dados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modularizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modularização
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1627,9 +1725,13 @@
                   
 
 
-  <h1>TLS for microservices</h1>
+  <h1>Crud basic</h1>
 
-<p><a href="https://letsencrypt.org" target="_blank">Let's Encrypt</a></p>
+<h2 id="a-requisito">A. Requisito</h2>
+<h2 id="banco-de-dados">Banco de dados</h2>
+<p>flyway</p>
+<h3 id="modularizacao">Modularização</h3>
+<p>Crie dois projetos Mavens: um de interface e outro para o micro serviço. A vantagem dessa abordagem é que a interface pode ser utilizada em outros projetos como uma biblioteca a ser consumida.</p>
 
 
 
@@ -1650,7 +1752,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 26, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
   </span>
 
     
@@ -1699,12 +1801,12 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../termynal.js"></script>
+        <script src="../../termynal.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
