@@ -1862,17 +1862,6 @@
 
   <h1>Roadmap</h1>
 
-<pre class="mermaid"><code>gantt
-    dateFormat dd
-    axisFormat x
-    section Microservice
-        Account        : a1, 01, 5d
-        Auth           : a2, after a1, 5d
-        Gateway        : a3, after a2, 5d
-    section Platform
-        Docker Compose : p1, 01, 15d
-    section Database
-        Account        : d1, 01, 5d</code></pre>
 <h2 id="microsservicos">Microsserviços</h2>
 <p>A fim de implementar microsserviços em Spring Boot, aqui, é proposto uma abordagem de modularização de cada microsserviço, de forma que exista uma interface de comunicação Java a ser consumida por outros microsserviços, também em Java, e também um compromisso de implementação. Essa estratégia visa aumentar a produtividade do ambiente de desenvolvimento em Java, já que para o consumo da API por outros frameworks sempre será necessário reescrever as assinaturas de cada endpoint.</p>
 <h3 id="modularizacao">Modularização</h3>
