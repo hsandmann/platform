@@ -9,7 +9,7 @@ Key concepts of microservices include:
 - **Decentralization**: Microservices architecture favors decentralized governance. Teams have the freedom to choose the best technology stack that suits their service.
 - **Isolation of Failures**: If a microservice fails, it should not impact the availability of other services.
 - **Data Isolation**: Each microservice should have its own database to ensure that the services are loosely coupled and can evolve independently.
-- **Communication**: Microservices communicate with each other through well-defined APIs and protocols, typically HTTP/REST with [JSON](./jwt.md) or gRPC with Protobuf.
+- **Communication**: Microservices communicate with each other through well-defined APIs and protocols, typically HTTP/REST with [JSON](./security/jwt.md) or gRPC with Protobuf.
 - **Infrastructure Automation**: Due to the distributed nature of the microservices architecture, automation of infrastructure is a must. This includes automated provisioning, scaling, and deployment.
 - **Observability**: With many different services, it's important to have excellent monitoring and logging to detect and diagnose problems.
 

@@ -1,7 +1,7 @@
 
 How to avoid the classical..
 
-![It Works on My Machine](./assets/images/itworksonmymachine.png){ width="400" }
+![It Works on My Machine](../assets/images/itworksonmymachine.png){ width="400" }
 
 ?
 

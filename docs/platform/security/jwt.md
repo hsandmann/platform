@@ -1,6 +1,6 @@
 ## JWT - JSON Web Token
 
-JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519[^1] and it is a decentralized approach for security (which can support [horizontal scalability](./platform.md#horizontal-scalability-scale-out)).
+JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519[^1] and it is a decentralized approach for security (which can support [horizontal scalability](../concepts.md#horizontal-scalability-scale-out)).
 
 Here are the key components and concepts of JWT:
 
@@ -69,7 +69,7 @@ JWTs are widely used in web development due to their simplicity, flexibility, an
 
 ### Addtional Material
 
-- [Spring Cloud Security](./auth-service.md)
+- [Spring Cloud Security](../../handout/microservice-auth.md)
 
 - <a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i>
 

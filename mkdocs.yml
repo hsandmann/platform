@@ -58,7 +58,7 @@ nav:
     - Testing: ./api/testing.md
     - Documentation: ./api/documentation.md
   - Platform:
-    - Concepts: ./platform/concept.md
+    - Concepts: ./platform/concepts.md
     - Microservices: ./platform/microservices.md
     - Discovery: ./platform/discovery.md
     - Gateway: ./platform/gateway.md
@@ -69,7 +69,7 @@ nav:
       - Concepts: ./platform/security/concepts.md
       - JWT: ./platform/security/jwt.md
       - OAuth2: ./platform/security/oauth2.md
-      - Auth Service: ./platform/security/auth-service.md
+      # - Auth Service: ./platform/security/auth-service.md
       # - OpenID: openid.md
       # - SSO: sso.md
     - Communication: ./platform/communcation.md
