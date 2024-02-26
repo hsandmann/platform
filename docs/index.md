@@ -18,9 +18,9 @@ Ao final da disciplina o aluno será capaz de:
 2. Implementar e interconectar aplicações computacionais para a construção de plataformas de alto desempenho: escalabilidade por meio do uso de técnicas de computação em nuvem;
 3. Administrar um sistema de gerenciamento de nuvem, provisionando a infraestrutura necessária como um serviço;
 4. Construir, com o auxílio de frameworks, soluções de plataformas completas e integradas de forma profissional;
-5. Arquitetar e implementar linhas de produções de softwares robustos;
+5. Arquitetar e implementar linhas de produções de softwares robustos (CI/CD);
 6. Analisar, projetar e especificar uma solução de computação em nuvem mista baseada em hardware, software e redes para atender aos requisitos de determinado pacto de nível de serviço (SLA);
-7. Planejar e analisar o uso de plataformas empresariais como subsídio para criação de novos negócios.
+7. Planejar e analisar o uso de plataformas empresariais como subsídio para criação de novos negócios (PaaS).
 
 ## [Conteúdo Programático](#conteudo-programatico)
 
@@ -73,3 +73,5 @@ Artigos:
 - Spring. Spring Cloud. Disponível em: [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud). Acesso em: 19 dezembro 2023.
 
 - CHOI, K., Software Engineering Blogs. Disponível em: [https://github.com/kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs). Acesso em: 20 dezembro 2023.
+
+- Ghemawat, S. et al.. Towards Modern Development of Cloud Applications.  Proceedings of the 19th Workshop on Hot Topics in Operating Systems, 2023 - p. 110-117. Association for Computing Machinery, Providence, RI, USA. Disponível em: [doi:10.1145/3593856.3595909](https://doi.org/10.1145/3593856.3595909). Acesso em: 05 fevereiro de 2024.

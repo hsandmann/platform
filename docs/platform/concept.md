@@ -81,6 +81,18 @@ MVC stands for Model-View-Controller. It's a design pattern often used in web de
 The idea behind MVC is that each of these components can be developed and tested independently, which can simplify the overall development process.
 
 
+``` mermaid
+timeline
+    title Relevant Events
+    1991 : CORBA
+    1994 : GoF
+    1999 : J2EE 1.2 <br> initial specification
+    2002 : Spring
+    2006 : Java EE 5
+    2014 : Spring Boot
+    2019 : Jakarta EE 8
+```
+
 
 
 ## [High-perfomance Architectures](#high-perfomance-architectures)
@@ -269,3 +281,5 @@ While design patterns are valuable tools, it's essential to use them judiciously
 [^1]: GAMMA, E.; HELM, R.; JOHNSON, R., VLISSIDES, J., [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com.br/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/), 1ª ed., Addison-Wesley Professional, 1994.
 
 [^2]: [Wikipedia - CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+
+[^3]: [Gof](https://springframework.guru/gang-of-four-design-patterns/)

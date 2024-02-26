@@ -48,59 +48,64 @@ plugins:
 nav:
   - Home: index.md
   - Versions:
-    - 2024.1: 2024.1.md
+    - 2024.1: ./versions/2024.1.md
+  - Handout:
+    - Roadmap: ./handout/roadmap.md
+    - Account: ./handout/microservice-account.md
+    - Auth: ./handout/microservice-auth.md
   - API:
-    - Spring Boot Cloud: spring-boot-cloud.md
-    - Testing: testing.md
-    - Documentation: documentation.md
+    - Spring Boot Cloud: ./api/spring-boot-cloud.md
+    - Testing: ./api/testing.md
+    - Documentation: ./api/documentation.md
   - Platform:
-    - Concepts: platform.md
-    - Microservices: microservices.md
-    - Discovery: discovery.md
-    - Gateway: gateway.md
-    - Config: config.md
-    - Load Balancing: load-balancing.md
-    - Circuit Breaker: circuit-breaker.md
+    - Concepts: ./platform/concept.md
+    - Microservices: ./platform/microservices.md
+    - Discovery: ./platform/discovery.md
+    - Gateway: ./platform/gateway.md
+    - Config: ./platform/config.md
+    - Load Balancing: ./platform/load-balancing.md
+    - Circuit Breaker: ./platform/circuit-breaker.md
     - Security:
-      - Concepts: security.md
-      - JWT: jwt.md
-      - OAuth2: oauth2.md
-      - Auth Service: auth-service.md
+      - Concepts: ./platform/security/concepts.md
+      - JWT: ./platform/security/jwt.md
+      - OAuth2: ./platform/security/oauth2.md
+      - Auth Service: ./platform/security/auth-service.md
       # - OpenID: openid.md
       # - SSO: sso.md
-    - Communication: communcation.md
-    - Monitoring: monitoring.md
-    - Logging: logging.md
-    - Tracing: tracing.md
+    - Communication: ./platform/communcation.md
+    - Observability:
+      - Monitoring: ./platform/observability/monitoring.md
+      - Logging: ./platform/observability/logging.md
+      - Tracing: ./platform/observability/tracing.md
     - Messaging: 
-      - Concepts: messaging.md
-      - Kafka: kafka.md
-      - RabbitMQ: rabbitmq.md
+      - Concepts: ./platform/messaging/concepts.md
+      - Kafka: ./platform/messaging/kafka.md
+      - RabbitMQ: ./platform/messaging/rabbitmq.md
     - Database:
-      - Flyway: flyway.md
-      - Caching: caching.md
+      - Flyway: ./platform/database/flyway.md
+      - Caching: ./platform/database/caching.md
       # - MongoDB: mongodb.md
       # - Elasticsearch: elasticsearch.md
-    - Payment: payment.md
+    - Payment: ./platform/payment.md
   - DevOps:
-    - Concepts: devops.md
-    - Version Control: version-control-system.md
-    - Docker: docker.md
-    - Package: package.md
-    - Release: release.md
+    - Concepts: ./devops/concepts.md
+    - Version Control: ./devops/version-control-system.md
+    - Docker: ./devops/docker.md
+    - Packaging: ./devops/packaging.md
+    - Release: ./devops/release.md
     # - Nexus: nexus.md
     # - SonarQube: sonarqube.md
-    - Kubernetes: kubernetes.md
+    - Kubernetes: ./devops/kubernetes.md
   - Cloud Computing:
-    - AWS: aws.md
-    - GCP: gcp.md
-    - Azure: azure.md
-    - GitActions: gitactions.md
-    - Terraform: terraform.md
-  - Platform as an Innovation:
-    - Concepts: platform-as-an-innovation.md
+    - AWS: ./cloud/aws.md
+    - GCP: ./cloud/gcp.md
+    - Azure: ./cloud/azure.md
+    - GitActions: ./cloud/gitactions.md
+    - Terraform: ./cloud/terraform.md
+  - Business:
+    - Concepts: ./business/concepts.md
   - Appendix:
-    - REST vs GraphQL: rest-vs-graphql.md
-    - Versioning REST APIs: versioning-rest-apis.md
-    - TLS for microservices: tls-for-microservices.md
-  - Contributors: contributors.md
+    - REST vs GraphQL: ./appendix/rest-vs-graphql.md
+    - Versioning REST APIs: ./appendix/versioning-rest-apis.md
+    - TLS for microservices: ./appendix/tls-for-microservices.md
+  - Disclaimer: ./disclaimer.md

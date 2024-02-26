@@ -12,3 +12,5 @@ Key features of Git include:
 
 
 SCM - Supply-chain-management software
+
+https://twitter.com/milan_milanovic/status/1745435542127349899
