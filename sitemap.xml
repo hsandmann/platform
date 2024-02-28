@@ -101,17 +101,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hsandmann.github.io/platform/handout/microservice-account/</loc>
+         <loc>https://hsandmann.github.io/platform/handout/microservices/account/</loc>
          <lastmod>2024-02-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hsandmann.github.io/platform/handout/microservice-auth/</loc>
+         <loc>https://hsandmann.github.io/platform/handout/microservices/auth/</loc>
          <lastmod>2024-02-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hsandmann.github.io/platform/handout/roadmap/</loc>
+         <loc>https://hsandmann.github.io/platform/handout/microservices/roadmap/</loc>
          <lastmod>2024-02-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
