@@ -113,7 +113,7 @@ classDiagram
 
 ## POM dependecy
 
-Note que esse microsserviço possui dependência da interface, o **Account**. Logo, se torna necessário explicitar essa dependência no `pom.xml` do microsserviço [Account](./microservice-account.md).
+Note que esse microsserviço possui dependência da interface, o **Account**. Logo, se torna necessário explicitar essa dependência no `pom.xml` do microsserviço [Account](./account.md).
 
 ``` xml
 <dependency>
