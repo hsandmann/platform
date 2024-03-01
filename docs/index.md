@@ -2,9 +2,11 @@
 
 <!-- ![Insper](https://www.insper.edu.br/wp-content/themes/insper/dist/image/logo.png){ align=right } -->
 
-Carga Horária: 80
+???+ info inline end
 
-*Semestre: 5º período*
+    Carga Horária: 80
+
+    *Semestre: 5º período*
 
 ## [Ementa](#ementa)
 
@@ -24,8 +26,8 @@ Ao final da disciplina o aluno será capaz de:
 
 ## [Conteúdo Programático](#conteudo-programatico)
 
-1. Conceitos de Arquitetura e Micro Serviços;
-2. Micro Serviços com Interface API - RESTful;
+1. Conceitos de Arquitetura e Microsserviços;
+2. Microsserviços com Interface API - RESTful;
 3. Introdução a Contêineres;
 4. Introdução e Implementação de Design Patterns;
 5. Apresentação de Design Patterns mais Complexos: Segurança, Mensageria, Cache, etc;
