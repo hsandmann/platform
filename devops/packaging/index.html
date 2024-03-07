@@ -2036,6 +2036,18 @@
 - Dependency management including automatic updating, dependency closures (also known as transitive dependencies)
 - Able to easily work with multiple projects at the same time.
 - Large and mature community with a large ecosystem of plugins and integrations.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+</span></code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</span></code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>spring-boot:run
+</span></code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span>versions:display-dependency-updates
+</span></code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn<span class="w"> </span>dependency:analyze
+</span></code></pre></div>
+<p>more about
+<a href="https://maven.apache.org/plugins/maven-dependency-plugin/usage.html" target="_blank">Maven dependency plugin</a></p>
 <h2 id="gradle">Gradle</h2>
 <p>Gradle is another build automation tool that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language (DSL) instead of the XML form used by Apache Maven for declaring the project configuration. Gradle provides a platform to support the entire development lifecycle of a software project.</p>
 <p>Key Features:
