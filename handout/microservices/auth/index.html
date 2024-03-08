@@ -16,7 +16,7 @@
         <link rel="prev" href="../account/">
       
       
-        <link rel="next" href="../gateway/">
+        <link rel="next" href="../discovery/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -627,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../discovery.md" class="md-nav__link">
+      <a href="../discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,135 +653,6 @@
   
   <span class="md-ellipsis">
     Gateway
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    DevOps
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            DevOps
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../devops-roadmap.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Roadmap
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../devops-jenkins.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Jenkins
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../devops-docker.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../devops-kubernetes.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Kubernetes
   </span>
   
 
@@ -2324,6 +2195,7 @@ User-&gt;&gt;User: stores the token to use for the next requests</code></pre>
       &lt;&lt;interface&gt;&gt;
       register(RegisterIn)
       authenticate(CredentialIn): LoginOut
+      solve(SolveIn): SolveOut
     }
     class RegisterIn {
       &lt;&lt;record&gt;&gt;
@@ -2339,6 +2211,16 @@ User-&gt;&gt;User: stores the token to use for the next requests</code></pre>
     class LoginOut {
       &lt;&lt;Record&gt;&gt;
       String token
+    }
+    class SolveIn {
+      &lt;&lt;Record&gt;&gt;
+      String token
+    }
+    class SolveOut {
+      &lt;&lt;Record&gt;&gt;
+      String id
+      String name
+      String role
     }
   }
   namespace Resource {
@@ -2367,6 +2249,7 @@ User-&gt;&gt;User: stores the token to use for the next requests</code></pre>
     class Token {
       &lt;&lt;record&gt;&gt;
       String id
+      String name
       String role
     }
   }
