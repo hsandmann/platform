@@ -86,11 +86,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hsandmann.github.io/platform/devops/observability/</loc>
-         <lastmod>2024-03-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hsandmann.github.io/platform/devops/packaging/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
@@ -102,6 +97,11 @@
     </url>
     <url>
          <loc>https://hsandmann.github.io/platform/devops/version-control-system/</loc>
+         <lastmod>2024-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/handout/devops/observability/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
