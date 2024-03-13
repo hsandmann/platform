@@ -23,7 +23,7 @@ A fim do sistema possuir um controle de acesso, é conveniente a criação de um
     {
         "name": "Antonio do Estudo",
         "email": "acme@insper.edu.br",
-        "password": "123@"
+        "password": "123@321"
     }
     ```
     
@@ -56,7 +56,7 @@ A fim do sistema possuir um controle de acesso, é conveniente a criação de um
     ``` json
     {
         "email": "acme@insper.edu.br",
-        "password": "123@"
+        "password": "123@321"
     }
     ```
 
@@ -96,6 +96,7 @@ classDiagram
       <<interface>>
       register(RegisterIn)
       authenticate(CredentialIn): LoginOut
+      solve(SolveIn): SolveOut
     }
     class RegisterIn {
       <<record>>
@@ -111,6 +112,16 @@ classDiagram
     class LoginOut {
       <<Record>>
       String token
+    }
+    class SolveIn {
+      <<Record>>
+      String token
+    }
+    class SolveOut {
+      <<Record>>
+      String id
+      String name
+      String role
     }
   }
   namespace Resource {
@@ -139,6 +150,7 @@ classDiagram
     class Token {
       <<record>>
       String id
+      String name
       String role
     }
   }
@@ -200,7 +212,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients(basePackages = {
-	"store.account"
+	"insper.store.account"
 })
 @EnableDiscoveryClient
 @SpringBootApplication
@@ -235,12 +247,12 @@ Note que esse microsserviço possui dependência de outro, o [Account](./account
   <artifactId>jjwt-api</artifactId>
   <version>0.12.3</version>
 </dependency>
-    <dependency>
-        <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt-impl</artifactId>
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-impl</artifactId>
   <version>0.12.3</version>
-        <scope>runtime</scope>
-    </dependency>
+  <scope>runtime</scope>
+</dependency>
 <dependency>
   <groupId>io.jsonwebtoken</groupId>
   <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->

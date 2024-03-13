@@ -12,8 +12,7 @@ Key features of Kubernetes include:
 - **Secret and configuration management**: Kubernetes lets you store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys. You can deploy and update secrets and application configuration without rebuilding your container images, and without exposing secrets in your stack configuration.
 
 
-
-https://minikube.sigs.k8s.io/docs/start/
+[MiniKube](https://minikube.sigs.k8s.io/docs/start/)
 
 
 https://cloud.google.com/learn/what-is-kubernetes?hl=pt-br#section-4
