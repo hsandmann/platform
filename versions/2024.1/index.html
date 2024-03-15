@@ -2199,10 +2199,11 @@
 </div>
 </div>
 <h2 id="repository-template"><a href="#repository">Repository Template</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Dev</label><label for="__tabbed_3_2">Ops</label></div>
+<div class="admonition dev">
+<p class="admonition-title">Dev</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Infra</label><label for="__tabbed_3_2">API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Infra</p>
 <table>
 <thead>
 <tr>
@@ -2221,7 +2222,8 @@
 </tr>
 </tbody>
 </table>
-<p>API</p>
+</div>
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -2247,8 +2249,14 @@
 </tbody>
 </table>
 </div>
+</div>
+</div>
+</div>
+<div class="admonition ops">
+<p class="admonition-title">Ops</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Docker</label><label for="__tabbed_4_2">Jenkins</label><label for="__tabbed_4_3">Kubernetes</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<p>Docker</p>
 <table>
 <thead>
 <tr>
@@ -2263,61 +2271,116 @@
 </tr>
 </tbody>
 </table>
-<p>Jenkins</p>
-<p>Kubernetes</p>
+</div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
 </div>
 </div>
 </div>
 <h2 id="project"><a href="#project">Project</a></h2>
-<blockquote>
-<p>Projetos começam. Terminam?</p>
-</blockquote>
-<p>Sugestão de Roteiros</p>
-<ol>
-<li>
-<p>Organização</p>
-<p>a. Eleja uma ferramenta para gerenciar a documentação da arquitetura</p>
+<div class="admonition individual">
+<p class="admonition-title">Individual</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Roteiro 1</label><label for="__tabbed_5_2">Roteiro 2</label><label for="__tabbed_5_3">Roteiro 3</label><label for="__tabbed_5_4">Participação</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Testes</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Roteiros de testes de funcionalidades ou de testes de carga</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Documentação dos resultados obtidos</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Bottlenecks</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Implementação de um microserviço de <em>bottleneck</em> para o projeto:</p>
+<ul>
+<li>Mensageria</li>
+<li>Resiliência</li>
+<li>Configuração</li>
+<li>Caching da dados</li>
+<li>Payments (sandboxes)</li>
+</ul>
 </li>
-<li>
-<p>Planejar</p>
-<p>a. Monte um diagrama com os domínios e microsserviços candidatos de seu sistema;</p>
-<p>b. Tente levantar quais são os <em>endpoints</em> que o sistema necessita;</p>
-<div class="language-text highlight"><pre><span></span><code>* Separe os *endpoints* entre *abertos* e *fechados*;
-* Se necessário, projete o microsserviço de segurança;
-* Adicione ao seu projeto um fluxo de informáções entre microsserviços;
-</code></pre></div>
-<p>c. Identifique possíveis (teóricos) <em>bottlenecks</em> em seu sistema;</p>
-<div class="language-text highlight"><pre><span></span><code>- Se existirem *bottlenecks*, então, elenque (sem implementar) possíveis soluções.
-</code></pre></div>
-<p>d. Revise toda a arquitetura montada, reiniciando todo o processo pelo <strong>item 1</strong>, se necessário.</p>
-</li>
-<li>
-<p>Criar</p>
-<p>a. Escolha um <em>framework</em> adequado (mandatório Spring Boot Cloud);</p>
-<p>b. Implemente a API;</p>
-<p>c. Documente a API (<a href="https://springdoc.org/">OpenAPI</a>)</p>
-</li>
-<li>
-<p>Testar</p>
-</li>
-<li>
-<p>Empacotar</p>
-</li>
-<li>
-<p>CI/CD</p>
-</li>
-<li>
-<p>Escalando o Sistema</p>
-<p>a. distribuia</p>
-<p>b. configure</p>
-<p>c. monitore</p>
-</li>
-<li>
-<p>Mitigando <em>Bottlenecks</em></p>
-<p>a. sobre os <em>bottlenecks</em> identificados, teoricamente ou durante a implementação, crie um plano de alteração na arquitetura de maneira a mitigar tais impactos;</p>
-<p>b. revise toda a arquitetura em busca de coerência.</p>
-</li>
-</ol>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Cloud</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Roteiro de publicação de um microsserviço em Cloud</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Contribuições no GitHub dos participantes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Documentação das reuniões (dayly, retro, etc)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Nota geral atribuída pelo professor mas dividida pelo grupo</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition team">
+<p class="admonition-title">Team</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:6"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><input id="__tabbed_6_4" name="__tabbed_6" type="radio" /><input id="__tabbed_6_5" name="__tabbed_6" type="radio" /><input id="__tabbed_6_6" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Checkpoint 1</label><label for="__tabbed_6_2">Checkpoint 2</label><label for="__tabbed_6_3">Checkpoint 3</label><label for="__tabbed_6_4">Checkpoint 4</label><label for="__tabbed_6_5">Apresentação</label><label for="__tabbed_6_6">Projeto</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Desenvolvimento Spring Cloud</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Serviço de discovery</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Serviço de gateway</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Serviço de autenticação e autorização</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 3 microsserviços com persistência de dados</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Comunicação entre, ao menos 2, microsserviços, além dos (Gateway <span class="arithmatex">\(\rightarrow\)</span> Auth <span class="arithmatex">\(\rightarrow\)</span> Account)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Monitoramento com dashboard de microsserviços</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Documentação das APIs padrão Swagger</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Cluster em Docker Compose para deploy dos microsserviços</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Testes e Empacotamento</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Plano de testes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Script Jenkins - <a href="https://www.jenkins.io/doc/book/pipeline/pipeline-as-code/" target="_blank">Pipeline as Code</a></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>K8s</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Release no <a href="https://kubernetes.io/pt-br/docs/tutorials/hello-minikube/" target="_blank">Minikube</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Scripts declarativos dos serviços</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Platform as a Service</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Plano de uso da plataforma como um produto (PaaS)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Vislumbrar uso da plataforma por terceiros</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Storytelling (começa, meio, fim)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Fluídez</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Qualidade do material apresentado</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Tempo</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Participação</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Checkpoint 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Checkpoint 2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Checkpoint 3</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Checkpoint 4</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Planejamento</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Documentação (markdown)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Frontend (apenas funcionalidades básicas - login, registro, dashboard)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 
 
 
