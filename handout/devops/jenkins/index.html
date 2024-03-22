@@ -10,25 +10,25 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/devops/packaging/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/handout/devops/jenkins/">
       
       
-        <link rel="prev" href="../docker/">
+        <link rel="prev" href="../observability/">
       
       
-        <link rel="next" href="../release/">
+        <link rel="next" href="../../../api/spring-boot-cloud/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
-        <title>Packaging - Platforms, Microservices, DevOps and APIs</title>
+        <title>Jenkins - Platforms, Microservices, DevOps and APIs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
       
       
   
@@ -88,18 +88,18 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+      <link rel="stylesheet" href="../../../assets/_markdown_exec_ansi.css">
     
-      <link rel="stylesheet" href="../../termynal.css">
+      <link rel="stylesheet" href="../../../termynal.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -110,7 +110,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -120,11 +120,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#maven" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -138,7 +133,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Platforms, Microservices, DevOps and APIs" class="md-header__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
+    <a href="../../.." title="Platforms, Microservices, DevOps and APIs" class="md-header__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -158,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Packaging
+              Jenkins
             
           </span>
         </div>
@@ -233,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Platforms, Microservices, DevOps and APIs" class="md-nav__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
+    <a href="../../.." title="Platforms, Microservices, DevOps and APIs" class="md-nav__button md-logo" aria-label="Platforms, Microservices, DevOps and APIs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -251,7 +246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -308,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../versions/2024.1/" class="md-nav__link">
+      <a href="../../../versions/2024.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,19 +328,21 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -359,7 +356,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Handout
@@ -410,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handout/microservices/roadmap/" class="md-nav__link">
+      <a href="../../microservices/roadmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -431,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handout/microservices/account/" class="md-nav__link">
+      <a href="../../microservices/account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -452,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handout/microservices/auth/" class="md-nav__link">
+      <a href="../../microservices/auth/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handout/microservices/discovery/" class="md-nav__link">
+      <a href="../../microservices/discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handout/microservices/gateway/" class="md-nav__link">
+      <a href="../../microservices/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,19 +517,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -546,7 +545,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -560,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../handout/devops/observability/" class="md-nav__link">
+      <a href="../observability/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,10 +577,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../handout/devops/jenkins/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -590,6 +596,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -654,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/spring-boot-cloud/" class="md-nav__link">
+      <a href="../../../api/spring-boot-cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/testing/" class="md-nav__link">
+      <a href="../../../api/testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -696,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/documentation/" class="md-nav__link">
+      <a href="../../../api/documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/concepts/" class="md-nav__link">
+      <a href="../../../platform/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/microservices/" class="md-nav__link">
+      <a href="../../../platform/microservices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -803,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/discovery/" class="md-nav__link">
+      <a href="../../../platform/discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -824,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/gateway/" class="md-nav__link">
+      <a href="../../../platform/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -845,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/config/" class="md-nav__link">
+      <a href="../../../platform/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/load-balancing/" class="md-nav__link">
+      <a href="../../../platform/load-balancing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -887,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/circuit-breaker/" class="md-nav__link">
+      <a href="../../../platform/circuit-breaker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/security/concepts/" class="md-nav__link">
+      <a href="../../../platform/security/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/security/jwt/" class="md-nav__link">
+      <a href="../../../platform/security/jwt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -987,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/security/oauth2/" class="md-nav__link">
+      <a href="../../../platform/security/oauth2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1016,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/communcation/" class="md-nav__link">
+      <a href="../../../platform/communcation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1074,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/observability/monitoring/" class="md-nav__link">
+      <a href="../../../platform/observability/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1095,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/observability/logging/" class="md-nav__link">
+      <a href="../../../platform/observability/logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1116,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/observability/tracing/" class="md-nav__link">
+      <a href="../../../platform/observability/tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1182,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/messaging/concepts/" class="md-nav__link">
+      <a href="../../../platform/messaging/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1203,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/messaging/kafka/" class="md-nav__link">
+      <a href="../../../platform/messaging/kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/messaging/rabbitmq/" class="md-nav__link">
+      <a href="../../../platform/messaging/rabbitmq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/database/flyway/" class="md-nav__link">
+      <a href="../../../platform/database/flyway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/database/caching/" class="md-nav__link">
+      <a href="../../../platform/database/caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1340,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platform/payment/" class="md-nav__link">
+      <a href="../../../platform/payment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1365,21 +1372,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1393,7 +1398,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -1407,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
+      <a href="../../../devops/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1428,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../version-control-system/" class="md-nav__link">
+      <a href="../../../devops/version-control-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1449,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../../devops/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1467,28 +1472,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Packaging
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../devops/packaging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1497,42 +1484,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#maven" class="md-nav__link">
-    <span class="md-ellipsis">
-      Maven
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gradle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gradle
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1545,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../release/" class="md-nav__link">
+      <a href="../../../devops/release/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kubernetes/" class="md-nav__link">
+      <a href="../../../devops/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/aws/" class="md-nav__link">
+      <a href="../../../cloud/aws/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/gcp/" class="md-nav__link">
+      <a href="../../../cloud/gcp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/azure/" class="md-nav__link">
+      <a href="../../../cloud/azure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1694,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/gitactions/" class="md-nav__link">
+      <a href="../../../cloud/gitactions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1715,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/terraform/" class="md-nav__link">
+      <a href="../../../cloud/terraform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1780,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../business/concepts/" class="md-nav__link">
+      <a href="../../../business/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1845,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/rest-vs-graphql/" class="md-nav__link">
+      <a href="../../../appendix/rest-vs-graphql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1866,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/versioning-rest-apis/" class="md-nav__link">
+      <a href="../../../appendix/versioning-rest-apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1887,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/tls-for-microservices/" class="md-nav__link">
+      <a href="../../../appendix/tls-for-microservices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1915,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../disclaimer/" class="md-nav__link">
+      <a href="../../../disclaimer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1946,32 +1897,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#maven" class="md-nav__link">
-    <span class="md-ellipsis">
-      Maven
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gradle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gradle
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1985,38 +1910,46 @@
                   
 
 
-  <h1>Packaging</h1>
+  <h1>Jenkins</h1>
 
-<h2 id="maven">Maven</h2>
-<p>Maven uses an XML file to describe the software project being built, its dependencies on other external modules and components, the build order, directories, and required plugins. It comes with pre-defined targets for performing certain well-defined tasks such as compilation of code and its packaging.</p>
-<p>Key Features:
-- Simple project setup that follows best practices.
-- Dependency management including automatic updating, dependency closures (also known as transitive dependencies)
-- Able to easily work with multiple projects at the same time.
-- Large and mature community with a large ecosystem of plugins and integrations.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># docker compose up -d --build --force-recreate</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infra</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">jenkins</span><span class="p">:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">dockerfile_inline</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="no">FROM jenkins/jenkins:jdk17</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="no">USER root</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="no">RUN apt-get update &amp;&amp; apt-get install -y lsb-release</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="no">RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">          </span><span class="no">https://download.docker.com/linux/debian/gpg</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="no">RUN echo &quot;deb [arch=$(dpkg --print-architecture) \</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="no">signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="no">https://download.docker.com/linux/debian \</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">          </span><span class="no">$(lsb_release -cs) stable&quot; &gt; /etc/apt/sources.list.d/docker.list</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="no">RUN apt-get update &amp;&amp; apt-get install -y docker-ce</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="no">RUN usermod -aG docker jenkins</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="no">USER jenkins</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="c1"># RUN jenkins-plugin-cli --plugins &quot;blueocean docker-workflow&quot;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9000:8080</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50000:50000</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CONFIG/jenkins:/var/jenkins_home</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="c1"># for mac distro</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/run/docker.sock:/var/run/docker.sock</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infra</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nt">networks</span><span class="p">:</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">  </span><span class="nt">infra</span><span class="p">:</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bridge</span>
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install
-</span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>spring-boot:run
-</span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span>versions:display-dependency-updates
-</span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn<span class="w"> </span>dependency:analyze
-</span></code></pre></div>
-<p>more about
-<a href="https://maven.apache.org/plugins/maven-dependency-plugin/usage.html" target="_blank">Maven dependency plugin</a></p>
-<h2 id="gradle">Gradle</h2>
-<p>Gradle is another build automation tool that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language (DSL) instead of the XML form used by Apache Maven for declaring the project configuration. Gradle provides a platform to support the entire development lifecycle of a software project.</p>
-<p>Key Features:
-- Declarative builds and build-by-convention.
-- Language for dependency-based programming.
-- Structure your build.
-- Deep API.
-- Multi-project builds.
-- Many ways to manage dependencies.
-- Integration with existing structures.
-- Ease of migration.</p>
 
 
 
@@ -2037,7 +1970,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2024</span>
   </span>
 
     
@@ -2086,18 +2019,18 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../termynal.js"></script>
+        <script src="../../../termynal.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
