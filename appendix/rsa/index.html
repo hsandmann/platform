@@ -10,13 +10,13 @@
         <meta name="author" content="Sandmann, H.">
       
       
-        <link rel="canonical" href="https://hsandmann.github.io/platform/platform/circuit-breaker/">
+        <link rel="canonical" href="https://hsandmann.github.io/platform/appendix/rsa/">
       
       
-        <link rel="prev" href="../load-balancing/">
+        <link rel="prev" href="../tls-for-microservices/">
       
       
-        <link rel="next" href="../security/concepts/">
+        <link rel="next" href="../../disclaimer/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Circuit Breaker - Platforms, Microservices, DevOps and APIs</title>
+        <title>RSA Algorithm - Platforms, Microservices, DevOps and APIs</title>
       
     
     
@@ -122,7 +122,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spring-cloud-circuit-breaker" class="md-skip">
+        <a href="#pkcs" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Circuit Breaker
+              RSA Algorithm
             
           </span>
         </div>
@@ -721,21 +721,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -749,7 +747,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Platform
@@ -763,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
+      <a href="../../platform/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -784,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../microservices/" class="md-nav__link">
+      <a href="../../platform/microservices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -805,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../discovery/" class="md-nav__link">
+      <a href="../../platform/discovery/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -826,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gateway/" class="md-nav__link">
+      <a href="../../platform/gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../platform/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -868,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../load-balancing/" class="md-nav__link">
+      <a href="../../platform/load-balancing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -886,28 +884,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Circuit Breaker
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../platform/circuit-breaker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,33 +896,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#spring-cloud-circuit-breaker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spring Cloud Circuit Breaker
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -992,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/concepts/" class="md-nav__link">
+      <a href="../../platform/security/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1013,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/jwt/" class="md-nav__link">
+      <a href="../../platform/security/jwt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1034,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/oauth2/" class="md-nav__link">
+      <a href="../../platform/security/oauth2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../communcation/" class="md-nav__link">
+      <a href="../../platform/communcation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1121,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../observability/monitoring/" class="md-nav__link">
+      <a href="../../platform/observability/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1142,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../observability/logging/" class="md-nav__link">
+      <a href="../../platform/observability/logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1163,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../observability/tracing/" class="md-nav__link">
+      <a href="../../platform/observability/tracing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1229,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../messaging/concepts/" class="md-nav__link">
+      <a href="../../platform/messaging/concepts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1250,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../messaging/kafka/" class="md-nav__link">
+      <a href="../../platform/messaging/kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1271,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../messaging/rabbitmq/" class="md-nav__link">
+      <a href="../../platform/messaging/rabbitmq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1337,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/flyway/" class="md-nav__link">
+      <a href="../../platform/database/flyway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1358,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/caching/" class="md-nav__link">
+      <a href="../../platform/database/caching/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1387,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../payment/" class="md-nav__link">
+      <a href="../../platform/payment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1796,19 +1749,21 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -1822,7 +1777,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Appendix
@@ -1836,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/rest-vs-graphql/" class="md-nav__link">
+      <a href="../rest-vs-graphql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1857,7 +1812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/versioning-rest-apis/" class="md-nav__link">
+      <a href="../versioning-rest-apis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1878,7 +1833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/tls-for-microservices/" class="md-nav__link">
+      <a href="../tls-for-microservices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1896,10 +1851,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../appendix/rsa/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RSA Algorithm
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1908,6 +1881,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pkcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      PKCS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rsa-encryption-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      The RSA Encryption Algorithm
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1965,9 +1974,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#spring-cloud-circuit-breaker" class="md-nav__link">
+  <a href="#pkcs" class="md-nav__link">
     <span class="md-ellipsis">
-      Spring Cloud Circuit Breaker
+      PKCS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rsa-encryption-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      The RSA Encryption Algorithm
     </span>
   </a>
   
@@ -1988,22 +2006,14 @@
                   
 
 
-  <h1>Circuit Breaker</h1>
+  <h1>RSA Algorithm</h1>
 
-<h2 id="spring-cloud-circuit-breaker">Spring Cloud Circuit Breaker</h2>
-<p>Spring Cloud Circuit Breaker is a service resilience pattern that allows you to provide default behavior when a network failure or any exception occurs while invoking a remote service. It's an abstraction over various circuit breaker implementations like Netflix Hystrix, Resilience4j, Sentinel, etc.</p>
-<p>Key components of Spring Cloud Circuit Breaker include:</p>
-<ul>
-<li>
-<p><strong>Dependency</strong>: To use Spring Cloud Circuit Breaker, you need to include the <code>spring-cloud-starter-circuitbreaker-{implementation}</code> dependency in your project, where <code>{implementation}</code> could be <code>hystrix</code>, <code>resilience4j</code>, <code>sentinel</code>, etc.</p>
-</li>
-<li>
-<p><strong>Configuration</strong>: You can configure the circuit breaker parameters like failure threshold, delay time, etc. in the application.properties (or application.yml) file.</p>
-</li>
-<li>
-<p><strong>Usage</strong>: You can use the <code>@CircuitBreaker</code> annotation on a method to apply the circuit breaker pattern. If the method throws an exception, the circuit breaker will open and provide a fallback method.</p>
-</li>
-</ul>
+<h2 id="pkcs"><a href="" target="_blank">PKCS</a></h2>
+<h2 id="the-rsa-encryption-algorithm"><a href="#the-rsa-encryption-algorithm">The RSA Encryption Algorithm</a></h2>
+<p><a href="https://youtu.be/4zahvcJ9glg" target="_blank">The RSA Encryption Algorithm (1 of 2: Generating the Keys)</a></p>
+<p><a href="https://youtu.be/4zahvcJ9glg" target="_blank"><img alt="" src="https://img.youtube.com/vi/4zahvcJ9glg/0.jpg" width="80%" /></a></p>
+<p><a href="https://youtu.be/oOcTVTpUsPQ" target="_blank">The RSA Encryption Algorithm (2 of 2: Generating the Keys)</a>
+<a href="https://youtu.be/oOcTVTpUsPQ" target="_blank"><img alt="" src="https://img.youtube.com/vi/oOcTVTpUsPQ/0.jpg" width="80%" /></a></p>
 
 
 
@@ -2024,7 +2034,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2024</span>
   </span>
 
     
