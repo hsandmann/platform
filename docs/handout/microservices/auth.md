@@ -7,7 +7,7 @@ A fim do sistema possuir um controle de acesso, é conveniente a criação de um
     * Resource
   3. [Documentação](#documentacao)
   4. [Integração](#integracao)
-  5. [Token](token)
+  5. [Token](#token)
   6. [Docker](#docker)
 
 ## Endpoints
