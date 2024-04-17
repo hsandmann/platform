@@ -1,3 +1,9 @@
+
+
+* Logging
+* Monitoring
+* Tracing
+
 ## Microservice
 
 ``` xml title="pom.xml""
@@ -63,16 +69,34 @@ scrape_configs:
     scrape_interval: 1s
     static_configs:
       - targets:
-        - host.docker.internal:8443
+        - gateway:8080
         labels:
           application: 'Gateway Application'
+
+  - job_name: 'AuthMetrics'
+    metrics_path: '/auth/actuator/prometheus'
+    scrape_interval: 1s
+    static_configs:
+      - targets:
+        - auth:8080
+        labels:
+          application: 'Auth Application'
+
+  - job_name: 'AccountMetrics'
+    metrics_path: '/accounts/actuator/prometheus'
+    scrape_interval: 1s
+    static_configs:
+      - targets:
+        - account:8080
+        labels:
+          application: 'Account Application'
 ```
 
 [http://localhost:9090/](http://localhost:9090/){target="_blank"}
 
 ## [Grafana](https://grafana.com){target="_blank"}
 
-``` yaml title="$VOLUME/grafana/provisioning/datasources/datasourse.yml"
+``` yaml title="$VOLUME/grafana/provisioning/datasources/datasources.yml"
 apiVersion: 1
 datasources:
   - name: Prometheus

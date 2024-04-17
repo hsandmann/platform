@@ -52,14 +52,17 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true  
   - footnotes
   - tables
-  
+
 plugins:
   - glightbox
   - git-revision-date-localized
   - search
   - markdown-exec
+  - swagger-ui-tag
   - termynal:
       prompt_literal_start:
         - "$"
@@ -69,7 +72,6 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
 
 nav:
   - Home: index.md
@@ -85,9 +87,9 @@ nav:
     - DevOps:
       - Observability: ./handout/devops/observability.md
     #   - Roadmap: ./handout/devops-roadmap.md
-    #   - Jenkins: ./handout/devops-jenkins.md
+      - Jenkins: ./handout/devops/jenkins.md
     #   - Docker: ./handout/devops-docker.md
-    #   - Kubernetes: ./handout/devops-kubernetes.md
+      - Kubernetes: ./handout/devops/kubernetes.md
   - API:
     - Spring Boot Cloud: ./api/spring-boot-cloud.md
     - Testing: ./api/testing.md
@@ -143,4 +145,6 @@ nav:
     - REST vs GraphQL: ./appendix/rest-vs-graphql.md
     - Versioning REST APIs: ./appendix/versioning-rest-apis.md
     - TLS for microservices: ./appendix/tls-for-microservices.md
+    - RSA Algorithm: ./appendix/rsa.md
+    - Oh My Zsh: ./appendix/ohmyzsh.md
   - Disclaimer: ./disclaimer.md

@@ -9,6 +9,8 @@ Key concepts of DevOps include:
 - **Monitoring and Logging**: Keeping track of how applications and systems are performing in real-time to understand ongoing IT infrastructure status.
 - **Communication and Collaboration**: Increased communication and collaboration in an organization is one of the key cultural aspects of DevOps. The use of DevOps tooling and automation of the software delivery process tends to increase collaboration between the teams.
 
+![](https://github.com/ByteByteGoHq/system-design-101/blob/main/images/netflix-ci-cd.jpg?raw=true)
+
 <figure markdown>
   ![DevOps - Chain from Dev to Ops](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Devops-toolchain.svg/2560px-Devops-toolchain.svg.png){ width="100%" }
   <figcaption><i>Source: <a href="https://pt.wikipedia.org/wiki/DevOps" target="_blank">Wikipedia - Devops</a></i></figcaption>
@@ -39,53 +41,7 @@ The goal of NoOps is to allow the software developers to focus on writing new fe
 
 https://www.jenkins.io/doc/tutorials/build-a-java-app-with-maven/
 
-Install Jenkins on Docker
 
-``` yaml
-version: '3.8'
-name: infra
-
-services:
-
-  jenkins:
-    container_name: jenkins
-    build:
-      context: ../infra/
-      dockerfile_inline: |
-        FROM jenkins/jenkins:jdk17
-        USER root
-        RUN apt-get update && apt-get install -y lsb-release
-        RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
-          https://download.docker.com/linux/debian/gpg
-        RUN echo "deb [arch=$(dpkg --print-architecture) \
-          signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
-          https://download.docker.com/linux/debian \
-          $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
-        RUN apt-get update && apt-get install -y docker-ce-cli
-        USER jenkins
-        # RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
-    ports:
-      - 9000:8080
-      - 50000:50000
-    volumes:
-      - ./data/jenkins_home:/var/jenkins_home
-    restart: always
-    networks:
-      - private-network
-
-networks:
-  private-network:
-    driver: bridge
-```
-
-``` shell
-docker compose up -d --build
-```
-
-The will be avaliable at:
-``` shell
-http://localhost:9000
-```
 
 Jenkins
 
