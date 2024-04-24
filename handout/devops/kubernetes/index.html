@@ -761,8 +761,21 @@
 <article class="md-content__inner md-typeset">
 <h1>Kubernetes</h1>
 <h2 id="minikube">Minikube</h2>
+<p>FIRST:</p>
+<p>Change the jenkins <code>docker compose</code>.</p>
 <p>Versão light do kubernetes, para rodar em máquinas locais.</p>
 <p><a href="https://minikube.sigs.k8s.io/docs/start/" target="_blank">Instalação do Kubernetes</a></p>
+<p>Para Inicializar o Minikube após a instalação, utilize:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>minikube<span class="w"> </span>start<span class="w"> </span>--driver<span class="o">=</span>docker
+</span></code></pre></div>
+<p>Dashboard
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>minikube<span class="w"> </span>dashboard
+</span></code></pre></div></p>
+<p>Service:</p>
+<p>ClusterIp
+NodePort
+LocadBalance</p>
+<p><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/">https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/</a></p>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Last update">
