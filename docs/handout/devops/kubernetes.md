@@ -62,6 +62,10 @@ kubectl api-resources
 kubectl logs <pod>
 ```
 
+``` shell
+kubectl describe pod <pod>
+```
+
 ## Services
 
 - ClusterIp: apenas dentro do cluster.
@@ -73,7 +77,7 @@ kubectl logs <pod>
 
 ## Deploying a Postgres 
 
-Crie um novo repositório para armazenar as configurações do banco de dados: `platform.241.store.db`.
+Crie um novo repositório para armazenar as configurações do banco de dados: [platform.241.store.db](https://github.com/hsandmann/platform.241.store.db){target='_blank'}.
 
 ``` tree title="estrutura de diretório sugerida"
 store.account
@@ -94,9 +98,9 @@ store.db
     apiVersion: v1
     kind: ConfigMap
     metadata:
-    name: postgres-configmap
-    labels:
-        app: postgres
+        name: postgres-configmap
+        labels:
+            app: postgres
     data:
         POSTGRES_HOST: postgres
         POSTGRES_DB: store
@@ -120,10 +124,10 @@ store.db
         POSTGRES_USERNAME: c3RvcmU=
         POSTGRES_PASSWORD: c3RvcmU=
     ```
-
+    
     ``` shell
     kubectl apply -f ./k8s/configmap.yaml
-    kubectl get configmap
+    kubectl get secrets
     ```
 
     Use encode base64 para ofuscar a senha. Vide: [Base64Encode](https://www.base64encode.org/).
@@ -136,18 +140,18 @@ store.db
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-    name: postgres-volume
-    labels:
-        type: local
-        app: postgres
+        name: postgres-volume
+        labels:
+            type: local
+            app: postgres
     spec:
-    storageClassName: manual
-    capacity:
-        storage: 10Gi
-    accessModes:
-        - ReadWriteMany
-    hostPath:
-        path: /data/postgresql
+        storageClassName: manual
+        capacity:
+            storage: 10Gi
+        accessModes:
+            - ReadWriteMany
+        hostPath:
+            path: /data/postgresql
     ```
 
     ``` shell
@@ -163,16 +167,16 @@ store.db
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: postgres-volume-claim
-    labels:
-        app: postgres
+        name: postgres-volume-claim
+        labels:
+            app: postgres
     spec:
-    storageClassName: manual
-    accessModes:
-        - ReadWriteMany
-    resources:
-        requests:
-        storage: 10Gi
+        storageClassName: manual
+        accessModes:
+            - ReadWriteMany
+        resources:
+            requests:
+                storage: 10Gi
     ```
 
     ``` shell
@@ -186,46 +190,50 @@ store.db
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    name: postgres
+      name: postgres
     spec:
-    replicas: 1
-    selector:
+      replicas: 1
+      selector:
         matchLabels:
-        app: postgres
-    template:
+          app: postgres
+      template:
         metadata:
-        labels:
+          labels:
             app: postgres
         spec:
-        containers:
-            - name: postgres
-            image: 'postgres:latest'
-            imagePullPolicy: IfNotPresent
-            ports:
-                - containerPort: 5432
-            env:
-                - name: DATABASE_DB
-                valueFrom:
-                    configMapKeyRef:
-                    name: postgres-configmap
-                    key: POSTGRES_DB
-                - name: DATABASE_USERNAME
-                valueFrom:
-                    secretKeyRef:
-                    name: postgres-credentials
-                    key: POSTGRES_USERNAME
-                - name: DATABASE_PASSWORD
-                valueFrom:
-                    secretKeyRef:
-                    name: postgres-credentials
-                    key: POSTGRES_PASSWORD
-            volumeMounts:
-                - mountPath: /var/lib/postgresql/data
-                name: postgresdata
-        volumes:
-            - name: postgresdata
-            persistentVolumeClaim:
-                claimName: postgres-volume-claim
+          containers:
+              - name: postgres
+                image: 'postgres:latest'
+                imagePullPolicy: IfNotPresent
+                ports:
+                  - containerPort: 5432
+                env:
+
+                  - name: POSTGRES_DB
+                    valueFrom:
+                      configMapKeyRef:
+                        name: postgres-configmap
+                        key: POSTGRES_DB
+
+                  - name: POSTGRES_USER
+                    valueFrom:
+                      secretKeyRef:
+                        name: postgres-credentials
+                        key: POSTGRES_USER
+
+                  - name: POSTGRES_PASSWORD
+                    valueFrom:
+                      secretKeyRef:
+                        name: postgres-credentials
+                        key: POSTGRES_PASSWORD
+
+                volumeMounts:
+                  - mountPath: /var/lib/postgresql/data
+                    name: postgresdata
+          volumes:
+              - name: postgresdata
+                persistentVolumeClaim:
+                  claimName: postgres-volume-claim
     ```
 
     ``` shell
@@ -240,15 +248,15 @@ store.db
     apiVersion: v1
     kind: Service
     metadata:
-    name: postgres
-    labels:
-        app: postgres
+        name: postgres
+        labels:
+            app: postgres
     spec:
-    type: NodePort
-    ports:
-        - port: 5432
-    selector:
-        app: postgres
+        type: ClusterIp
+        ports:
+            - port: 5432
+        selector:
+            app: postgres
     ```
 
     ``` shell
@@ -287,23 +295,23 @@ store.account-resource
 
     ``` yaml title="application.yaml"
     server:
-    port: 8080
+        port: 8080
 
     spring:
-    application:
-        name: account
-    datasource:
-        url: jdbc:postgresql://${DATABASE_HOST}:5432/${DATABASE_NAME}
-        username: ${DATABASE_USERNAME:postgres}
-        password: ${DATABASE_PASSWORD:Post123321}
-        driver-class-name: org.postgresql.Driver
-    flyway:
-        baseline-on-migrate: true
-        schemas: account
-    jpa:
-        properties:
-        hibernate:
-            default_schema: account
+        application:
+            name: account
+        datasource:
+            url: jdbc:postgresql://${DATABASE_HOST}:5432/${DATABASE_NAME}
+            username: ${DATABASE_USERNAME:postgres}
+            password: ${DATABASE_PASSWORD:Post123321}
+            driver-class-name: org.postgresql.Driver
+        flyway:
+            baseline-on-migrate: true
+            schemas: account
+        jpa:
+            properties:
+            hibernate:
+                default_schema: account
 
     management:
         endpoints:
@@ -328,43 +336,50 @@ store.account-resource
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    name: account
+      name: postgres
     spec:
-    selector:
+      replicas: 1
+      selector:
         matchLabels:
-        app: account
-    replicas: 1
-    template:
+          app: postgres
+      template:
         metadata:
-        labels:
-            app: account
+          labels:
+            app: postgres
         spec:
-        containers:
-            - name: account
-            image: humbertosandmann/account:latest
-            ports:
-                - containerPort: 8080
-            env:
-                - name: DATABASE_HOST
-                valueFrom:
-                    configMapKeyRef:
-                    name: postgres-configmap
-                    key: POSTGRES_HOST
-                - name: DATABASE_DB
-                valueFrom:
-                    configMapKeyRef:
-                    name: postgres-configmap
-                    key: POSTGRES_DB
-                - name: DATABASE_USERNAME
-                valueFrom:
-                    secretKeyRef:
-                    name: postgres-credentials
-                    key: POSTGRES_USERNAME
-                - name: DATABASE_PASSWORD
-                valueFrom:
-                    secretKeyRef:
-                    name: postgres-credentials
-                    key: POSTGRES_PASSWORD
+          containers:
+              - name: postgres
+                image: 'postgres:latest'
+                imagePullPolicy: IfNotPresent
+                ports:
+                  - containerPort: 5432
+                env:
+
+                  - name: POSTGRES_DB
+                    valueFrom:
+                      configMapKeyRef:
+                        name: postgres-configmap
+                        key: POSTGRES_DB
+
+                  - name: POSTGRES_USER
+                    valueFrom:
+                      secretKeyRef:
+                        name: postgres-credentials
+                        key: POSTGRES_USER
+
+                  - name: POSTGRES_PASSWORD
+                    valueFrom:
+                      secretKeyRef:
+                        name: postgres-credentials
+                        key: POSTGRES_PASSWORD
+
+                volumeMounts:
+                  - mountPath: /var/lib/postgresql/data
+                    name: postgresdata
+          volumes:
+              - name: postgresdata
+                persistentVolumeClaim:
+                  claimName: postgres-volume-claim
     ```
 
 
@@ -374,17 +389,17 @@ store.account-resource
     apiVersion: v1
     kind: Service
     metadata:
-    name: account
-    labels:
         name: account
+        labels:
+            name: account
     spec:
-    type: NodePort
-    ports:
-        - port: 8080
-        targetPort: 8080
-        protocol: TCP
-    selector:
-        app: account
+        type: NodePort
+        ports:
+            - port: 8080
+            targetPort: 8080
+            protocol: TCP
+        selector:
+            app: account
     ```
 
     ``` shell
@@ -392,7 +407,14 @@ store.account-resource
     kubectl get services
     ```
 
-
+``` shell
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/credentials.yaml
+kubectl apply -f k8s/pv.yaml
+kubectl apply -f k8s/pvc.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml  
+```
 
 ## References:
 
