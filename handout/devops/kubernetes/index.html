@@ -287,11 +287,57 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deploying-a-microservice">
+<a class="md-nav__link" href="#deploying-the-discovery-microservice">
 <span class="md-ellipsis">
-      Deploying a microservice
+      Deploying the Discovery Microservice
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deploying-a-microservice">
+<span class="md-ellipsis">
+      Deploying a Microservice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deploying-using-jenkins">
+<span class="md-ellipsis">
+      Deploying using Jenkins
+    </span>
+</a>
+<nav aria-label="Deploying using Jenkins" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-crendentials-for-jenkins-on-k8s">
+<span class="md-ellipsis">
+      Creating crendentials for Jenkins on K8s
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recovering-the-jenkins-token">
+<span class="md-ellipsis">
+      Recovering the Jenkins' Token
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-the-credential-on-jenkins">
+<span class="md-ellipsis">
+      Set up the credential on Jenkins
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updating-the-jenkinsfile">
+<span class="md-ellipsis">
+      Updating the Jenkinsfile
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#references">
@@ -809,11 +855,57 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deploying-a-microservice">
+<a class="md-nav__link" href="#deploying-the-discovery-microservice">
 <span class="md-ellipsis">
-      Deploying a microservice
+      Deploying the Discovery Microservice
     </span>
 </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deploying-a-microservice">
+<span class="md-ellipsis">
+      Deploying a Microservice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deploying-using-jenkins">
+<span class="md-ellipsis">
+      Deploying using Jenkins
+    </span>
+</a>
+<nav aria-label="Deploying using Jenkins" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-crendentials-for-jenkins-on-k8s">
+<span class="md-ellipsis">
+      Creating crendentials for Jenkins on K8s
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recovering-the-jenkins-token">
+<span class="md-ellipsis">
+      Recovering the Jenkins' Token
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-up-the-credential-on-jenkins">
+<span class="md-ellipsis">
+      Set up the credential on Jenkins
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updating-the-jenkinsfile">
+<span class="md-ellipsis">
+      Updating the Jenkinsfile
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#references">
@@ -1043,7 +1135,77 @@
 <p>Redirecionando porta:
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>&lt;pod&gt;<span class="w"> </span><span class="m">5432</span>:5432
 </span></code></pre></div></p>
-<h2 id="deploying-a-microservice">Deploying a microservice</h2>
+<h2 id="deploying-the-discovery-microservice">Deploying the Discovery Microservice</h2>
+<div class="language-bash highlight"><span class="filename">discovery</span><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>📁<span class="w"> </span>store.discovery-resource
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>├──<span class="w"> </span>📁<span class="w"> </span>src
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>│<span class="w">   </span>└──<span class="w"> </span>📁<span class="w"> </span>main
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>│<span class="w">       </span>└──<span class="w"> </span>📁<span class="w"> </span>resources
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>│<span class="w">           </span>└──<span class="w"> </span>📄<span class="w"> </span>application.yaml
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>├──<span class="w"> </span>📁<span class="w"> </span>k8s
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>│<span class="w">   </span>├──<span class="w"> </span>📄<span class="w"> </span>configmap.yaml
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>│<span class="w">   </span>├──<span class="w"> </span>📄<span class="w"> </span>deployment.yaml
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>│<span class="w">   </span>└──<span class="w"> </span>📄<span class="w"> </span>service.yaml
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>├──<span class="w"> </span>📄<span class="w"> </span>Dockerfile
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>├──<span class="w"> </span>📄<span class="w"> </span>Jenkins
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>└──<span class="w"> </span>📄<span class="w"> </span>pom.xml
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">configmap.yaml</label><label for="__tabbed_2_2">deployment.yaml</label><label for="__tabbed_2_3">service.yaml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-yaml highlight"><span class="filename">configmap.yaml</span><pre><span></span><code><span id="__span-28-1"><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+</span><span id="__span-28-2"><a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+</span><span id="__span-28-3"><a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-28-4"><a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery-configmap</span>
+</span><span id="__span-28-5"><a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-28-6"><a href="#__codelineno-28-6" id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-28-7"><a href="#__codelineno-28-7" id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-28-8"><a href="#__codelineno-28-8" id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">    </span><span class="nt">DISCOVERY_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span><span class="w">    </span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><span class="filename">configmap.yaml</span><pre><span></span><code><span id="__span-29-1"><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+</span><span id="__span-29-2"><a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+</span><span id="__span-29-3"><a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-29-4"><a href="#__codelineno-29-4" id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-29-5"><a href="#__codelineno-29-5" id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-29-6"><a href="#__codelineno-29-6" id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-29-7"><a href="#__codelineno-29-7" id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-29-8"><a href="#__codelineno-29-8" id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-29-9"><a href="#__codelineno-29-9" id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+</span><span id="__span-29-10"><a href="#__codelineno-29-10" id="__codelineno-29-10" name="__codelineno-29-10"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+</span><span id="__span-29-11"><a href="#__codelineno-29-11" id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-29-12"><a href="#__codelineno-29-12" id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+</span><span id="__span-29-13"><a href="#__codelineno-29-13" id="__codelineno-29-13" name="__codelineno-29-13"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-29-14"><a href="#__codelineno-29-14" id="__codelineno-29-14" name="__codelineno-29-14"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-29-15"><a href="#__codelineno-29-15" id="__codelineno-29-15" name="__codelineno-29-15"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-29-16"><a href="#__codelineno-29-16" id="__codelineno-29-16" name="__codelineno-29-16"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-29-17"><a href="#__codelineno-29-17" id="__codelineno-29-17" name="__codelineno-29-17"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+</span><span id="__span-29-18"><a href="#__codelineno-29-18" id="__codelineno-29-18" name="__codelineno-29-18"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-29-19"><a href="#__codelineno-29-19" id="__codelineno-29-19" name="__codelineno-29-19"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">humbertosandmann/discovery:latest</span>
+</span><span id="__span-29-20"><a href="#__codelineno-29-20" id="__codelineno-29-20" name="__codelineno-29-20"></a><span class="w">          </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-29-21"><a href="#__codelineno-29-21" id="__codelineno-29-21" name="__codelineno-29-21"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8761</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><span class="filename">service.yaml</span><pre><span></span><code><span id="__span-30-1"><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+</span><span id="__span-30-2"><a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+</span><span id="__span-30-3"><a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-30-4"><a href="#__codelineno-30-4" id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-30-5"><a href="#__codelineno-30-5" id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-30-6"><a href="#__codelineno-30-6" id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span><span id="__span-30-7"><a href="#__codelineno-30-7" id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-30-8"><a href="#__codelineno-30-8" id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span>
+</span><span id="__span-30-9"><a href="#__codelineno-30-9" id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-30-10"><a href="#__codelineno-30-10" id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8761</span>
+</span><span id="__span-30-11"><a href="#__codelineno-30-11" id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8761</span>
+</span><span id="__span-30-12"><a href="#__codelineno-30-12" id="__codelineno-30-12" name="__codelineno-30-12"></a><span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+</span><span id="__span-30-13"><a href="#__codelineno-30-13" id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+</span><span id="__span-30-14"><a href="#__codelineno-30-14" id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">discovery</span>
+</span></code></pre></div>
+</div>
+</div>
+</input></input></input></div>
+<h2 id="deploying-a-microservice">Deploying a Microservice</h2>
 <div class="language-bash highlight"><span class="filename">account</span><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>📁<span class="w"> </span>store.account-resource
 </span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>├──<span class="w"> </span>📁<span class="w"> </span>src
 </span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>│<span class="w">   </span>└──<span class="w"> </span>📁<span class="w"> </span>main
@@ -1056,118 +1218,250 @@
 </span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>├──<span class="w"> </span>📄<span class="w"> </span>Jenkins
 </span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>└──<span class="w"> </span>📄<span class="w"> </span>pom.xml
 </span></code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">application.yaml</label><label for="__tabbed_2_2">deployment.yaml</label><label for="__tabbed_2_3">service.yaml</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">application.yaml</label><label for="__tabbed_3_2">deployment.yaml</label><label for="__tabbed_3_3">service.yaml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-yaml highlight"><span class="filename">application.yaml</span><pre><span></span><code><span id="__span-28-1"><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="nt">server</span><span class="p">:</span>
-</span><span id="__span-28-2"><a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
-</span><span id="__span-28-3"><a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a>
-</span><span id="__span-28-4"><a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="nt">spring</span><span class="p">:</span>
-</span><span id="__span-28-5"><a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">    </span><span class="nt">application</span><span class="p">:</span>
-</span><span id="__span-28-6"><a href="#__codelineno-28-6" id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
-</span><span id="__span-28-7"><a href="#__codelineno-28-7" id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span>
-</span><span id="__span-28-8"><a href="#__codelineno-28-8" id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DB}</span>
-</span><span id="__span-28-9"><a href="#__codelineno-28-9" id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_USER:postgres}</span>
-</span><span id="__span-28-10"><a href="#__codelineno-28-10" id="__codelineno-28-10" name="__codelineno-28-10"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_PASSWORD:Post123321}</span>
-</span><span id="__span-28-11"><a href="#__codelineno-28-11" id="__codelineno-28-11" name="__codelineno-28-11"></a><span class="w">        </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">org.postgresql.Driver</span>
-</span><span id="__span-28-12"><a href="#__codelineno-28-12" id="__codelineno-28-12" name="__codelineno-28-12"></a><span class="w">    </span><span class="nt">flyway</span><span class="p">:</span>
-</span><span id="__span-28-13"><a href="#__codelineno-28-13" id="__codelineno-28-13" name="__codelineno-28-13"></a><span class="w">        </span><span class="nt">baseline-on-migrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-28-14"><a href="#__codelineno-28-14" id="__codelineno-28-14" name="__codelineno-28-14"></a><span class="w">        </span><span class="nt">schemas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
-</span><span id="__span-28-15"><a href="#__codelineno-28-15" id="__codelineno-28-15" name="__codelineno-28-15"></a><span class="w">    </span><span class="nt">jpa</span><span class="p">:</span>
-</span><span id="__span-28-16"><a href="#__codelineno-28-16" id="__codelineno-28-16" name="__codelineno-28-16"></a><span class="w">        </span><span class="nt">properties</span><span class="p">:</span>
-</span><span id="__span-28-17"><a href="#__codelineno-28-17" id="__codelineno-28-17" name="__codelineno-28-17"></a><span class="w">        </span><span class="nt">hibernate</span><span class="p">:</span>
-</span><span id="__span-28-18"><a href="#__codelineno-28-18" id="__codelineno-28-18" name="__codelineno-28-18"></a><span class="w">            </span><span class="nt">default_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
-</span><span id="__span-28-19"><a href="#__codelineno-28-19" id="__codelineno-28-19" name="__codelineno-28-19"></a>
-</span><span id="__span-28-20"><a href="#__codelineno-28-20" id="__codelineno-28-20" name="__codelineno-28-20"></a><span class="nt">management</span><span class="p">:</span>
-</span><span id="__span-28-21"><a href="#__codelineno-28-21" id="__codelineno-28-21" name="__codelineno-28-21"></a><span class="w">    </span><span class="nt">endpoints</span><span class="p">:</span>
-</span><span id="__span-28-22"><a href="#__codelineno-28-22" id="__codelineno-28-22" name="__codelineno-28-22"></a><span class="w">        </span><span class="nt">web</span><span class="p">:</span>
-</span><span id="__span-28-23"><a href="#__codelineno-28-23" id="__codelineno-28-23" name="__codelineno-28-23"></a><span class="w">            </span><span class="nt">base-path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/account/actuator</span>
-</span><span id="__span-28-24"><a href="#__codelineno-28-24" id="__codelineno-28-24" name="__codelineno-28-24"></a><span class="w">            </span><span class="nt">exposure</span><span class="p">:</span>
-</span><span id="__span-28-25"><a href="#__codelineno-28-25" id="__codelineno-28-25" name="__codelineno-28-25"></a><span class="w">                </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">'prometheus'</span><span class="w"> </span><span class="p p-Indicator">]</span>
-</span><span id="__span-28-26"><a href="#__codelineno-28-26" id="__codelineno-28-26" name="__codelineno-28-26"></a>
-</span><span id="__span-28-27"><a href="#__codelineno-28-27" id="__codelineno-28-27" name="__codelineno-28-27"></a><span class="nt">eureka</span><span class="p">:</span>
-</span><span id="__span-28-28"><a href="#__codelineno-28-28" id="__codelineno-28-28" name="__codelineno-28-28"></a><span class="w">    </span><span class="nt">client</span><span class="p">:</span>
-</span><span id="__span-28-29"><a href="#__codelineno-28-29" id="__codelineno-28-29" name="__codelineno-28-29"></a><span class="w">        </span><span class="nt">register-with-eureka</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-28-30"><a href="#__codelineno-28-30" id="__codelineno-28-30" name="__codelineno-28-30"></a><span class="w">        </span><span class="nt">fetch-registry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-28-31"><a href="#__codelineno-28-31" id="__codelineno-28-31" name="__codelineno-28-31"></a><span class="w">        </span><span class="nt">service-url</span><span class="p">:</span>
-</span><span id="__span-28-32"><a href="#__codelineno-28-32" id="__codelineno-28-32" name="__codelineno-28-32"></a><span class="w">        </span><span class="nt">defaultZone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${EUREKA_URI:http://localhost:8761/eureka/}</span>
+<div class="language-yaml highlight"><span class="filename">application.yaml</span><pre><span></span><code><span id="__span-31-1"><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="nt">server</span><span class="p">:</span>
+</span><span id="__span-31-2"><a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</span><span id="__span-31-3"><a href="#__codelineno-31-3" id="__codelineno-31-3" name="__codelineno-31-3"></a>
+</span><span id="__span-31-4"><a href="#__codelineno-31-4" id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="nt">spring</span><span class="p">:</span>
+</span><span id="__span-31-5"><a href="#__codelineno-31-5" id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">    </span><span class="nt">application</span><span class="p">:</span>
+</span><span id="__span-31-6"><a href="#__codelineno-31-6" id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
+</span><span id="__span-31-7"><a href="#__codelineno-31-7" id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span>
+</span><span id="__span-31-8"><a href="#__codelineno-31-8" id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DB}</span>
+</span><span id="__span-31-9"><a href="#__codelineno-31-9" id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_USER:postgres}</span>
+</span><span id="__span-31-10"><a href="#__codelineno-31-10" id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_PASSWORD:Post123321}</span>
+</span><span id="__span-31-11"><a href="#__codelineno-31-11" id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="w">        </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">org.postgresql.Driver</span>
+</span><span id="__span-31-12"><a href="#__codelineno-31-12" id="__codelineno-31-12" name="__codelineno-31-12"></a><span class="w">    </span><span class="nt">flyway</span><span class="p">:</span>
+</span><span id="__span-31-13"><a href="#__codelineno-31-13" id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="w">        </span><span class="nt">baseline-on-migrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-31-14"><a href="#__codelineno-31-14" id="__codelineno-31-14" name="__codelineno-31-14"></a><span class="w">        </span><span class="nt">schemas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
+</span><span id="__span-31-15"><a href="#__codelineno-31-15" id="__codelineno-31-15" name="__codelineno-31-15"></a><span class="w">    </span><span class="nt">jpa</span><span class="p">:</span>
+</span><span id="__span-31-16"><a href="#__codelineno-31-16" id="__codelineno-31-16" name="__codelineno-31-16"></a><span class="w">        </span><span class="nt">properties</span><span class="p">:</span>
+</span><span id="__span-31-17"><a href="#__codelineno-31-17" id="__codelineno-31-17" name="__codelineno-31-17"></a><span class="w">        </span><span class="nt">hibernate</span><span class="p">:</span>
+</span><span id="__span-31-18"><a href="#__codelineno-31-18" id="__codelineno-31-18" name="__codelineno-31-18"></a><span class="w">            </span><span class="nt">default_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
+</span><span id="__span-31-19"><a href="#__codelineno-31-19" id="__codelineno-31-19" name="__codelineno-31-19"></a>
+</span><span id="__span-31-20"><a href="#__codelineno-31-20" id="__codelineno-31-20" name="__codelineno-31-20"></a><span class="nt">management</span><span class="p">:</span>
+</span><span id="__span-31-21"><a href="#__codelineno-31-21" id="__codelineno-31-21" name="__codelineno-31-21"></a><span class="w">    </span><span class="nt">endpoints</span><span class="p">:</span>
+</span><span id="__span-31-22"><a href="#__codelineno-31-22" id="__codelineno-31-22" name="__codelineno-31-22"></a><span class="w">        </span><span class="nt">web</span><span class="p">:</span>
+</span><span id="__span-31-23"><a href="#__codelineno-31-23" id="__codelineno-31-23" name="__codelineno-31-23"></a><span class="w">            </span><span class="nt">base-path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/account/actuator</span>
+</span><span id="__span-31-24"><a href="#__codelineno-31-24" id="__codelineno-31-24" name="__codelineno-31-24"></a><span class="w">            </span><span class="nt">exposure</span><span class="p">:</span>
+</span><span id="__span-31-25"><a href="#__codelineno-31-25" id="__codelineno-31-25" name="__codelineno-31-25"></a><span class="w">                </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">'prometheus'</span><span class="w"> </span><span class="p p-Indicator">]</span>
+</span><span id="__span-31-26"><a href="#__codelineno-31-26" id="__codelineno-31-26" name="__codelineno-31-26"></a>
+</span><span id="__span-31-27"><a href="#__codelineno-31-27" id="__codelineno-31-27" name="__codelineno-31-27"></a><span class="nt">eureka</span><span class="p">:</span>
+</span><span id="__span-31-28"><a href="#__codelineno-31-28" id="__codelineno-31-28" name="__codelineno-31-28"></a><span class="w">    </span><span class="nt">client</span><span class="p">:</span>
+</span><span id="__span-31-29"><a href="#__codelineno-31-29" id="__codelineno-31-29" name="__codelineno-31-29"></a><span class="w">        </span><span class="nt">register-with-eureka</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-31-30"><a href="#__codelineno-31-30" id="__codelineno-31-30" name="__codelineno-31-30"></a><span class="w">        </span><span class="nt">fetch-registry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-31-31"><a href="#__codelineno-31-31" id="__codelineno-31-31" name="__codelineno-31-31"></a><span class="w">        </span><span class="nt">service-url</span><span class="p">:</span>
+</span><span id="__span-31-32"><a href="#__codelineno-31-32" id="__codelineno-31-32" name="__codelineno-31-32"></a><span class="w">        </span><span class="nt">defaultZone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://${DISCOVERY_HOST}:8761/eureka/</span>
 </span></code></pre></div>
 <p>Subir no Git e rodar o Jenkins.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><span class="filename">deployment.yaml</span><pre><span></span><code><span id="__span-29-1"><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-</span><span id="__span-29-2"><a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-</span><span id="__span-29-3"><a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-29-4"><a href="#__codelineno-29-4" id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
-</span><span id="__span-29-5"><a href="#__codelineno-29-5" id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-29-6"><a href="#__codelineno-29-6" id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-29-7"><a href="#__codelineno-29-7" id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-</span><span id="__span-29-8"><a href="#__codelineno-29-8" id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-</span><span id="__span-29-9"><a href="#__codelineno-29-9" id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
-</span><span id="__span-29-10"><a href="#__codelineno-29-10" id="__codelineno-29-10" name="__codelineno-29-10"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-</span><span id="__span-29-11"><a href="#__codelineno-29-11" id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-29-12"><a href="#__codelineno-29-12" id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-</span><span id="__span-29-13"><a href="#__codelineno-29-13" id="__codelineno-29-13" name="__codelineno-29-13"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
-</span><span id="__span-29-14"><a href="#__codelineno-29-14" id="__codelineno-29-14" name="__codelineno-29-14"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-29-15"><a href="#__codelineno-29-15" id="__codelineno-29-15" name="__codelineno-29-15"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-</span><span id="__span-29-16"><a href="#__codelineno-29-16" id="__codelineno-29-16" name="__codelineno-29-16"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
-</span><span id="__span-29-17"><a href="#__codelineno-29-17" id="__codelineno-29-17" name="__codelineno-29-17"></a><span class="w">            </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">'postgres:latest'</span>
-</span><span id="__span-29-18"><a href="#__codelineno-29-18" id="__codelineno-29-18" name="__codelineno-29-18"></a><span class="w">            </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
-</span><span id="__span-29-19"><a href="#__codelineno-29-19" id="__codelineno-29-19" name="__codelineno-29-19"></a><span class="w">            </span><span class="nt">ports</span><span class="p">:</span>
-</span><span id="__span-29-20"><a href="#__codelineno-29-20" id="__codelineno-29-20" name="__codelineno-29-20"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432</span>
-</span><span id="__span-29-21"><a href="#__codelineno-29-21" id="__codelineno-29-21" name="__codelineno-29-21"></a><span class="w">            </span><span class="nt">env</span><span class="p">:</span>
-</span><span id="__span-29-22"><a href="#__codelineno-29-22" id="__codelineno-29-22" name="__codelineno-29-22"></a>
-</span><span id="__span-29-23"><a href="#__codelineno-29-23" id="__codelineno-29-23" name="__codelineno-29-23"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB</span>
-</span><span id="__span-29-24"><a href="#__codelineno-29-24" id="__codelineno-29-24" name="__codelineno-29-24"></a><span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
-</span><span id="__span-29-25"><a href="#__codelineno-29-25" id="__codelineno-29-25" name="__codelineno-29-25"></a><span class="w">                  </span><span class="nt">configMapKeyRef</span><span class="p">:</span>
-</span><span id="__span-29-26"><a href="#__codelineno-29-26" id="__codelineno-29-26" name="__codelineno-29-26"></a><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-configmap</span>
-</span><span id="__span-29-27"><a href="#__codelineno-29-27" id="__codelineno-29-27" name="__codelineno-29-27"></a><span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB</span>
-</span><span id="__span-29-28"><a href="#__codelineno-29-28" id="__codelineno-29-28" name="__codelineno-29-28"></a>
-</span><span id="__span-29-29"><a href="#__codelineno-29-29" id="__codelineno-29-29" name="__codelineno-29-29"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER</span>
-</span><span id="__span-29-30"><a href="#__codelineno-29-30" id="__codelineno-29-30" name="__codelineno-29-30"></a><span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
-</span><span id="__span-29-31"><a href="#__codelineno-29-31" id="__codelineno-29-31" name="__codelineno-29-31"></a><span class="w">                  </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-</span><span id="__span-29-32"><a href="#__codelineno-29-32" id="__codelineno-29-32" name="__codelineno-29-32"></a><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-credentials</span>
-</span><span id="__span-29-33"><a href="#__codelineno-29-33" id="__codelineno-29-33" name="__codelineno-29-33"></a><span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER</span>
-</span><span id="__span-29-34"><a href="#__codelineno-29-34" id="__codelineno-29-34" name="__codelineno-29-34"></a>
-</span><span id="__span-29-35"><a href="#__codelineno-29-35" id="__codelineno-29-35" name="__codelineno-29-35"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD</span>
-</span><span id="__span-29-36"><a href="#__codelineno-29-36" id="__codelineno-29-36" name="__codelineno-29-36"></a><span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
-</span><span id="__span-29-37"><a href="#__codelineno-29-37" id="__codelineno-29-37" name="__codelineno-29-37"></a><span class="w">                  </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-</span><span id="__span-29-38"><a href="#__codelineno-29-38" id="__codelineno-29-38" name="__codelineno-29-38"></a><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-credentials</span>
-</span><span id="__span-29-39"><a href="#__codelineno-29-39" id="__codelineno-29-39" name="__codelineno-29-39"></a><span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD</span>
-</span><span id="__span-29-40"><a href="#__codelineno-29-40" id="__codelineno-29-40" name="__codelineno-29-40"></a>
-</span><span id="__span-29-41"><a href="#__codelineno-29-41" id="__codelineno-29-41" name="__codelineno-29-41"></a><span class="w">            </span><span class="nt">volumeMounts</span><span class="p">:</span>
-</span><span id="__span-29-42"><a href="#__codelineno-29-42" id="__codelineno-29-42" name="__codelineno-29-42"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/postgresql/data</span>
-</span><span id="__span-29-43"><a href="#__codelineno-29-43" id="__codelineno-29-43" name="__codelineno-29-43"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresdata</span>
-</span><span id="__span-29-44"><a href="#__codelineno-29-44" id="__codelineno-29-44" name="__codelineno-29-44"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
-</span><span id="__span-29-45"><a href="#__codelineno-29-45" id="__codelineno-29-45" name="__codelineno-29-45"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresdata</span>
-</span><span id="__span-29-46"><a href="#__codelineno-29-46" id="__codelineno-29-46" name="__codelineno-29-46"></a><span class="w">            </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
-</span><span id="__span-29-47"><a href="#__codelineno-29-47" id="__codelineno-29-47" name="__codelineno-29-47"></a><span class="w">              </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-volume-claim</span>
+<div class="language-yaml highlight"><span class="filename">deployment.yaml</span><pre><span></span><code><span id="__span-32-1"><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+</span><span id="__span-32-2"><a href="#__codelineno-32-2" id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+</span><span id="__span-32-3"><a href="#__codelineno-32-3" id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-32-4"><a href="#__codelineno-32-4" id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</span><span id="__span-32-5"><a href="#__codelineno-32-5" id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-32-6"><a href="#__codelineno-32-6" id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-32-7"><a href="#__codelineno-32-7" id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+</span><span id="__span-32-8"><a href="#__codelineno-32-8" id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+</span><span id="__span-32-9"><a href="#__codelineno-32-9" id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</span><span id="__span-32-10"><a href="#__codelineno-32-10" id="__codelineno-32-10" name="__codelineno-32-10"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+</span><span id="__span-32-11"><a href="#__codelineno-32-11" id="__codelineno-32-11" name="__codelineno-32-11"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-32-12"><a href="#__codelineno-32-12" id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-32-13"><a href="#__codelineno-32-13" id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</span><span id="__span-32-14"><a href="#__codelineno-32-14" id="__codelineno-32-14" name="__codelineno-32-14"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-32-15"><a href="#__codelineno-32-15" id="__codelineno-32-15" name="__codelineno-32-15"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+</span><span id="__span-32-16"><a href="#__codelineno-32-16" id="__codelineno-32-16" name="__codelineno-32-16"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</span><span id="__span-32-17"><a href="#__codelineno-32-17" id="__codelineno-32-17" name="__codelineno-32-17"></a><span class="w">            </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">'postgres:latest'</span>
+</span><span id="__span-32-18"><a href="#__codelineno-32-18" id="__codelineno-32-18" name="__codelineno-32-18"></a><span class="w">            </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+</span><span id="__span-32-19"><a href="#__codelineno-32-19" id="__codelineno-32-19" name="__codelineno-32-19"></a><span class="w">            </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-32-20"><a href="#__codelineno-32-20" id="__codelineno-32-20" name="__codelineno-32-20"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</span><span id="__span-32-21"><a href="#__codelineno-32-21" id="__codelineno-32-21" name="__codelineno-32-21"></a><span class="w">            </span><span class="nt">env</span><span class="p">:</span>
+</span><span id="__span-32-22"><a href="#__codelineno-32-22" id="__codelineno-32-22" name="__codelineno-32-22"></a>
+</span><span id="__span-32-23"><a href="#__codelineno-32-23" id="__codelineno-32-23" name="__codelineno-32-23"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB</span>
+</span><span id="__span-32-24"><a href="#__codelineno-32-24" id="__codelineno-32-24" name="__codelineno-32-24"></a><span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
+</span><span id="__span-32-25"><a href="#__codelineno-32-25" id="__codelineno-32-25" name="__codelineno-32-25"></a><span class="w">                  </span><span class="nt">configMapKeyRef</span><span class="p">:</span>
+</span><span id="__span-32-26"><a href="#__codelineno-32-26" id="__codelineno-32-26" name="__codelineno-32-26"></a><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-configmap</span>
+</span><span id="__span-32-27"><a href="#__codelineno-32-27" id="__codelineno-32-27" name="__codelineno-32-27"></a><span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB</span>
+</span><span id="__span-32-28"><a href="#__codelineno-32-28" id="__codelineno-32-28" name="__codelineno-32-28"></a>
+</span><span id="__span-32-29"><a href="#__codelineno-32-29" id="__codelineno-32-29" name="__codelineno-32-29"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER</span>
+</span><span id="__span-32-30"><a href="#__codelineno-32-30" id="__codelineno-32-30" name="__codelineno-32-30"></a><span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
+</span><span id="__span-32-31"><a href="#__codelineno-32-31" id="__codelineno-32-31" name="__codelineno-32-31"></a><span class="w">                  </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+</span><span id="__span-32-32"><a href="#__codelineno-32-32" id="__codelineno-32-32" name="__codelineno-32-32"></a><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-credentials</span>
+</span><span id="__span-32-33"><a href="#__codelineno-32-33" id="__codelineno-32-33" name="__codelineno-32-33"></a><span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER</span>
+</span><span id="__span-32-34"><a href="#__codelineno-32-34" id="__codelineno-32-34" name="__codelineno-32-34"></a>
+</span><span id="__span-32-35"><a href="#__codelineno-32-35" id="__codelineno-32-35" name="__codelineno-32-35"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD</span>
+</span><span id="__span-32-36"><a href="#__codelineno-32-36" id="__codelineno-32-36" name="__codelineno-32-36"></a><span class="w">                </span><span class="nt">valueFrom</span><span class="p">:</span>
+</span><span id="__span-32-37"><a href="#__codelineno-32-37" id="__codelineno-32-37" name="__codelineno-32-37"></a><span class="w">                  </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+</span><span id="__span-32-38"><a href="#__codelineno-32-38" id="__codelineno-32-38" name="__codelineno-32-38"></a><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-credentials</span>
+</span><span id="__span-32-39"><a href="#__codelineno-32-39" id="__codelineno-32-39" name="__codelineno-32-39"></a><span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD</span>
+</span><span id="__span-32-40"><a href="#__codelineno-32-40" id="__codelineno-32-40" name="__codelineno-32-40"></a>
+</span><span id="__span-32-41"><a href="#__codelineno-32-41" id="__codelineno-32-41" name="__codelineno-32-41"></a><span class="w">            </span><span class="nt">volumeMounts</span><span class="p">:</span>
+</span><span id="__span-32-42"><a href="#__codelineno-32-42" id="__codelineno-32-42" name="__codelineno-32-42"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/postgresql/data</span>
+</span><span id="__span-32-43"><a href="#__codelineno-32-43" id="__codelineno-32-43" name="__codelineno-32-43"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresdata</span>
+</span><span id="__span-32-44"><a href="#__codelineno-32-44" id="__codelineno-32-44" name="__codelineno-32-44"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-32-45"><a href="#__codelineno-32-45" id="__codelineno-32-45" name="__codelineno-32-45"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresdata</span>
+</span><span id="__span-32-46"><a href="#__codelineno-32-46" id="__codelineno-32-46" name="__codelineno-32-46"></a><span class="w">            </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+</span><span id="__span-32-47"><a href="#__codelineno-32-47" id="__codelineno-32-47" name="__codelineno-32-47"></a><span class="w">              </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres-volume-claim</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-yaml highlight"><span class="filename">service.yaml</span><pre><span></span><code><span id="__span-30-1"><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-</span><span id="__span-30-2"><a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
-</span><span id="__span-30-3"><a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-30-4"><a href="#__codelineno-30-4" id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
-</span><span id="__span-30-5"><a href="#__codelineno-30-5" id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
-</span><span id="__span-30-6"><a href="#__codelineno-30-6" id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
-</span><span id="__span-30-7"><a href="#__codelineno-30-7" id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-30-8"><a href="#__codelineno-30-8" id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span>
-</span><span id="__span-30-9"><a href="#__codelineno-30-9" id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-</span><span id="__span-30-10"><a href="#__codelineno-30-10" id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
-</span><span id="__span-30-11"><a href="#__codelineno-30-11" id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="w">        </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
-</span><span id="__span-30-12"><a href="#__codelineno-30-12" id="__codelineno-30-12" name="__codelineno-30-12"></a><span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
-</span><span id="__span-30-13"><a href="#__codelineno-30-13" id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="w">    </span><span class="nt">selector</span><span class="p">:</span>
-</span><span id="__span-30-14"><a href="#__codelineno-30-14" id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
+<div class="language-yaml highlight"><span class="filename">service.yaml</span><pre><span></span><code><span id="__span-33-1"><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+</span><span id="__span-33-2"><a href="#__codelineno-33-2" id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+</span><span id="__span-33-3"><a href="#__codelineno-33-3" id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-33-4"><a href="#__codelineno-33-4" id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
+</span><span id="__span-33-5"><a href="#__codelineno-33-5" id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-33-6"><a href="#__codelineno-33-6" id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
+</span><span id="__span-33-7"><a href="#__codelineno-33-7" id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-33-8"><a href="#__codelineno-33-8" id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span>
+</span><span id="__span-33-9"><a href="#__codelineno-33-9" id="__codelineno-33-9" name="__codelineno-33-9"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+</span><span id="__span-33-10"><a href="#__codelineno-33-10" id="__codelineno-33-10" name="__codelineno-33-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</span><span id="__span-33-11"><a href="#__codelineno-33-11" id="__codelineno-33-11" name="__codelineno-33-11"></a><span class="w">        </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</span><span id="__span-33-12"><a href="#__codelineno-33-12" id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="w">        </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TCP</span>
+</span><span id="__span-33-13"><a href="#__codelineno-33-13" id="__codelineno-33-13" name="__codelineno-33-13"></a><span class="w">    </span><span class="nt">selector</span><span class="p">:</span>
+</span><span id="__span-33-14"><a href="#__codelineno-33-14" id="__codelineno-33-14" name="__codelineno-33-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">account</span>
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-31-1"><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>./k8s/service.yaml
-</span><span id="__span-31-2"><a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>services
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-34-1"><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>./k8s/service.yaml
+</span><span id="__span-34-2"><a href="#__codelineno-34-2" id="__codelineno-34-2" name="__codelineno-34-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>services
 </span></code></pre></div>
 </div>
 </div>
 </input></input></input></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-32-1"><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>k8s/deployment.yaml
-</span><span id="__span-32-2"><a href="#__codelineno-32-2" id="__codelineno-32-2" name="__codelineno-32-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>k8s/service.yaml<span class="w">  </span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-35-1"><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>k8s/deployment.yaml
+</span><span id="__span-35-2"><a href="#__codelineno-35-2" id="__codelineno-35-2" name="__codelineno-35-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>k8s/service.yaml<span class="w">  </span>
+</span></code></pre></div>
+<h2 id="deploying-using-jenkins">Deploying using Jenkins</h2>
+<h3 id="creating-crendentials-for-jenkins-on-k8s">Creating crendentials for Jenkins on K8s</h3>
+<p>Criar credentials no Kubernetes para que o Jenkins possa conectar.</p>
+<div class="language-yaml highlight"><span class="filename">jenkins.yaml</span><pre><span></span><code><span id="__span-36-1"><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="nn">---</span>
+</span><span id="__span-36-2"><a href="#__codelineno-36-2" id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+</span><span id="__span-36-3"><a href="#__codelineno-36-3" id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+</span><span id="__span-36-4"><a href="#__codelineno-36-4" id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-36-5"><a href="#__codelineno-36-5" id="__codelineno-36-5" name="__codelineno-36-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-6"><a href="#__codelineno-36-6" id="__codelineno-36-6" name="__codelineno-36-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-36-7"><a href="#__codelineno-36-7" id="__codelineno-36-7" name="__codelineno-36-7"></a><span class="nn">---</span>
+</span><span id="__span-36-8"><a href="#__codelineno-36-8" id="__codelineno-36-8" name="__codelineno-36-8"></a>
+</span><span id="__span-36-9"><a href="#__codelineno-36-9" id="__codelineno-36-9" name="__codelineno-36-9"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
+</span><span id="__span-36-10"><a href="#__codelineno-36-10" id="__codelineno-36-10" name="__codelineno-36-10"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+</span><span id="__span-36-11"><a href="#__codelineno-36-11" id="__codelineno-36-11" name="__codelineno-36-11"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-36-12"><a href="#__codelineno-36-12" id="__codelineno-36-12" name="__codelineno-36-12"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-13"><a href="#__codelineno-36-13" id="__codelineno-36-13" name="__codelineno-36-13"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-36-14"><a href="#__codelineno-36-14" id="__codelineno-36-14" name="__codelineno-36-14"></a><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-36-15"><a href="#__codelineno-36-15" id="__codelineno-36-15" name="__codelineno-36-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-16"><a href="#__codelineno-36-16" id="__codelineno-36-16" name="__codelineno-36-16"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">,</span><span class="s">"services"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-17"><a href="#__codelineno-36-17" id="__codelineno-36-17" name="__codelineno-36-17"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="s">"delete"</span><span class="p p-Indicator">,</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="s">"patch"</span><span class="p p-Indicator">,</span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-18"><a href="#__codelineno-36-18" id="__codelineno-36-18" name="__codelineno-36-18"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"apps"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-19"><a href="#__codelineno-36-19" id="__codelineno-36-19" name="__codelineno-36-19"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"deployments"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-20"><a href="#__codelineno-36-20" id="__codelineno-36-20" name="__codelineno-36-20"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="s">"delete"</span><span class="p p-Indicator">,</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="s">"patch"</span><span class="p p-Indicator">,</span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-21"><a href="#__codelineno-36-21" id="__codelineno-36-21" name="__codelineno-36-21"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-22"><a href="#__codelineno-36-22" id="__codelineno-36-22" name="__codelineno-36-22"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods/exec"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-23"><a href="#__codelineno-36-23" id="__codelineno-36-23" name="__codelineno-36-23"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="s">"delete"</span><span class="p p-Indicator">,</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="s">"patch"</span><span class="p p-Indicator">,</span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-24"><a href="#__codelineno-36-24" id="__codelineno-36-24" name="__codelineno-36-24"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-25"><a href="#__codelineno-36-25" id="__codelineno-36-25" name="__codelineno-36-25"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods/log"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-26"><a href="#__codelineno-36-26" id="__codelineno-36-26" name="__codelineno-36-26"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-27"><a href="#__codelineno-36-27" id="__codelineno-36-27" name="__codelineno-36-27"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-28"><a href="#__codelineno-36-28" id="__codelineno-36-28" name="__codelineno-36-28"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"secrets"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-29"><a href="#__codelineno-36-29" id="__codelineno-36-29" name="__codelineno-36-29"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-30"><a href="#__codelineno-36-30" id="__codelineno-36-30" name="__codelineno-36-30"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-31"><a href="#__codelineno-36-31" id="__codelineno-36-31" name="__codelineno-36-31"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"configmaps"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-32"><a href="#__codelineno-36-32" id="__codelineno-36-32" name="__codelineno-36-32"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"update"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-33"><a href="#__codelineno-36-33" id="__codelineno-36-33" name="__codelineno-36-33"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-34"><a href="#__codelineno-36-34" id="__codelineno-36-34" name="__codelineno-36-34"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"persistentvolumeclaims"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-35"><a href="#__codelineno-36-35" id="__codelineno-36-35" name="__codelineno-36-35"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="s">"delete"</span><span class="p p-Indicator">,</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="s">"patch"</span><span class="p p-Indicator">,</span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-36"><a href="#__codelineno-36-36" id="__codelineno-36-36" name="__codelineno-36-36"></a>
+</span><span id="__span-36-37"><a href="#__codelineno-36-37" id="__codelineno-36-37" name="__codelineno-36-37"></a><span class="nn">---</span>
+</span><span id="__span-36-38"><a href="#__codelineno-36-38" id="__codelineno-36-38" name="__codelineno-36-38"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+</span><span id="__span-36-39"><a href="#__codelineno-36-39" id="__codelineno-36-39" name="__codelineno-36-39"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+</span><span id="__span-36-40"><a href="#__codelineno-36-40" id="__codelineno-36-40" name="__codelineno-36-40"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-36-41"><a href="#__codelineno-36-41" id="__codelineno-36-41" name="__codelineno-36-41"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins-token</span>
+</span><span id="__span-36-42"><a href="#__codelineno-36-42" id="__codelineno-36-42" name="__codelineno-36-42"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+</span><span id="__span-36-43"><a href="#__codelineno-36-43" id="__codelineno-36-43" name="__codelineno-36-43"></a><span class="w">    </span><span class="nt">kubernetes.io/service-account.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-44"><a href="#__codelineno-36-44" id="__codelineno-36-44" name="__codelineno-36-44"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/service-account-token</span>
+</span><span id="__span-36-45"><a href="#__codelineno-36-45" id="__codelineno-36-45" name="__codelineno-36-45"></a>
+</span><span id="__span-36-46"><a href="#__codelineno-36-46" id="__codelineno-36-46" name="__codelineno-36-46"></a><span class="nn">---</span>
+</span><span id="__span-36-47"><a href="#__codelineno-36-47" id="__codelineno-36-47" name="__codelineno-36-47"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+</span><span id="__span-36-48"><a href="#__codelineno-36-48" id="__codelineno-36-48" name="__codelineno-36-48"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleBinding</span>
+</span><span id="__span-36-49"><a href="#__codelineno-36-49" id="__codelineno-36-49" name="__codelineno-36-49"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-36-50"><a href="#__codelineno-36-50" id="__codelineno-36-50" name="__codelineno-36-50"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-51"><a href="#__codelineno-36-51" id="__codelineno-36-51" name="__codelineno-36-51"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-36-52"><a href="#__codelineno-36-52" id="__codelineno-36-52" name="__codelineno-36-52"></a><span class="nt">roleRef</span><span class="p">:</span>
+</span><span id="__span-36-53"><a href="#__codelineno-36-53" id="__codelineno-36-53" name="__codelineno-36-53"></a><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
+</span><span id="__span-36-54"><a href="#__codelineno-36-54" id="__codelineno-36-54" name="__codelineno-36-54"></a><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
+</span><span id="__span-36-55"><a href="#__codelineno-36-55" id="__codelineno-36-55" name="__codelineno-36-55"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-56"><a href="#__codelineno-36-56" id="__codelineno-36-56" name="__codelineno-36-56"></a><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-36-57"><a href="#__codelineno-36-57" id="__codelineno-36-57" name="__codelineno-36-57"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+</span><span id="__span-36-58"><a href="#__codelineno-36-58" id="__codelineno-36-58" name="__codelineno-36-58"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-59"><a href="#__codelineno-36-59" id="__codelineno-36-59" name="__codelineno-36-59"></a><span class="nn">---</span>
+</span><span id="__span-36-60"><a href="#__codelineno-36-60" id="__codelineno-36-60" name="__codelineno-36-60"></a><span class="c1"># Allows jenkins to create persistent volumes</span>
+</span><span id="__span-36-61"><a href="#__codelineno-36-61" id="__codelineno-36-61" name="__codelineno-36-61"></a><span class="c1"># This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.</span>
+</span><span id="__span-36-62"><a href="#__codelineno-36-62" id="__codelineno-36-62" name="__codelineno-36-62"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span>
+</span><span id="__span-36-63"><a href="#__codelineno-36-63" id="__codelineno-36-63" name="__codelineno-36-63"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+</span><span id="__span-36-64"><a href="#__codelineno-36-64" id="__codelineno-36-64" name="__codelineno-36-64"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-36-65"><a href="#__codelineno-36-65" id="__codelineno-36-65" name="__codelineno-36-65"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins-crb</span>
+</span><span id="__span-36-66"><a href="#__codelineno-36-66" id="__codelineno-36-66" name="__codelineno-36-66"></a><span class="nt">subjects</span><span class="p">:</span>
+</span><span id="__span-36-67"><a href="#__codelineno-36-67" id="__codelineno-36-67" name="__codelineno-36-67"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+</span><span id="__span-36-68"><a href="#__codelineno-36-68" id="__codelineno-36-68" name="__codelineno-36-68"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-36-69"><a href="#__codelineno-36-69" id="__codelineno-36-69" name="__codelineno-36-69"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+</span><span id="__span-36-70"><a href="#__codelineno-36-70" id="__codelineno-36-70" name="__codelineno-36-70"></a><span class="nt">roleRef</span><span class="p">:</span>
+</span><span id="__span-36-71"><a href="#__codelineno-36-71" id="__codelineno-36-71" name="__codelineno-36-71"></a><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span>
+</span><span id="__span-36-72"><a href="#__codelineno-36-72" id="__codelineno-36-72" name="__codelineno-36-72"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkinsclusterrole</span>
+</span><span id="__span-36-73"><a href="#__codelineno-36-73" id="__codelineno-36-73" name="__codelineno-36-73"></a><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
+</span><span id="__span-36-74"><a href="#__codelineno-36-74" id="__codelineno-36-74" name="__codelineno-36-74"></a><span class="nn">---</span>
+</span><span id="__span-36-75"><a href="#__codelineno-36-75" id="__codelineno-36-75" name="__codelineno-36-75"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span>
+</span><span id="__span-36-76"><a href="#__codelineno-36-76" id="__codelineno-36-76" name="__codelineno-36-76"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+</span><span id="__span-36-77"><a href="#__codelineno-36-77" id="__codelineno-36-77" name="__codelineno-36-77"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-36-78"><a href="#__codelineno-36-78" id="__codelineno-36-78" name="__codelineno-36-78"></a><span class="w">  </span><span class="c1"># "namespace" omitted since ClusterRoles are not namespaced</span>
+</span><span id="__span-36-79"><a href="#__codelineno-36-79" id="__codelineno-36-79" name="__codelineno-36-79"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkinsclusterrole</span>
+</span><span id="__span-36-80"><a href="#__codelineno-36-80" id="__codelineno-36-80" name="__codelineno-36-80"></a><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-36-81"><a href="#__codelineno-36-81" id="__codelineno-36-81" name="__codelineno-36-81"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-82"><a href="#__codelineno-36-82" id="__codelineno-36-82" name="__codelineno-36-82"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"persistentvolumes"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-36-83"><a href="#__codelineno-36-83" id="__codelineno-36-83" name="__codelineno-36-83"></a><span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="s">"delete"</span><span class="p p-Indicator">,</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="s">"patch"</span><span class="p p-Indicator">,</span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+<p>Executar a declaração:
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-37-1"><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>account.yaml
+</span></code></pre></div></p>
+<h3 id="recovering-the-jenkins-token">Recovering the Jenkins' Token</h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-38-1"><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>secrets
+</span></code></pre></div>
+<div class="termy" data-termynal="" data-ty-macos="" data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">kubectl get secrets</span><span data-ty="">NAME            TYPE                                  DATA   AGE<br/>jenkins-token   kubernetes.io/service-account-token   3      21s<br/></span></div>
+<p>Abrindo o objeto com o token.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-39-1"><a href="#__codelineno-39-1" id="__codelineno-39-1" name="__codelineno-39-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>secrets/jenkins-token
+</span></code></pre></div>
+<div class="termy" data-termynal="" data-ty-macos="" data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">kubectl describe secrets/jenkins-token</span><span data-ty="">Name:         jenkins-token<br/>Namespace:    default<br/>Labels:       &lt;none&gt;<br/>Annotations:  kubernetes.io/service-account.name: jenkins<br/>              kubernetes.io/service-account.uid: 0d06d343-fd34-4aff-8396-5dfec5a9e5b6<br/><br/>Type:  kubernetes.io/service-account-token<br/><br/>Data<br/>====<br/>ca.crt:     1111 bytes<br/>namespace:  7 bytes<br/>token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IklqTkZXdEVKcW1iclBrNHBnQzJSX1F6QjFIWDFMX0FvNGV<br/>kNGd2aWFKd00ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ<br/>2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZW<br/>NyZXQubmFtZSI6ImplbmtpbnMtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtY<br/>WNjb3VudC5uYW1lIjoiamVua2lucyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2Nv<br/>dW50LnVpZCI6IjBkMDZkMzQzLWZkMzQtNGFmZi04Mzk2LTVkZmVjNWE5ZTViNiIsInN1YiI6InN5c3RlbTpzZXJ<br/>2aWNlYWNjb3VudDpkZWZhdWx0OmplbmtpbnMifQ.XkwD5vwC7CJNDv44PxCAIpLEfVlQbLE6VDNmTOEpFkaoe_x<br/>4ehU8QS8fnTgUz0a_vjUKuXum-PD2vF8Fx_WBsWVAG8BNhXJv79MMbEe7axYT7W91fjsnT0rMqSqzajNjTTDFvP<br/>DQu0KkLzC-UUnlG3RdNHhzxGVnUIA9lIeJuVKnlCXAexPQr6HeX5ggbe-CZO_uMjFZjwBnjLC-IJsIKKaz8I4Cb<br/>Fxz10vAl5SpJ7PadA1iZZEvr_VYhhG42qMqRFLzkrXtWUG0NX8aSitJT0Wk9c54ME13WDZb6MfRXwUWbARu-TLN<br/>56KrPaqtL2dBtRG2EFOn5nVXARI7jPzhjg<br/></span></div>
+<details class="tip" open="open">
+<summary>Try it!!!</summary>
+<p>Abra o token no site <a href="https://jwt.io/" target="_blank">jwt.io</a> e verifique seu conteúdo.</p>
+</details>
+<h3 id="set-up-the-credential-on-jenkins">Set up the credential on Jenkins</h3>
+<div class="admonition warning">
+<p class="admonition-title">Before to go ahead</p>
+<p>Instale os plugins: Kubernetes Cli e Kubernetes pipeline.</p>
+</div>
+<p>Manage Jenkins &gt; Credentials</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../assets/images/jenkins.kubernetes.credentials.png"><img alt="" src="../../../assets/images/jenkins.kubernetes.credentials.png"/></a></p>
+<p>Instalar certificado digital do Kubernetes para o Jenkins aceitar o <code>https://</code>.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-40-1"><a href="#__codelineno-40-1" id="__codelineno-40-1" name="__codelineno-40-1"></a>cat<span class="w"> </span>~/.minikube/ca.crt<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>
+</span></code></pre></div>
+<div class="termy" data-termynal="" data-ty-macos="" data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">cat ~/.minikube/ca.crt | base64; echo</span><span data-ty="">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTk<br/>Jna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRY<br/>RFRJME1ERXlNVEF6TWpNek5sb1hEVE0wTURFeE9UQXpNak16Tmxvd0ZURVRNQkVHQTFVRQ<br/>pBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBREND<br/>QVFvQ2dnRUJBTFlrClZWMVRCcWg3aEcyQ2s4VE8yWHN4R0lGMzZSNllMRWE1aHQ2cy9aeU<br/>E1aXhmSkQvWU9DNkdWWjVyREpJOGhoMUIKUm1yR29zQittSWZEeTF2VWNlUEVUbEZXWWlx<br/>MXpwZXRxYWFEVUp4L2U5a0dzUWFRU3J5blZOc2NWNG5sTzhTRgp0MjRxcm5pZ1pVblV2UD<br/>ZFanRiZytDUnZKQ3pTRE9zWktrU0h4ckp1NmNOcGR2U2NRbFNMRDhKMVpTZUtucHFhCkJQ<br/>RC9UUkx2ZkJlOHIxQ2RMQU9mN0pUYVRxaGtVSGlpdFVzZW02Z3g3OVprY1MxdzIzWDFERX<br/>NiSklkNHBzTEQKQWlzaUFIVmhJeGs4T3lPUGp2VWxROVVpVnNLQU4vbHBRRFA2Q0llRkZB<br/>SnBwVUw2aVdFYXNZMEU1UDR2OXNRUwphSGtRMmh5Qld6NVdIeTVJOUMwQ0F3RUFBYU5oTU<br/>Y4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNC<br/>Z2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJTRW<br/>hQQy8xaTN6SS9VdkpSZzI5SnJNaUtDbVdEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFj<br/>eE9DelZoQgp5aC9IVm5xYlpBd000cDEvWFRyUlV3Nm1mV1JhTmFTWDlKQTc0MkJCOXptQW<br/>dUaXgwakVwTDNDRG41dk9qTW5OCk9ZaDNFNC9odUJiREJxVkpNQnpEK2hYeGoyRVBmWTB3<br/>aG5nK3pHQnZLaVdyMHMwdjc4T2twTGNnTi9NNWhWTFQKWDh2dFRZWWdaSld5NFhMZWxmbn<br/>YrT2VnR2FGWTNIYjFrcEpNbDd1U1I2MVJlaHhkdEF1VG9vQmEzMTZZNEpOZQpjcVRGdlpp<br/>VVl5VERQM3A5U016TUI2LzlLU25xUVppQmkzNzBFdVBSOVNZNlJrV0QyVGtnclBNaDVPdn<br/>JRMzNlCkR6bGIvOEQ0UHV2YUxDNnB6R2pYVVN5Z1dpTW9JQVRkMEg4QUxVZk8rSjRoTmZk<br/>OU95ZVRwNk50VXNmdC9SamcKRHpFS0lnenlEajMyS3c9PQotLS0tLUVORCBDRVJUSUZJQ0<br/>FURS0tLS0tCg==<br/></span></div>
+<details class="tip" open="open">
+<summary>BASE64 -&gt; PEM -&gt; X.509</summary>
+<p><a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef</a>, verifique o certificado.</p>
+</details>
+<p>Instalar o certificado do Minikube no Jenkins, Manage Jenkins &gt; Clouds</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../assets/images/jenkins.kubernetes.cloud.png"><img alt="" src="../../../assets/images/jenkins.kubernetes.cloud.png"/></a></p>
+<h3 id="updating-the-jenkinsfile">Updating the Jenkinsfile</h3>
+<p>Adding the <code>Deploy on k8s</code> stage:</p>
+<div class="language-yaml highlight"><span class="filename">Jenkinsfile</span><pre><span></span><code><span id="__span-41-1"><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="nn">...</span>
+</span><span id="__span-41-2"><a href="#__codelineno-41-2" id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="l l-Scalar l-Scalar-Plain">stage('Deploy on k8s') {</span>
+</span><span id="__span-41-3"><a href="#__codelineno-41-3" id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">steps {</span>
+</span><span id="__span-41-4"><a href="#__codelineno-41-4" id="__codelineno-41-4" name="__codelineno-41-4"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">withCredentials([ string(credentialsId</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">'minikube-credentials'</span><span class="err">,</span><span class="w"> </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="s">'api_token'</span><span class="l l-Scalar l-Scalar-Plain">) ]) {</span>
+</span><span id="__span-41-5"><a href="#__codelineno-41-5" id="__codelineno-41-5" name="__codelineno-41-5"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml '</span>
+</span><span id="__span-41-6"><a href="#__codelineno-41-6" id="__codelineno-41-6" name="__codelineno-41-6"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/service.yaml '</span>
+</span><span id="__span-41-7"><a href="#__codelineno-41-7" id="__codelineno-41-7" name="__codelineno-41-7"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+</span><span id="__span-41-8"><a href="#__codelineno-41-8" id="__codelineno-41-8" name="__codelineno-41-8"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+</span><span id="__span-41-9"><a href="#__codelineno-41-9" id="__codelineno-41-9" name="__codelineno-41-9"></a><span class="err">}</span>
+</span><span id="__span-41-10"><a href="#__codelineno-41-10" id="__codelineno-41-10" name="__codelineno-41-10"></a><span class="nn">...</span>
 </span></code></pre></div>
 <h2 id="references">References:</h2>
 <p><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/" target="_blank">Using a Service to Expose Your App</a></p>
