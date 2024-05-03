@@ -489,7 +489,7 @@ kubectl apply -f k8s/service.yaml
 
 ## Deploying using Jenkins
 
-### Creating crendentials for Jenkins on K8s
+### Creating crendentials for Jenkins to K8s
 
 Criar credentials no Kubernetes para que o Jenkins possa conectar.
 
@@ -638,7 +638,7 @@ Fxz10vAl5SpJ7PadA1iZZEvr_VYhhG42qMqRFLzkrXtWUG0NX8aSitJT0Wk9c54ME13WDZb6MfRXwUWb
     Abra o token no site [jwt.io](https://jwt.io/){target='_blank'} e verifique seu conteúdo.
 
 
-### Set up the credential on Jenkins
+### Set up the credential to Jenkins
 
 !!! warning "Before to go ahead"
 
