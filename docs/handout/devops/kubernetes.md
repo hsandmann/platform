@@ -275,7 +275,82 @@ Redirecionando porta:
 kubectl port-forward <pod> 5432:5432
 ```
 
-## Deploying a microservice
+## Deploying the Discovery Microservice
+
+``` tree title="discovery"
+store.discovery-resource
+    src
+        main
+            resources
+                application.yaml
+    k8s
+        configmap.yaml
+        deployment.yaml
+        service.yaml
+    Dockerfile
+    Jenkins
+    pom.xml
+```
+
+=== "configmap.yaml"
+
+    ``` yaml title="configmap.yaml"
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+        name: discovery-configmap
+        labels:
+            app: discovery
+    data:
+        DISCOVERY_HOST: discovery    
+    ```
+
+=== "deployment.yaml"
+
+    ``` yaml title="configmap.yaml"
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: discovery
+      labels:
+        app: discovery
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: discovery
+      template:
+        metadata:
+          labels:
+            app: discovery
+        spec:
+          containers:
+            - name: discovery
+              image: humbertosandmann/discovery:latest
+              ports:
+                - containerPort: 8761
+    ```
+
+=== "service.yaml"
+
+    ``` yaml title="service.yaml"
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: discovery
+      labels:
+        app: discovery
+    spec:
+      type: ClusterIP
+      ports:
+        - port: 8761
+          targetPort: 8761
+          protocol: TCP
+      selector:
+        app: discovery
+    ```
+
+## Deploying a Microservice
 
 ``` tree title="account"
 store.account-resource
@@ -301,9 +376,9 @@ store.account-resource
         application:
             name: account
         datasource:
-            url: jdbc:postgresql://${DATABASE_HOST}:5432/${DATABASE_NAME}
-            username: ${DATABASE_USERNAME:postgres}
-            password: ${DATABASE_PASSWORD:Post123321}
+            url: jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DB}
+            username: ${POSTGRES_USER:postgres}
+            password: ${POSTGRES_PASSWORD:Post123321}
             driver-class-name: org.postgresql.Driver
         flyway:
             baseline-on-migrate: true
@@ -325,7 +400,7 @@ store.account-resource
             register-with-eureka: true
             fetch-registry: true
             service-url:
-            defaultZone: ${EUREKA_URI:http://localhost:8761/eureka/}
+            defaultZone: http://${DISCOVERY_HOST}:8761/eureka/
     ```
 
     Subir no Git e rodar o Jenkins.
@@ -352,7 +427,7 @@ store.account-resource
                 image: 'postgres:latest'
                 imagePullPolicy: IfNotPresent
                 ports:
-                  - containerPort: 5432
+                  - containerPort: 8080
                 env:
 
                   - name: POSTGRES_DB
@@ -408,13 +483,233 @@ store.account-resource
     ```
 
 ``` shell
-kubectl apply -f k8s/configmap.yaml
-kubectl apply -f k8s/credentials.yaml
-kubectl apply -f k8s/pv.yaml
-kubectl apply -f k8s/pvc.yaml
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml  
 ```
+
+## Deploying using Jenkins
+
+### Creating crendentials for Jenkins on K8s
+
+Criar credentials no Kubernetes para que o Jenkins possa conectar.
+
+``` yaml title="jenkins.yaml"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jenkins
+  namespace: default
+---
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: jenkins
+  namespace: default
+rules:
+- apiGroups: [""]
+  resources: ["pods","services"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+- apiGroups: [""]
+  resources: ["pods/exec"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+- apiGroups: [""]
+  resources: ["pods/log"]
+  verbs: ["get","list","watch"]
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get"]
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["create","get","update"]
+- apiGroups: [""]
+  resources: ["persistentvolumeclaims"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+ 
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: jenkins-token
+  annotations:
+    kubernetes.io/service-account.name: jenkins
+type: kubernetes.io/service-account-token
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jenkins
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: jenkins
+subjects:
+- kind: ServiceAccount
+  name: jenkins
+---
+# Allows jenkins to create persistent volumes
+# This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: jenkins-crb
+subjects:
+- kind: ServiceAccount
+  namespace: default
+  name: jenkins
+roleRef:
+  kind: ClusterRole
+  name: jenkinsclusterrole
+  apiGroup: rbac.authorization.k8s.io
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  # "namespace" omitted since ClusterRoles are not namespaced
+  name: jenkinsclusterrole
+rules:
+- apiGroups: [""]
+  resources: ["persistentvolumes"]
+  verbs: ["create","delete","get","list","patch","update","watch"]
+```
+
+Executar a declaração:
+``` shell
+kubectl apply -f account.yaml
+```
+
+### Recovering the Jenkins' Token
+
+``` shell
+kubectl get secrets
+```
+
+<!-- termynal -->
+
+```shell
+> kubectl get secrets
+NAME            TYPE                                  DATA   AGE
+jenkins-token   kubernetes.io/service-account-token   3      21s
+```
+
+Abrindo o objeto com o token.
+
+``` shell
+kubectl describe secrets/jenkins-token
+```
+
+<!-- termynal -->
+
+```shell
+> kubectl describe secrets/jenkins-token
+Name:         jenkins-token
+Namespace:    default
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: jenkins
+              kubernetes.io/service-account.uid: 0d06d343-fd34-4aff-8396-5dfec5a9e5b6
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1111 bytes
+namespace:  7 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IklqTkZXdEVKcW1iclBrNHBnQzJSX1F6QjFIWDFMX0FvNGV
+kNGd2aWFKd00ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ
+2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZW
+NyZXQubmFtZSI6ImplbmtpbnMtdG9rZW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtY
+WNjb3VudC5uYW1lIjoiamVua2lucyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2Nv
+dW50LnVpZCI6IjBkMDZkMzQzLWZkMzQtNGFmZi04Mzk2LTVkZmVjNWE5ZTViNiIsInN1YiI6InN5c3RlbTpzZXJ
+2aWNlYWNjb3VudDpkZWZhdWx0OmplbmtpbnMifQ.XkwD5vwC7CJNDv44PxCAIpLEfVlQbLE6VDNmTOEpFkaoe_x
+4ehU8QS8fnTgUz0a_vjUKuXum-PD2vF8Fx_WBsWVAG8BNhXJv79MMbEe7axYT7W91fjsnT0rMqSqzajNjTTDFvP
+DQu0KkLzC-UUnlG3RdNHhzxGVnUIA9lIeJuVKnlCXAexPQr6HeX5ggbe-CZO_uMjFZjwBnjLC-IJsIKKaz8I4Cb
+Fxz10vAl5SpJ7PadA1iZZEvr_VYhhG42qMqRFLzkrXtWUG0NX8aSitJT0Wk9c54ME13WDZb6MfRXwUWbARu-TLN
+56KrPaqtL2dBtRG2EFOn5nVXARI7jPzhjg
+```
+
+???+ tip "Try it!!!"
+
+    Abra o token no site [jwt.io](https://jwt.io/){target='_blank'} e verifique seu conteúdo.
+
+
+### Set up the credential on Jenkins
+
+!!! warning "Before to go ahead"
+
+    Instale os plugins: Kubernetes Cli e Kubernetes pipeline.
+
+
+Manage Jenkins > Credentials
+
+![](../../assets/images/jenkins.kubernetes.credentials.png)
+
+
+Instalar certificado digital do Kubernetes para o Jenkins aceitar o `https://`.
+
+``` shell
+cat ~/.minikube/ca.crt | base64; echo 
+```
+
+<!-- termynal -->
+
+```shell
+> cat ~/.minikube/ca.crt | base64; echo
+LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTk
+Jna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRY
+RFRJME1ERXlNVEF6TWpNek5sb1hEVE0wTURFeE9UQXpNak16Tmxvd0ZURVRNQkVHQTFVRQ
+pBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBREND
+QVFvQ2dnRUJBTFlrClZWMVRCcWg3aEcyQ2s4VE8yWHN4R0lGMzZSNllMRWE1aHQ2cy9aeU
+E1aXhmSkQvWU9DNkdWWjVyREpJOGhoMUIKUm1yR29zQittSWZEeTF2VWNlUEVUbEZXWWlx
+MXpwZXRxYWFEVUp4L2U5a0dzUWFRU3J5blZOc2NWNG5sTzhTRgp0MjRxcm5pZ1pVblV2UD
+ZFanRiZytDUnZKQ3pTRE9zWktrU0h4ckp1NmNOcGR2U2NRbFNMRDhKMVpTZUtucHFhCkJQ
+RC9UUkx2ZkJlOHIxQ2RMQU9mN0pUYVRxaGtVSGlpdFVzZW02Z3g3OVprY1MxdzIzWDFERX
+NiSklkNHBzTEQKQWlzaUFIVmhJeGs4T3lPUGp2VWxROVVpVnNLQU4vbHBRRFA2Q0llRkZB
+SnBwVUw2aVdFYXNZMEU1UDR2OXNRUwphSGtRMmh5Qld6NVdIeTVJOUMwQ0F3RUFBYU5oTU
+Y4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNC
+Z2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJTRW
+hQQy8xaTN6SS9VdkpSZzI5SnJNaUtDbVdEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFj
+eE9DelZoQgp5aC9IVm5xYlpBd000cDEvWFRyUlV3Nm1mV1JhTmFTWDlKQTc0MkJCOXptQW
+dUaXgwakVwTDNDRG41dk9qTW5OCk9ZaDNFNC9odUJiREJxVkpNQnpEK2hYeGoyRVBmWTB3
+aG5nK3pHQnZLaVdyMHMwdjc4T2twTGNnTi9NNWhWTFQKWDh2dFRZWWdaSld5NFhMZWxmbn
+YrT2VnR2FGWTNIYjFrcEpNbDd1U1I2MVJlaHhkdEF1VG9vQmEzMTZZNEpOZQpjcVRGdlpp
+VVl5VERQM3A5U016TUI2LzlLU25xUVppQmkzNzBFdVBSOVNZNlJrV0QyVGtnclBNaDVPdn
+JRMzNlCkR6bGIvOEQ0UHV2YUxDNnB6R2pYVVN5Z1dpTW9JQVRkMEg4QUxVZk8rSjRoTmZk
+OU95ZVRwNk50VXNmdC9SamcKRHpFS0lnenlEajMyS3c9PQotLS0tLUVORCBDRVJUSUZJQ0
+FURS0tLS0tCg==
+```
+
+???+ tip "BASE64 -> PEM -> X.509"
+
+    [CyberChef](https://gchq.github.io/CyberChef/){target='_blank'}, verifique o certificado.
+
+Instalar o certificado do Minikube no Jenkins, Manage Jenkins > Clouds
+
+![](../../assets/images/jenkins.kubernetes.cloud.png)
+
+
+### Updating the Jenkinsfile
+
+Adding the `Deploy on k8s` stage:
+
+```yaml title="Jenkinsfile"
+...
+stage('Deploy on k8s') {
+    steps {
+        withCredentials([ string(credentialsId: 'minikube-credentials', variable: 'api_token') ]) {
+            sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml '
+            sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/service.yaml '
+        }
+    }
+}
+...
+```
+
 
 ## References:
 
@@ -424,4 +719,6 @@ kubectl apply -f k8s/service.yaml
 
 [How to Deploy Postgres to Kubernetes Cluster](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster){target='_blank'}
 
-[Spring boot, PostgreSQL and Kubernetes](https://medium.com/@dickanirwansyah/spring-boot-postgresql-kubernetes-e3eb726570bd)
+[Spring boot, PostgreSQL and Kubernetes](https://medium.com/@dickanirwansyah/spring-boot-postgresql-kubernetes-e3eb726570bd){target='_blank'}
+
+[Deploy nodejs App in a Minikube Kubernetes using Jenkins CI/CD pipeline](https://medium.com/@devayanthakur/minikube-configure-jenkins-kubernetes-plugin-25eb804d0dec){target='_blank'}
