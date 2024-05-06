@@ -126,7 +126,7 @@ store.db
     ```
     
     ``` shell
-    kubectl apply -f ./k8s/configmap.yaml
+    kubectl apply -f ./k8s/credentials.yaml
     kubectl get secrets
     ```
 
@@ -215,11 +215,11 @@ store.db
                         name: postgres-configmap
                         key: POSTGRES_DB
 
-                  - name: POSTGRES_USER
+                  - name: POSTGRES_USERNAME
                     valueFrom:
                       secretKeyRef:
                         name: postgres-credentials
-                        key: POSTGRES_USER
+                        key: POSTGRES_USERNAME
 
                   - name: POSTGRES_PASSWORD
                     valueFrom:
@@ -252,7 +252,7 @@ store.db
         labels:
             app: postgres
     spec:
-        type: ClusterIp
+        type: ClusterIP
         ports:
             - port: 5432
         selector:
@@ -298,11 +298,11 @@ store.discovery-resource
     apiVersion: v1
     kind: ConfigMap
     metadata:
-        name: discovery-configmap
-        labels:
-            app: discovery
+      name: discovery-configmap
+      labels:
+        app: discovery
     data:
-        DISCOVERY_HOST: discovery    
+      DISCOVERY_HOST: discovery    
     ```
 
 === "deployment.yaml"
@@ -370,37 +370,37 @@ store.account-resource
 
     ``` yaml title="application.yaml"
     server:
-        port: 8080
+      port: 8080
 
     spring:
-        application:
-            name: account
-        datasource:
-            url: jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DB}
-            username: ${POSTGRES_USER:postgres}
-            password: ${POSTGRES_PASSWORD:Post123321}
-            driver-class-name: org.postgresql.Driver
-        flyway:
-            baseline-on-migrate: true
-            schemas: account
-        jpa:
-            properties:
-            hibernate:
-                default_schema: account
+      application:
+        name: account
+      datasource:
+        url: jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DB}
+        username: ${POSTGRES_USERNAME:postgres}
+        password: ${POSTGRES_PASSWORD:Post123321}
+        driver-class-name: org.postgresql.Driver
+      flyway:
+        baseline-on-migrate: true
+        schemas: account
+      jpa:
+        properties:
+          hibernate:
+            default_schema: account
 
     management:
-        endpoints:
-            web:
-                base-path: /account/actuator
-                exposure:
-                    include: [ 'prometheus' ]
+      endpoints:
+        web:
+          base-path: /account/actuator
+            exposure:
+              include: [ 'prometheus' ]
 
     eureka:
-        client:
-            register-with-eureka: true
-            fetch-registry: true
-            service-url:
-            defaultZone: http://${DISCOVERY_HOST}:8761/eureka/
+      client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+        defaultZone: http://${DISCOVERY_HOST}:8761/eureka/
     ```
 
     Subir no Git e rodar o Jenkins.
@@ -411,50 +411,53 @@ store.account-resource
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: postgres
+      name: account
     spec:
-      replicas: 1
       selector:
         matchLabels:
-          app: postgres
+          app: account
+      replicas: 1
       template:
         metadata:
           labels:
-            app: postgres
+            app: account
         spec:
           containers:
-              - name: postgres
-                image: 'postgres:latest'
-                imagePullPolicy: IfNotPresent
-                ports:
-                  - containerPort: 8080
-                env:
+            - name: account
+              image: humbertosandmann/account:latest
+              ports:
+                - containerPort: 8080
+              env:
 
-                  - name: POSTGRES_DB
-                    valueFrom:
-                      configMapKeyRef:
-                        name: postgres-configmap
-                        key: POSTGRES_DB
+                - name: DISCOVERY_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: discovery-configmap
+                      key: DISCOVERY_HOST
 
-                  - name: POSTGRES_USER
-                    valueFrom:
-                      secretKeyRef:
-                        name: postgres-credentials
-                        key: POSTGRES_USER
+                - name: POSTGRES_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: postgres-configmap
+                      key: POSTGRES_HOST
 
-                  - name: POSTGRES_PASSWORD
-                    valueFrom:
-                      secretKeyRef:
-                        name: postgres-credentials
-                        key: POSTGRES_PASSWORD
+                - name: POSTGRES_DB
+                  valueFrom:
+                    configMapKeyRef:
+                      name: postgres-configmap
+                      key: POSTGRES_DB
 
-                volumeMounts:
-                  - mountPath: /var/lib/postgresql/data
-                    name: postgresdata
-          volumes:
-              - name: postgresdata
-                persistentVolumeClaim:
-                  claimName: postgres-volume-claim
+                - name: POSTGRES_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres-credentials
+                      key: POSTGRES_USERNAME
+
+                - name: POSTGRES_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: postgres-credentials
+                      key: POSTGRES_PASSWORD
     ```
 
 
@@ -464,17 +467,17 @@ store.account-resource
     apiVersion: v1
     kind: Service
     metadata:
+      name: account
+      labels:
         name: account
-        labels:
-            name: account
     spec:
-        type: NodePort
-        ports:
-            - port: 8080
-            targetPort: 8080
-            protocol: TCP
-        selector:
-            app: account
+      type: NodePort
+      ports:
+        - port: 8080
+          targetPort: 8080
+          protocol: TCP
+      selector:
+        app: account
     ```
 
     ``` shell
@@ -699,14 +702,14 @@ Adding the `Deploy on k8s` stage:
 
 ```yaml title="Jenkinsfile"
 ...
-stage('Deploy on k8s') {
-    steps {
-        withCredentials([ string(credentialsId: 'minikube-credentials', variable: 'api_token') ]) {
-            sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml '
-            sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/service.yaml '
+    stage('Deploy on k8s') {
+        steps {
+            withCredentials([ string(credentialsId: 'minikube-credentials', variable: 'api_token') ]) {
+                sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml '
+                sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/service.yaml '
+            }
         }
     }
-}
 ...
 ```
 

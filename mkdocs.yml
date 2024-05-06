@@ -147,4 +147,5 @@ nav:
     - TLS for microservices: ./appendix/tls-for-microservices.md
     - RSA Algorithm: ./appendix/rsa.md
     - Oh My Zsh: ./appendix/ohmyzsh.md
+    - Others: ./appendix/others.md
   - Disclaimer: ./disclaimer.md
