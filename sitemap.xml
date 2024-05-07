@@ -116,6 +116,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hsandmann.github.io/platform/handout/cloud/aws/cli/</loc>
+         <lastmod>2024-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hsandmann.github.io/platform/handout/cloud/aws/eks/</loc>
+         <lastmod>2024-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hsandmann.github.io/platform/handout/devops/jenkins/</loc>
          <lastmod>2024-05-07</lastmod>
          <changefreq>daily</changefreq>
