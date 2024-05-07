@@ -904,6 +904,7 @@
 <th>Avaliação</th>
 <th></th>
 <th>Descrição</th>
+<th style="text-align: center;">Data</th>
 <th style="text-align: right;">Nota (%)</th>
 </tr>
 </thead>
@@ -912,30 +913,35 @@
 <td>Roteiros</td>
 <td></td>
 <td>Média aritmética dos 2 roteiros de maiores notas.</td>
+<td style="text-align: center;"></td>
 <td style="text-align: right;">60.0</td>
 </tr>
 <tr>
 <td></td>
 <td>Roteiro 1</td>
 <td>Testes</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr>
 <td></td>
 <td>Roteiro 2</td>
 <td>Bottlenecks</td>
+<td style="text-align: center;">22.mai</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr>
 <td></td>
 <td>Roteiro 3</td>
 <td>Cloud</td>
+<td style="text-align: center;">22.mai</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr>
 <td>Participação</td>
 <td></td>
 <td>Nota geral atribuída ao grupo distribuída aos membros pelo próprio grupo, apenas notas inteiras <span class="arithmatex">\([0; 10]\)</span></td>
+<td style="text-align: center;"></td>
 <td style="text-align: right;">40.0</td>
 </tr>
 </tbody>
@@ -1026,14 +1032,34 @@
 <li class="task-list-item">
 <p><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Implementação de um microserviço de <em>bottleneck</em> para o projeto:</p>
 <ul>
-<li>Mensageria</li>
-<li>Resiliência</li>
-<li>Configuração</li>
-<li>Caching da dados<ul>
-<li><a href="https://youtu.be/YcI9b-lgi7w" target="_blank">Aprenda a usar cache nos seus projetos Spring Boot! Guliana Bezerra</a></li>
+<li>Mensageria<ul>
+<li><a href="https://spring.io/guides/gs/messaging-rabbitmq" target="_blank">RabbitMQ</a></li>
+<li><a href="https://www.baeldung.com/spring-kafka" target="_blank">Kafka</a></li>
+<li><a href="https://youtu.be/97TF2xZgAhU" target="_blank">Spring e Kafka, Giuliana Bezerra</a></li>
 </ul>
 </li>
-<li>Payments (sandboxes)</li>
+<li>Resiliência<ul>
+<li><a href="https://spring.io/guides/gs/cloud-circuit-breaker" target="_blank">Spring Cloud Circuit Breaker</a></li>
+</ul>
+</li>
+<li>Configuração<ul>
+<li><a href="https://docs.spring.io/spring-cloud-config/docs/current/reference/html/" target="_blank">Spring Cloud Config</a></li>
+</ul>
+</li>
+<li>In-Memory Database<ul>
+<li><a href="https://youtu.be/YcI9b-lgi7w" target="_blank">Redis, Giuliana Bezerra</a></li>
+</ul>
+</li>
+<li>Payments (sandboxes)<ul>
+<li><a href="https://developer.paypal.com/tools/sandbox/" target="_blank">PayPal</a></li>
+<li><a href="https://developer.heartlandpaymentsystems.com/" target="_blank">Hearland</a></li>
+<li><a href="https://www.mercadopago.com.br/developers/pt" target="_blank">Mercado Pago</a></li>
+</ul>
+</li>
+<li>Jenkins Pipeline<ul>
+<li><a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/ci-integration/jenkins-integration/key-features/" target="_blank">SonarQube</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
