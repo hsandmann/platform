@@ -37,7 +37,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#reference">
+<a class="md-skip" href="#setting-up-the-aws-cli">
           Skip to content
         </a>
 </div>
@@ -296,6 +296,13 @@
       Table of contents
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-the-aws-cli">
+<span class="md-ellipsis">
+      Setting up the AWS Cli
+    </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#reference">
 <span class="md-ellipsis">
@@ -801,6 +808,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-the-aws-cli">
+<span class="md-ellipsis">
+      Setting up the AWS Cli
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#reference">
 <span class="md-ellipsis">
       Reference
@@ -815,6 +829,17 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>cli</h1>
+<h2 id="setting-up-the-aws-cli">Setting up the AWS Cli</h2>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../../assets/images/cloud.aws.cli.crendentials.png"><img alt="" src="../../../../assets/images/cloud.aws.cli.crendentials.png"/></a></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>aws<span class="w"> </span>configure
+</span></code></pre></div>
+<div class="termy" data-termynal="" data-ty-macos="" data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">aws configure</span><span data-ty="">AWS Access Key ID: ****************5DMG<br/>AWS Secret Access Key]: *********************************fhwQt<br/>Default region name [None]: <br/>Default output format [None]: <br/></span></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>aws<span class="w"> </span>sts<span class="w"> </span>get-session-token
+</span></code></pre></div>
+<div class="termy" data-termynal="" data-ty-macos="" data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">aws sts get-session-token</span><span data-ty="">{<br/>    "Credentials": {<br/>        "AccessKeyId": "ASIA4MTWJ5HP4RFKVFX2",<br/>        "SecretAccessKey": "RWfqFn9NZRZYEy1a5sFpdUPSd5i03YRer/9+PZ6V",<br/>        "SessionToken": "FwoGZXIvYXdzEJX//////////wEaDIRJrTOKnJTZ/<br/>        ZpZGiKCAYnnc+16sxQl/eGYvj998q9u2eFb3VziCgpvNzKAuI/YcthL2XLp2VUXZswaOb5C3BikDENEKVbeH4va32ltJ/1Bm+F/<br/>        qkHNE9dTRMOxshV9iwkCe3/4+Sl9O6dZJguglcCq2Yfh+9HDzJxo6WtAd7UiCL6C/<br/>        hlcWgRS24IhvbdUDsgoy47qsQYyKNwLwW9ki4w5bmYRM9MVMinufs4LEkVRJGpEmc8<br/>        RG3gNaGvnRB0d840=",<br/>        "Expiration": "2024-05-08T07:55:55+00:00"<br/>    }<br/>}<br/></span></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>aws<span class="w"> </span>sts<span class="w"> </span>get-caller-identity
+</span></code></pre></div>
+<div class="termy" data-termynal="" data-ty-macos="" data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">aws sts get-caller-identity</span><span data-ty="">{<br/>    "UserId": "AIDA4MTWJ5HPRUU7R22VG",<br/>    "Account": "851725380063",<br/>    "Arn": "arn:aws:iam::851725380063:user/root"<br/>}<br/></span></div>
 <h2 id="reference">Reference</h2>
 <ul>
 <li>
@@ -830,7 +855,7 @@
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2024</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 8, 2024</span>
 </span>
 </aside>
 </article>
