@@ -914,11 +914,53 @@
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://kubernetes.io/images/docs/components-of-kubernetes.svg"><img alt="" src="https://kubernetes.io/images/docs/components-of-kubernetes.svg"/></a>
 <figcaption>Kubernetes Components <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></figcaption>
 </figure>
-<p>É necessário criar uma estrutura de rede para suportar o Kubernetes, para isso, é aconselhável utilizar o Cloud Formation.</p>
+<p>É necessário criar uma estrutura de rede para suportar o Kubernetes, para isso, é aconselhável utilizar um template do Cloud Formation. Abaixe o arquivo <a download="amazon-eks-vpc-private-subnets.yaml" href="../../../../assets/templates/amazon-eks-vpc-private-subnets.yaml">amazon-eks-vpc-private-subnets.yaml</a> e dê um <em>upload</em> na criação da VPC.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../../assets/images/cloud.aws.eks.vpc.1.png"><img alt="" src="../../../../assets/images/cloud.aws.eks.vpc.1.png"/></a></p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
 </span></code></pre></div>
-<p><a download="download" href="../../../../assets/templates/amazon-eks-vpc-private-subnets.yaml">amazon-eks-vpc-private-subnets.yaml</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../../assets/images/cloud.aws.eks.vpc.2.png"><img alt="" src="../../../../assets/images/cloud.aws.eks.vpc.2.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../../assets/images/cloud.aws.eks.vpc.3.png"><img alt="" src="../../../../assets/images/cloud.aws.eks.vpc.3.png"/></a></p>
+<pre class="mermaid"><code>flowchart TB
+  subgraph Region
+    direction LR
+    subgraph Zone A
+      direction LR
+      subgraph subpri1["Subnet Private"]
+        direction TB
+        poda1["pod 1"]
+        poda2["pod 2"]
+        poda3["pod 3"]
+      end
+      subgraph subpub1["Subnet Public"]
+        loadbalancea["Load Balance"]
+      end
+    end
+    subgraph Zone B
+      direction LR
+      subgraph subpri2["Subnet Private"]
+        direction TB
+        podb1["pod 1"]
+        podb2["pod 2"]
+        podb3["pod 3"]
+      end
+      subgraph subpub2["Subnet Public"]
+        loadbalanceb["Load Balance"]
+      end
+    end
+    User --&gt; loadbalancea
+    loadbalancea --&gt; poda1
+    loadbalancea --&gt; poda2
+    loadbalancea --&gt; poda3
+    User --&gt; loadbalanceb
+    loadbalanceb --&gt; podb1
+    loadbalanceb --&gt; podb2
+    loadbalanceb --&gt; podb3
+  end</code></pre>
+<p>gateway --&gt; auth
+gateway --&gt; discovery</p>
 <h3 id="building-a-eks">Building a EKS</h3>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../../assets/images/cloud.aws.eks.1.png"><img alt="" src="../../../../assets/images/cloud.aws.eks.1.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../../../assets/images/cloud.aws.eks.2.png"><img alt="" src="../../../../assets/images/cloud.aws.eks.2.png"/></a></p>
 <h2 id="references">References:</h2>
 <div class="footnote">
 <hr/>
@@ -935,6 +977,9 @@
 </li>
 <li id="fn:4">
 <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html" target="_blank">Creating a VPC for your Amazon EKS cluster</a> <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://calculator.aws/#/createCalculator/EKS" target="_blank">AWS Princing Calculator - EKS</a> <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 </ol>
 </div>
