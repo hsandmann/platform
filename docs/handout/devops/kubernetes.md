@@ -525,7 +525,7 @@ rules:
   verbs: ["get","list","watch"]
 - apiGroups: [""]
   resources: ["secrets"]
-  verbs: ["get"]
+  verbs: ["get","create"]
 - apiGroups: [""]
   resources: ["configmaps"]
   verbs: ["create","get","update"]
@@ -653,48 +653,6 @@ Manage Jenkins > Credentials
 ![](../../assets/images/jenkins.kubernetes.credentials.png)
 
 
-Instalar certificado digital do Kubernetes para o Jenkins aceitar o `https://`.
-
-``` shell
-cat ~/.minikube/ca.crt | base64; echo 
-```
-
-<!-- termynal -->
-
-```shell
-> cat ~/.minikube/ca.crt | base64; echo
-LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTk
-Jna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRY
-RFRJME1ERXlNVEF6TWpNek5sb1hEVE0wTURFeE9UQXpNak16Tmxvd0ZURVRNQkVHQTFVRQ
-pBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBREND
-QVFvQ2dnRUJBTFlrClZWMVRCcWg3aEcyQ2s4VE8yWHN4R0lGMzZSNllMRWE1aHQ2cy9aeU
-E1aXhmSkQvWU9DNkdWWjVyREpJOGhoMUIKUm1yR29zQittSWZEeTF2VWNlUEVUbEZXWWlx
-MXpwZXRxYWFEVUp4L2U5a0dzUWFRU3J5blZOc2NWNG5sTzhTRgp0MjRxcm5pZ1pVblV2UD
-ZFanRiZytDUnZKQ3pTRE9zWktrU0h4ckp1NmNOcGR2U2NRbFNMRDhKMVpTZUtucHFhCkJQ
-RC9UUkx2ZkJlOHIxQ2RMQU9mN0pUYVRxaGtVSGlpdFVzZW02Z3g3OVprY1MxdzIzWDFERX
-NiSklkNHBzTEQKQWlzaUFIVmhJeGs4T3lPUGp2VWxROVVpVnNLQU4vbHBRRFA2Q0llRkZB
-SnBwVUw2aVdFYXNZMEU1UDR2OXNRUwphSGtRMmh5Qld6NVdIeTVJOUMwQ0F3RUFBYU5oTU
-Y4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNC
-Z2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJTRW
-hQQy8xaTN6SS9VdkpSZzI5SnJNaUtDbVdEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFj
-eE9DelZoQgp5aC9IVm5xYlpBd000cDEvWFRyUlV3Nm1mV1JhTmFTWDlKQTc0MkJCOXptQW
-dUaXgwakVwTDNDRG41dk9qTW5OCk9ZaDNFNC9odUJiREJxVkpNQnpEK2hYeGoyRVBmWTB3
-aG5nK3pHQnZLaVdyMHMwdjc4T2twTGNnTi9NNWhWTFQKWDh2dFRZWWdaSld5NFhMZWxmbn
-YrT2VnR2FGWTNIYjFrcEpNbDd1U1I2MVJlaHhkdEF1VG9vQmEzMTZZNEpOZQpjcVRGdlpp
-VVl5VERQM3A5U016TUI2LzlLU25xUVppQmkzNzBFdVBSOVNZNlJrV0QyVGtnclBNaDVPdn
-JRMzNlCkR6bGIvOEQ0UHV2YUxDNnB6R2pYVVN5Z1dpTW9JQVRkMEg4QUxVZk8rSjRoTmZk
-OU95ZVRwNk50VXNmdC9SamcKRHpFS0lnenlEajMyS3c9PQotLS0tLUVORCBDRVJUSUZJQ0
-FURS0tLS0tCg==
-```
-
-???+ tip "BASE64 -> PEM -> X.509"
-
-    [CyberChef](https://gchq.github.io/CyberChef/){target='_blank'}, verifique o certificado.
-
-Instalar o certificado do Minikube no Jenkins, Manage Jenkins > Clouds
-
-![](../../assets/images/jenkins.kubernetes.cloud.png)
-
 
 ### Updating the Jenkinsfile
 
@@ -716,12 +674,12 @@ Adding the `Deploy on k8s` stage:
 
 ## References:
 
-[Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/){target='_blank'}
+[1^]: [Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/){target='_blank'}
 
-[Install Kubernetes's Tools](https://kubernetes.io/docs/tasks/tools/){target='_blank'}
+[2^]: [Install Kubernetes's Tools](https://kubernetes.io/docs/tasks/tools/){target='_blank'}
 
-[How to Deploy Postgres to Kubernetes Cluster](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster){target='_blank'}
+[3^]: [How to Deploy Postgres to Kubernetes Cluster](https://www.digitalocean.com/community/tutorials/how-to-deploy-postgres-to-kubernetes-cluster){target='_blank'}
 
-[Spring boot, PostgreSQL and Kubernetes](https://medium.com/@dickanirwansyah/spring-boot-postgresql-kubernetes-e3eb726570bd){target='_blank'}
+[4^]: [Spring boot, PostgreSQL and Kubernetes](https://medium.com/@dickanirwansyah/spring-boot-postgresql-kubernetes-e3eb726570bd){target='_blank'}
 
-[Deploy nodejs App in a Minikube Kubernetes using Jenkins CI/CD pipeline](https://medium.com/@devayanthakur/minikube-configure-jenkins-kubernetes-plugin-25eb804d0dec){target='_blank'}
+[5^]: [Deploy nodejs App in a Minikube Kubernetes using Jenkins CI/CD pipeline](https://medium.com/@devayanthakur/minikube-configure-jenkins-kubernetes-plugin-25eb804d0dec){target='_blank'}

@@ -91,12 +91,11 @@ flowchart TB
 gateway --> auth
 gateway --> discovery
 
-### Building a EKS
+### 3. Building an EKS
 
 ![](../../../assets/images/cloud.aws.eks.1.png)
 
 ![](../../../assets/images/cloud.aws.eks.2.png)
-
 
 
 
