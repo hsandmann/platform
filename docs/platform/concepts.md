@@ -1,4 +1,4 @@
-## [Historical Context](#historical-context)
+## Historical Context
 
 ### Single block system
 
@@ -95,7 +95,7 @@ timeline
 
 
 
-## [High-perfomance Architectures](#high-perfomance-architectures)
+## High-perfomance Architectures
 
 High-performance architectures refer to the design and configuration of computer systems, networks, and software to achieve optimal speed, responsiveness, throughput, and efficiency. These architectures are specifically tailored to handle large-scale, resource-intensive, and performance-critical workloads. High-performance systems are often employed in scenarios such as data centers, cloud computing environments, scientific computing, financial services, and other applications where speed and efficiency are paramount.
 
@@ -278,8 +278,10 @@ Design patterns provide several benefits in software development:
 
 While design patterns are valuable tools, it's essential to use them judiciously. Not every problem requires a design pattern, and using patterns unnecessarily can lead to overly complex and difficult-to-maintain code. It's important to understand the problem at hand and choose the appropriate design pattern when it genuinely adds value to the solution.
 
-[^1]: GAMMA, E.; HELM, R.; JOHNSON, R., VLISSIDES, J., [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com.br/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/), 1ª ed., Addison-Wesley Professional, 1994.
 
-[^2]: [Wikipedia - CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
-[^3]: [Gof](https://springframework.guru/gang-of-four-design-patterns/)
+[^1]: GAMMA, E.; HELM, R.; JOHNSON, R., VLISSIDES, J., [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com.br/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/){:target='_blank'}, 1ª ed., Addison-Wesley Professional, 1994.
+
+[^2]: :fontawesome-brands-wikipedia-w:{ .wikipedia } [Wikipedia - CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem){:target='_blank'}
+
+[^3]: [Gang of Four - Gof](https://springframework.guru/gang-of-four-design-patterns/){:target='_blank'}

@@ -60,6 +60,6 @@ resource "aws_s3_public_access_block" "static_site_bucket" {
 
 ## Additional Material
 
-- <a href="https://youtu.be/BslJdgv_I2c" target="_blank">Fernanda Kipper - Criando Infra na AWS com Terraform (IaC)</a></i>
+- :fontawesome-brands-youtube:{ .youtube } [Criando Infra na AWS com Terraform (IaC)](https://youtu.be/BslJdgv_I2c){:target='_blank'} by [Fernanda Kipper](https://github.com/Fernanda-Kipper){:target='_blank'}
 
-    [![](https://img.youtube.com/vi/BslJdgv_I2c/0.jpg){ width=80% }](https://youtu.be/BslJdgv_I2c){:target="_blank"}
+    [![](https://img.youtube.com/vi/BslJdgv_I2c/0.jpg){ width=60% }](https://youtu.be/BslJdgv_I2c){:target="_blank"}

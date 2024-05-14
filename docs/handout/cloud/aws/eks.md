@@ -99,7 +99,6 @@ gateway --> discovery
 
 
 
-
 ## References:
 
 [^1]: [Setting up to use Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/setting-up.html){target='_blank'}
@@ -108,7 +107,7 @@ gateway --> discovery
 
 [^3]: :fontawesome-brands-youtube:{ .youtube } [Como criar um cluster Kubernetes na AWS com EKS](https://youtu.be/JrT5YV1KMeY){:target="_blank"} by [Fabricio Veronez](https://github.com/fabricioveronez){:target="_blank"}
 
-    [![](https://img.youtube.com/vi/JrT5YV1KMeY/0.jpg){ width=80% }](https://youtu.be/JrT5YV1KMeY){:target="_blank"}
+    [![](https://img.youtube.com/vi/JrT5YV1KMeY/0.jpg){ width=60% }](https://youtu.be/JrT5YV1KMeY){:target="_blank"}
 
 [^4]: [Creating a VPC for your Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html){:target="_blank"}
 

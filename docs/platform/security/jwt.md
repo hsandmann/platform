@@ -24,7 +24,7 @@ Here's a simple example of a JWT created on JWT Builder[^2]:
 
 This JWT consists of three parts, decoded by [^3]:
 
-=== "[Header](#header)"
+=== "Header"
 
     `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9`
 
@@ -35,7 +35,7 @@ This JWT consists of three parts, decoded by [^3]:
     }
     ```
 
-=== "[Payload](#payload)"
+=== "Payload"
 
     `eyJpc3MiOiJJbnNwZXIiLCJpYXQiOjE3MDMwMDgzMzgsImV4cCI6MjAxODU0MTEzOCwiYXVkIjoid3d3Lmluc3Blci5lZHUuYnIiLCJzdWIiOiJodW1iZXJ0b3JzQGluc3Blci5lZHUuYnIiLCJHaXZlbk5hbWUiOiJIdW1iZXJ0byIsIlN1cm5hbWUiOiJTYW5kbWFubiIsIkVtYWlsIjoiaHVtYmVydG9yc0BpbnNwZXIuZWR1LmJyIiwiUm9sZSI6IlByb2Zlc3NvciJ9`
 
@@ -53,7 +53,7 @@ This JWT consists of three parts, decoded by [^3]:
     }
     ```
 
-=== "[Signature](#signature)"
+=== "Signature"
 
     `SsGdvR5GbYWTRbxY7IGxHt1vSxhkpRueBJWsi0lrPhJVCICp119QjU8F3QvHW0yF5tw-HhQ9RVh0l89t4M0LNw`
 
@@ -71,9 +71,10 @@ JWTs are widely used in web development due to their simplicity, flexibility, an
 
 - [Spring Cloud Security](../../handout/microservices/auth.md)
 
-- <a href="https://www.youtube.com/watch?v=P2CPd9ynFLg" target="_blank">ByeteByteGo - Why is JWT popular?</a></i>
+- :fontawesome-brands-youtube:{ .youtube } [ByeteByteGo - Why is JWT popular?](https://www.youtube.com/watch?v=P2CPd9ynFLg){:target='_blank'}
 
-    [![](https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg){ width=80% }](https://www.youtube.com/watch?v=P2CPd9ynFLg){:target="_blank"}
+    [![](https://img.youtube.com/vi/P2CPd9ynFLg/0.jpg){ width=60% }](https://www.youtube.com/watch?v=P2CPd9ynFLg){:target="_blank"}
+
 
 
 [^1]: [RFC 7519 - JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519){:target="_blank"}, 2015.
