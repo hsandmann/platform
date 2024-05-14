@@ -106,7 +106,7 @@ gateway --> discovery
 
 [^2]: [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/){:target="_blank"}
 
-[^3]: <a href="https://youtu.be/JrT5YV1KMeY" target="_blank">Como criar um cluster Kubernetes na AWS com EKS, Fabricio Veronez</a>
+[^3]: :fontawesome-brands-youtube:{ .youtube } [Como criar um cluster Kubernetes na AWS com EKS](https://youtu.be/JrT5YV1KMeY){:target="_blank"} by [Fabricio Veronez](https://github.com/fabricioveronez){:target="_blank"}
 
     [![](https://img.youtube.com/vi/JrT5YV1KMeY/0.jpg){ width=80% }](https://youtu.be/JrT5YV1KMeY){:target="_blank"}
 
