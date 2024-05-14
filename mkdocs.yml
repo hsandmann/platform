@@ -62,7 +62,6 @@ plugins:
   - git-revision-date-localized
   - search
   - markdown-exec
-  - swagger-ui-tag
   - termynal:
       prompt_literal_start:
         - "$"

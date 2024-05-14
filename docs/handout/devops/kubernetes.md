@@ -121,7 +121,7 @@ store.db
     metadata:
         name: postgres-credentials
     data:
-        POSTGRES_USERNAME: c3RvcmU=
+        POSTGRES_USER: c3RvcmU=
         POSTGRES_PASSWORD: c3RvcmU=
     ```
     
@@ -215,11 +215,11 @@ store.db
                         name: postgres-configmap
                         key: POSTGRES_DB
 
-                  - name: POSTGRES_USERNAME
+                  - name: POSTGRES_USER
                     valueFrom:
                       secretKeyRef:
                         name: postgres-credentials
-                        key: POSTGRES_USERNAME
+                        key: POSTGRES_USER
 
                   - name: POSTGRES_PASSWORD
                     valueFrom:
@@ -377,7 +377,7 @@ store.account-resource
         name: account
       datasource:
         url: jdbc:postgresql://${POSTGRES_HOST}:5432/${POSTGRES_DB}
-        username: ${POSTGRES_USERNAME:postgres}
+        username: ${POSTGRES_USER:postgres}
         password: ${POSTGRES_PASSWORD:Post123321}
         driver-class-name: org.postgresql.Driver
       flyway:
@@ -447,11 +447,11 @@ store.account-resource
                       name: postgres-configmap
                       key: POSTGRES_DB
 
-                - name: POSTGRES_USERNAME
+                - name: POSTGRES_USER
                   valueFrom:
                     secretKeyRef:
                       name: postgres-credentials
-                      key: POSTGRES_USERNAME
+                      key: POSTGRES_USER
 
                 - name: POSTGRES_PASSWORD
                   valueFrom:
