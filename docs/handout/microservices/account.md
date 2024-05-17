@@ -12,7 +12,7 @@ Esse microserviço é responsável por gerenciar as contas dos usuários do sist
 
 ## Endpoints
 
-??? note "Create Account"
+???+ note "Create Account"
 
     ``` url
     POST /accounts
@@ -26,12 +26,21 @@ Esse microserviço é responsável por gerenciar as contas dos usuários do sist
         "password": "123@"
     }
     ```
-    Response
+    Responses:
 
-    | code | body | 
-    |--|--|
-    | 201 | `{ "id": "45d16201-12a4-48bf-8c84-df768fdc4878", "name": "Antonio do Estudo", "email": "acme@insper.edu.br" }`{:.json} |
-    | 401 | | 
+    <table>
+      <tr><th>code</th><th>body</th></tr>
+      <tr><td>201</td><td>
+      ``` json
+      {
+        "id": "45d16201-12a4-48bf-8c84-df768fdc4878",
+        "name": "Antonio do Estudo",
+        "email": "acme@insper.edu.br"
+      }
+      ```
+      </td></tr>
+      <tr><td>401</td><td></td></tr>
+    </table>
 
 ??? info "Login :: find by email and password"
 
@@ -40,12 +49,23 @@ Esse microserviço é responsável por gerenciar as contas dos usuários do sist
     ```
     GET /accounts/{uuid}
     ```
-    Response
 
-    | code | body | 
-    |--|--|
-    | 200 | ```{"id": "45d16201-12a4-48bf-8c84-df768fdc4878", "name": "Antonio do Estudo", "email": "acme@insper.edu.br" }``` |
-    | 401 | | 
+    Responses:
+
+    <table>
+      <tr><th>code</th><th>body</th></tr>
+      <tr><td>200</td><td>
+      ``` json
+      {
+        "id": "45d16201-12a4-48bf-8c84-df768fdc4878",
+        "name": "Antonio do Estudo",
+        "email": "acme@insper.edu.br"
+      }
+      ```
+      </td></tr>
+      <tr><td>401</td><td></td></tr>
+    </table>
+
 
 ## Modularização
 

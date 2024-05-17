@@ -1,7 +1,7 @@
 
 ## Elastic Kubernetes Service
 
-!!! warning "Never spend your money before you have it, Jefferson T."
+!!! quote "Never spend your money before you have it, Jefferson T."
 
     EKS não tem cota grátis, sempre é muito bem cobrado.
 
@@ -98,6 +98,150 @@ gateway --> discovery
 ![](../../../assets/images/cloud.aws.eks.2.png)
 
 
+### 4. Accessing the EKS
+
+On terminal, after that it had been set up the aws cli.
+
+``` shell
+aws configure
+```
+
+See the configuration that was done.
+
+``` shell
+aws configure list
+```
+<!-- termynal -->
+``` shell
+> aws configure list
+      Name                    Value             Type    Location
+      ----                    -----             ----    --------
+   profile                <not set>             None    None
+access_key     ****************TTNI shared-credentials-file    
+secret_key     ****************zAJ1 shared-credentials-file    
+    region                us-east-2      config-file    ~/.aws/config
+```
+
+Set up the kube-config to point to the remote aws eks cluster.
+
+``` shell
+aws eks update-kubeconfig --name eks-store
+```
+<!-- termynal -->
+``` shell
+> aws eks update-kubeconfig --name eks-store
+Added new context arn:aws:eks:us-east-2:058264361068:cluster/eks-store to /Users/sandmann/.kube/config
+>
+>
+> kubectl get pods
+No resources found in default namespace.
+>
+>
+> kubectl get nodes
+No resources found
+>
+```
+
+Come back to AWS EKS > compute:
+
+![](../../../assets/images/cloud.aws.eks.nodes.group.1.png)
+
+Notice that there no nodes on cluster also, because only the **Control Pane** had been created, there is no exist a node for the worker nodes.
+
+Attach roles to node group, it is exclusive for the worker nodes.
+
+> IAM > Roles
+
+![](../../../assets/images/cloud.aws.eks.nodes.group.2.png)
+
+> Add Permissions
+
+- AmazonEKS_CNI_Policy (*Configuration Network Interface*)
+- AmazonEKSWorkerNodePolicy
+- AmazonEC2ContainerRegistryReadOnly
+
+> Review
+
+![](../../../assets/images/cloud.aws.eks.nodes.group.3.png)
+
+> Group Node Group
+
+![](../../../assets/images/cloud.aws.eks.nodes.group.4.png)
+
+![](../../../assets/images/cloud.aws.eks.nodes.group.5.png)
+
+Only private subnets:
+
+![](../../../assets/images/cloud.aws.eks.nodes.group.6.png)
+
+
+``` shell
+kubectl get nodes
+```
+<!-- termynal -->
+``` shell
+> kubectl get nodes
+NAME                                            STATUS   ROLES    AGE   VERSION
+ip-192-168-179-174.us-east-2.compute.internal   Ready    <none>   54s   v1.29.3-eks-ae9a62a
+ip-192-168-204-234.us-east-2.compute.internal   Ready    <none>   54s   v1.29.3-eks-ae9a62a
+```
+
+Now, deploy the microservice.
+
+<!-- termynal -->
+``` shell
+> kubectl apply -f ./k8s/deployment.yaml
+deployment.apps/gateway created
+> kubectl apply -f ./k8s/service.yaml
+service/gateway created
+>
+>
+>
+> kubectl get all
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/gateway-7894679df8-lbngj   1/1     Running   0          81s
+
+NAME                 TYPE           CLUSTER-IP     EXTERNAL-IP                                                               PORT(S)          AGE
+service/gateway      LoadBalancer   10.100.245.4   a3a5cc62ba81e466e9746f64f83fc349-1127848642.us-east-2.elb.amazonaws.com   8080:32681/TCP   25m
+service/kubernetes   ClusterIP      10.100.0.1     <none>                                                                    443/TCP          87m
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/gateway   1/1     1            1           82s
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/gateway-7894679df8   1         1         1       82s
+>
+```
+
+!!! note "Jenkins update"
+
+    Jenkins precisa instalar o awscli (adicionar ao `docker-compose.yaml`)
+    ```yaml
+    RUN apt-get install -y awscli
+    ```
+
+    Dentro da instância, configurar:
+
+    ```shell
+    > aws configure
+    > aws eks update-kubeconfig --name eks-store
+    ```
+
+!!! info "Scale"
+
+    ```shell
+    > kubectl scale --replicas=3 deployment/gateway
+    ```
+    <!-- termynal -->
+    ```shell
+    > kubectl scale --replicas=3 deployment/gateway
+    deployment.apps/gateway scaled
+    > kubectl get pods
+    NAME                       READY   STATUS    RESTARTS   AGE
+    gateway-7894679df8-62m7z   1/1     Running   0          12s
+    gateway-7894679df8-r2kp2   1/1     Running   0          12s
+    gateway-7894679df8-v6xhs   1/1     Running   0          5m58s
+    ```
 
 ## References:
 
@@ -112,3 +256,7 @@ gateway --> discovery
 [^4]: [Creating a VPC for your Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/creating-a-vpc.html){:target="_blank"}
 
 [^5]: [AWS Princing Calculator - EKS](https://calculator.aws/#/createCalculator/EKS){:target="_blank"}
+
+[^6]: [Getting started with Amazon EKS – AWS Management Console and AWS CLI](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html){:target='_blank'}
+
+[^7]: [kubectl scale](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/){:target='blank'}

@@ -17,6 +17,10 @@ minikube profile list
 minikube delete --all
 ```
 
+``` shell
+minikube delete --all --purge
+```
+
 Dashboard
 ``` shell
 minikube dashboard
@@ -584,7 +588,7 @@ rules:
 
 Executar a declaração:
 ``` shell
-kubectl apply -f account.yaml
+kubectl apply -f jenkins.yaml
 ```
 
 ### Recovering the Jenkins' Token
@@ -683,3 +687,5 @@ Adding the `Deploy on k8s` stage:
 [4^]: [Spring boot, PostgreSQL and Kubernetes](https://medium.com/@dickanirwansyah/spring-boot-postgresql-kubernetes-e3eb726570bd){target='_blank'}
 
 [5^]: [Deploy nodejs App in a Minikube Kubernetes using Jenkins CI/CD pipeline](https://medium.com/@devayanthakur/minikube-configure-jenkins-kubernetes-plugin-25eb804d0dec){target='_blank'}
+
+[6^]: [Horizontal Pod Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){target='_blank'}
