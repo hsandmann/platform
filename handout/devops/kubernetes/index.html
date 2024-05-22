@@ -745,6 +745,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#kubectl-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      kubectl config
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References:
@@ -893,6 +902,48 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../business/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2340,6 +2391,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#kubectl-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      kubectl config
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References:
@@ -2893,7 +2953,7 @@
 <h3 id="updating-the-jenkinsfile">Updating the Jenkinsfile</h3>
 <p>Adding the <code>Deploy on k8s</code> stage:</p>
 <div class="language-yaml highlight"><span class="filename">Jenkinsfile</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nn">...</span>
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">stage(&#39;Deploy on k8s&#39;) {</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">stage(&#39;Deploy on local k8s&#39;) {</span>
 </span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">steps {</span>
 </span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">withCredentials([ string(credentialsId</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;minikube-credentials&#39;</span><span class="err">,</span><span class="w"> </span><span class="nt">variable</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;api_token&#39;</span><span class="l l-Scalar l-Scalar-Plain">) ]) {</span>
 </span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">sh &#39;kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml &#39;</span>
@@ -2903,6 +2963,9 @@
 </span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="w">    </span><span class="err">}</span>
 </span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="nn">...</span>
 </span></code></pre></div>
+<hr />
+<h2 id="kubectl-config">kubectl config</h2>
+<p>kubectl config get-contexts</p>
 <h2 id="references">References:</h2>
 <p>[1^]: <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/" target="_blank">Using a Service to Expose Your App</a></p>
 <p>[2^]: <a href="https://kubernetes.io/docs/tasks/tools/" target="_blank">Install Kubernetes's Tools</a></p>
