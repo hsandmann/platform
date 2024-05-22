@@ -664,7 +664,7 @@ Adding the `Deploy on k8s` stage:
 
 ```yaml title="Jenkinsfile"
 ...
-    stage('Deploy on k8s') {
+    stage('Deploy on local k8s') {
         steps {
             withCredentials([ string(credentialsId: 'minikube-credentials', variable: 'api_token') ]) {
                 sh 'kubectl --token $api_token --server https://host.docker.internal:55529  --insecure-skip-tls-verify=true apply -f ./k8s/deployment.yaml '
@@ -674,6 +674,15 @@ Adding the `Deploy on k8s` stage:
     }
 ...
 ```
+
+---
+
+## kubectl config
+
+
+kubectl config get-contexts
+
+
 
 
 ## References:

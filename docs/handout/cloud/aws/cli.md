@@ -48,6 +48,7 @@ aws sts get-session-token
 ``` shell
 aws sts get-caller-identity
 ```
+
 <!-- termynal -->
 
 ``` shell

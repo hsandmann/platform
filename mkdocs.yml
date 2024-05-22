@@ -14,6 +14,7 @@ theme:
     - navigation.path
     - navigation.tracking
   icon:
+    # logo: assets/images/devops
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -96,6 +97,8 @@ nav:
       - AWS:
         - cli: ./handout/cloud/aws/cli.md
         - eks: ./handout/cloud/aws/eks.md
+    - Architecture: ./handout/architecture.md
+    - Business: ./handout/business.md
   - API:
     - Spring Boot Cloud: ./api/spring-boot-cloud.md
     - Testing: ./api/testing.md
