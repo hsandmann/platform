@@ -28,6 +28,7 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
+  logo: assets/images/devops.png
 
 markdown_extensions:
   - admonition
