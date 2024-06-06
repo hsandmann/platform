@@ -8,17 +8,20 @@ Crie um ambiente virtual do Python:
 python3 -m venv env
 ```
 
-Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum script deste repositório**). No Windows:
+Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum script deste repositório**):
 
-``` shell
-env\Scripts\activate
-```
+- Linux/MacOS:
 
-No Linux/MacOS:
+    ``` shell
+    . env/bin/activate
+    ```
 
-``` shell
-. env/bin/activate
-```
+- Windows:
+
+    ``` shell
+    env\Scripts\activate
+    ```
+
 
 Instale as dependências com:
 
